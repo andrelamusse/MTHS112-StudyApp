@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <div class="container">
@@ -68,6 +68,9 @@
 
       <!-- Workspace: where user writes calculations line by line -->
       <div id="workspace-area"></div>
+
+      <!-- Skip Button (before keypad) -->
+      <button class="btn-skip" id="btn-skip" style="display:none">Skip Question →</button>
 
       <!-- Math Keypad -->
       <div id="math-keypad" class="math-keypad">
@@ -126,7 +129,6 @@
 
       <!-- Feedback / Memo -->
       <div class="feedback" id="feedback"></div>
-      <button class="btn-skip" id="btn-skip" style="display:none">Skip Question →</button>
       <button class="btn-next" id="btn-next">Next Question →</button>
     </div>
 
@@ -156,13 +158,13 @@
   </div>
 
   <!-- Question Banks -->
-  <script src="questions_percentages.js"></script>
-  <script src="questions_matrices.js"></script>
-  <script src="questions_linprog.js"></script>
-  <script src="questions_tax.js"></script>
-  <script src="questions_finance.js"></script>
-  <script src="questions_functions.js"></script>
-  <script src="questions_calculus.js"></script>
-  <script src="app.js"></script>
+  <script src="questions_percentages.js?v=3"></script>
+  <script src="questions_matrices.js?v=3"></script>
+  <script src="questions_linprog.js?v=3"></script>
+  <script src="questions_tax.js?v=3"></script>
+  <script src="questions_finance.js?v=3"></script>
+  <script src="questions_functions.js?v=3"></script>
+  <script src="questions_calculus.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
