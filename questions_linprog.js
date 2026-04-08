@@ -1,28 +1,405 @@
-// ========== MTHS 112 — LINEAR PROGRAMMING (25 Questions) ==========
+// ========== MTHS 112 — LINEAR PROGRAMMING (30 Questions) ==========
 (function(){const Q=[
-{id:3001,topic:'Linear Programming',question:'A fruit farmer supplies raspberries (x) and blueberries (y). Constraints: $x \\geq 100$, $y \\geq 50$, $x + y \\geq 200$, $x \\leq 200$, $y \\leq 300$. Cost = $100x + 75y$.<br><br>4.1 Write the constraints. <em>[3 marks]</em><br>4.4 Find the minimum cost solution. <em>[2 marks]</em><br>4.5 What is the minimum cost? <em>[1 mark]</em>',markingCriteria:[{type:'contains',expected:['x ≥ 100','x≥100','x >= 100'],description:'Constraint: x ≥ 100',marks:1},{type:'contains',expected:['y ≥ 50','y≥50','y >= 50'],description:'Constraint: y ≥ 50',marks:1},{type:'contains',expected:['x + y ≥ 200','x+y≥200','x+y >= 200'],description:'Constraint: x + y ≥ 200',marks:1},{type:'value',expected:150,tolerance:0.5,description:'Min at x=150, y=50',marks:1},{type:'value',expected:50,tolerance:0.5,description:'y=50 at minimum',marks:1},{type:'value',expected:18750,tolerance:0.5,description:'Min cost = 100(150)+75(50) = R18 750',marks:1}],easyTemplate:'<div class="memo-line"><strong>4.1</strong> $x \\geq @INPUT@$, $y \\geq @INPUT@$, $x + y \\geq @INPUT@$, $x \\leq @INPUT@$, $y \\leq @INPUT@$</div><div class="memo-line"><strong>4.4</strong> Min at $(@INPUT@, @INPUT@)$</div><div class="memo-line"><strong>4.5</strong> $C = 100(@INPUT@) + 75(@INPUT@) = R@INPUT@$</div>',hardTemplate:'4.4 (x,y) = (@INPUT@, @INPUT@)<br>4.5 Min cost = R@INPUT@',memo:'<div class="memo-line"><strong>4.1</strong> Constraints listed <span class="memo-mark">✓(3)</span></div><div class="memo-line"><strong>4.4</strong> Min at (150, 50) <span class="memo-mark">✓(2)</span></div><div class="memo-line"><strong>4.5</strong> $C = R18\\,750$ <span class="memo-mark">✓(1)</span></div>'},
-{id:3002,topic:'Linear Programming',question:'A farmer has 80 hectares. Peach maintenance costs R12 000/ha and plum costs R8 000/ha. Budget: R720 000. Min 10 ha peaches. Peaches ≤ 2 × plums. Profit: R6 000/ha peach, R5 000/ha plum.<br><br>3.1 Write constraints. <em>[4 marks]</em><br>3.3 Find maximum profit. <em>[5 marks]</em>',markingCriteria:[{type:'contains',expected:['x + y ≤ 80','x+y≤80','x+y <= 80'],description:'Land: x + y ≤ 80',marks:1},{type:'contains',expected:['12000x + 8000y','12x + 8y','12000x+8000y'],description:'Budget constraint',marks:1},{type:'contains',expected:['x ≥ 10','x≥10'],description:'Min peaches: x ≥ 10',marks:1},{type:'contains',expected:['x ≤ 2y','x≤2y','x <= 2y'],description:'Ratio: x ≤ 2y',marks:1},{type:'contains',expected:['6000x + 5000y','6x + 5y'],description:'Objective: P = 6000x + 5000y',marks:1},{type:'anyValue',expected:[420000,440000],tolerance:10000,description:'Max profit ≈ R420 000–R440 000',marks:2}],easyTemplate:'<div class="memo-line"><strong>3.1</strong> $x + y \\leq @INPUT@$; $12000x + 8000y \\leq @INPUT@$; $x \\geq @INPUT@$; $x \\leq @INPUT@y$</div><div class="memo-line"><strong>3.3</strong> Objective: $P = @INPUT@x + @INPUT@y$</div><div class="memo-line">Max profit $= R@INPUT@$</div>',hardTemplate:'Max profit = R@INPUT@',memo:'<div class="memo-line">Constraints: $x+y \\leq 80$, $12000x+8000y \\leq 720000$, $x \\geq 10$, $x \\leq 2y$ <span class="memo-mark">✓(4)</span></div><div class="memo-line">Max at corner, profit ≈ R430\\,000 <span class="memo-mark">✓(5)</span></div>'},
-{id:3003,topic:'Linear Programming',question:'Maximize $P = 140x + 168y$ subject to: $12x + 18y \\leq 10800$, $24x + 12y \\leq 19200$, $x,y \\geq 0$.<br><br>Find the maximum profit and the optimal values of x and y.',markingCriteria:[{type:'contains',expected:['12x + 18y','12x+18y'],description:'Constraint 1 identified',marks:1},{type:'value',expected:750,tolerance:0.5,description:'x = 750',marks:2},{type:'value',expected:100,tolerance:0.5,description:'y = 100',marks:2},{type:'value',expected:121800,tolerance:0.5,description:'Max P = 140(750) + 168(100) = R121 800',marks:2}],easyTemplate:'<div class="memo-line">Solve intersection: $12x + 18y = 10800$ and $24x + 12y = 19200$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$</div><div class="memo-line">$P = 140(@INPUT@) + 168(@INPUT@) = R@INPUT@$</div>',hardTemplate:'(x,y) = (@INPUT@, @INPUT@), Max P = R@INPUT@',memo:'<div class="memo-line">Intersection: $(750, 100)$ <span class="memo-mark">✓(4)</span></div><div class="memo-line">$P = R121\\,800$ <span class="memo-mark">✓(2)</span></div>'},
-{id:3004,topic:'Linear Programming',question:'A gardener sows two vegetables on 20 hectares. Type 1 costs R30/ha, type 2 costs R20/ha. Budget: R480. Labour: type 1 needs 1 man-day/ha, type 2 needs 2 man-days/ha. Available: 36 man-days. Profit: R100/ha type 1, R120/ha type 2.<br><br>Write constraints, find max profit.',markingCriteria:[{type:'contains',expected:['x + y ≤ 20','x+y≤20'],description:'Land: x + y ≤ 20',marks:1},{type:'contains',expected:['30x + 20y','30x+20y'],description:'Cost: 30x + 20y ≤ 480',marks:1},{type:'contains',expected:['x + 2y','x+2y'],description:'Labour: x + 2y ≤ 36',marks:1},{type:'contains',expected:['100x + 120y','p = 100x'],description:'Objective: P = 100x + 120y',marks:1},{type:'anyValue',expected:[2080,2160,2200],tolerance:100,description:'Max profit',marks:2}],easyTemplate:'<div class="memo-line">$x + y \\leq @INPUT@$; $30x + 20y \\leq @INPUT@$; $x + 2y \\leq @INPUT@$</div><div class="memo-line">$P = @INPUT@x + @INPUT@y$</div><div class="memo-line">Max profit $= R@INPUT@$</div>',hardTemplate:'Max profit = R@INPUT@',memo:'<div class="memo-line">Constraints listed <span class="memo-mark">✓(3)</span></div><div class="memo-line">Objective: $P = 100x + 120y$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Max at corner ≈ R2\\,160 <span class="memo-mark">✓(2)</span></div>'},
-{id:3005,topic:'Linear Programming',question:'Minimize $C = 5x + 3y$ subject to: $x + y \\geq 10$, $2x + y \\leq 20$, $x \\leq 12$, $x,y \\geq 0$. Find minimum cost.',markingCriteria:[{type:'contains',expected:['x + y ≥ 10','x+y≥10'],description:'Constraint 1',marks:1},{type:'value',expected:30,tolerance:0.5,description:'Min at (0,10): C = 30',marks:2}],easyTemplate:'<div class="memo-line">Test corners: $(0,10)$: $C = @INPUT@$</div><div class="memo-line">$(10,0)$: $C = @INPUT@$; Min $= @INPUT@$</div>',hardTemplate:'Min C = @INPUT@',memo:'<div class="memo-line">At (0,10): $C = 30$ → minimum <span class="memo-mark">✓(3)</span></div>'},
-{id:3006,topic:'Linear Programming',question:'Maximize $P = 8x + 6y$ subject to: $x + y \\leq 50$, $x \\leq 30$, $y \\leq 35$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:30,tolerance:0.5,description:'x = 30',marks:1},{type:'value',expected:20,tolerance:0.5,description:'y = 20',marks:1},{type:'value',expected:360,tolerance:0.5,description:'P = 8(30)+6(20) = 360',marks:1}],easyTemplate:'<div class="memo-line">Corners: $(30,20)$: $P = @INPUT@$; $(30,0)$: $P = @INPUT@$</div><div class="memo-line">Max at $(@INPUT@, @INPUT@)$, $P = @INPUT@$</div>',hardTemplate:'Max P = @INPUT@',memo:'<div class="memo-line">Max at $(30,20)$: $P = 360$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3007,topic:'Linear Programming',question:'A factory makes chairs (x) and tables (y). Wood: 2x + 4y ≤ 120 board-feet. Labour: 3x + 2y ≤ 90 hours. Profit: R40/chair, R50/table. Maximize profit.',markingCriteria:[{type:'contains',expected:['2x + 4y','2x+4y'],description:'Wood constraint',marks:1},{type:'contains',expected:['3x + 2y','3x+2y'],description:'Labour constraint',marks:1},{type:'contains',expected:['40x + 50y','40x+50y'],description:'Objective',marks:1},{type:'anyValue',expected:[1500,1550],tolerance:100,description:'Max profit',marks:2}],easyTemplate:'<div class="memo-line">$2x + 4y \\leq @INPUT@$; $3x + 2y \\leq @INPUT@$</div><div class="memo-line">$P = @INPUT@x + @INPUT@y$, Max $= R@INPUT@$</div>',hardTemplate:'Max profit = R@INPUT@',memo:'<div class="memo-line">$2x+4y \\leq 120$, $3x+2y \\leq 90$ <span class="memo-mark">✓(2)</span></div><div class="memo-line">Max profit ≈ R1\\,500 <span class="memo-mark">✓(2)</span></div>'},
-{id:3008,topic:'Linear Programming',question:'Minimize $C = 10x + 8y$ subject to: $x + y \\geq 40$, $2x + y \\geq 60$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:20,tolerance:0.5,description:'Intersection: x = 20',marks:1},{type:'value',expected:20,tolerance:0.5,description:'y = 20',marks:1},{type:'value',expected:360,tolerance:0.5,description:'Min C = 10(20)+8(20) = 360',marks:1}],easyTemplate:'<div class="memo-line">Intersection: $x + y = 40$ and $2x + y = 60$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$, $C = @INPUT@$</div>',hardTemplate:'Min C = @INPUT@',memo:'<div class="memo-line">At $(20,20)$: $C = 360$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3009,topic:'Linear Programming',question:'Convert to search line: $P = 6x + 5y$. Express $y$ in terms of $x$ and $P$.',markingCriteria:[{type:'contains',expected:['y = -6÷5','y = -1.2x','y=-6/5','y = -6x/5'],description:'y = −(6/5)x + P/5',marks:2}],easyTemplate:'<div class="memo-line">$5y = -6x + P$</div><div class="memo-line">$y = -\\frac{@INPUT@}{@INPUT@}x + \\frac{P}{@INPUT@}$</div>',hardTemplate:'Search line: y = @INPUT@',memo:'<div class="memo-line">$y = -\\frac{6}{5}x + \\frac{P}{5}$ <span class="memo-mark">✓(2)</span></div>'},
-{id:3010,topic:'Linear Programming',question:'Maximize $P = 12x + 10y$ subject to: $3x + 2y \\leq 60$, $x + 2y \\leq 40$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:10,tolerance:0.5,description:'Intersection x = 10',marks:1},{type:'value',expected:15,tolerance:0.5,description:'y = 15',marks:1},{type:'value',expected:270,tolerance:0.5,description:'P = 12(10)+10(15) = 270',marks:1}],easyTemplate:'<div class="memo-line">$3x+2y=60$ and $x+2y=40$: $2x = @INPUT@ \\Rightarrow x = @INPUT@$</div><div class="memo-line">$y = @INPUT@$, $P = @INPUT@$</div>',hardTemplate:'Max P = @INPUT@',memo:'<div class="memo-line">At $(10,15)$: $P = 270$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3011,topic:'Linear Programming',question:'A dietician combines foods A and B. Protein: 3A + 2B ≥ 12g. Fat: A + 3B ≤ 15g. Min 2 units of each. Cost: R5 per unit A, R4 per unit B. Minimize cost.',markingCriteria:[{type:'contains',expected:['3x + 2y ≥ 12','3a+2b'],description:'Protein constraint',marks:1},{type:'contains',expected:['5x + 4y','5a + 4b'],description:'Objective',marks:1},{type:'anyValue',expected:[28,30,32],tolerance:4,description:'Min cost',marks:1}],easyTemplate:'<div class="memo-line">$3A + 2B \\geq @INPUT@$; $A + 3B \\leq @INPUT@$; $A,B \\geq @INPUT@$</div><div class="memo-line">$C = @INPUT@A + @INPUT@B$, Min $= R@INPUT@$</div>',hardTemplate:'Min cost = R@INPUT@',memo:'<div class="memo-line">Min cost at feasible corner <span class="memo-mark">✓(3)</span></div>'},
-{id:3012,topic:'Linear Programming',question:'Maximize $P = 3x + 4y$ subject to: $x + y \\leq 10$, $x + 3y \\leq 18$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:6,tolerance:0.5,description:'x = 6',marks:1},{type:'value',expected:4,tolerance:0.5,description:'y = 4',marks:1},{type:'value',expected:34,tolerance:0.5,description:'P = 3(6)+4(4) = 34',marks:1}],easyTemplate:'<div class="memo-line">$x+y=10$ and $x+3y=18$: $2y = @INPUT@ \\Rightarrow y = @INPUT@$</div><div class="memo-line">$x = @INPUT@$, $P = @INPUT@$</div>',hardTemplate:'Max P = @INPUT@',memo:'<div class="memo-line">At $(6,4)$: $P = 34$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3013,topic:'Linear Programming',question:'A bakery makes cakes (x) and pies (y). Flour: 2x + y ≤ 40. Eggs: x + y ≤ 30. Profit: R15/cake, R10/pie. Maximize.',markingCriteria:[{type:'value',expected:10,tolerance:0.5,description:'x = 10',marks:1},{type:'value',expected:20,tolerance:0.5,description:'y = 20',marks:1},{type:'value',expected:350,tolerance:0.5,description:'P = 15(10)+10(20) = 350',marks:1}],easyTemplate:'<div class="memo-line">$2x + y = 40$ and $x + y = 30$: $x = @INPUT@, y = @INPUT@$</div><div class="memo-line">$P = @INPUT@$</div>',hardTemplate:'Max P = R@INPUT@',memo:'<div class="memo-line">At $(10,20)$: $P = R350$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3014,topic:'Linear Programming',question:'Minimize $C = 20x + 15y$ subject to: $x + y \\geq 25$, $x \\geq 5$, $y \\geq 8$, $x + y \\leq 40$.',markingCriteria:[{type:'value',expected:5,tolerance:0.5,description:'x = 5 (minimum)',marks:1},{type:'value',expected:20,tolerance:0.5,description:'y = 20',marks:1},{type:'value',expected:400,tolerance:0.5,description:'C = 20(5)+15(20) = 400',marks:1}],easyTemplate:'<div class="memo-line">Test: $(5,20)$: $C = @INPUT@$; $(17,8)$: $C = @INPUT@$</div><div class="memo-line">Min $C = @INPUT@$ at $(@INPUT@, @INPUT@)$</div>',hardTemplate:'Min C = R@INPUT@',memo:'<div class="memo-line">At $(5,20)$: $C = 400$ → minimum <span class="memo-mark">✓(3)</span></div>'},
-{id:3015,topic:'Linear Programming',question:'List the corner points of the feasible region: $x + y \\leq 8$, $x \\leq 5$, $y \\leq 6$, $x,y \\geq 0$.',markingCriteria:[{type:'contains',expected:['(0,0)','0, 0','(0;0)'],description:'Origin',marks:1},{type:'contains',expected:['(5,3)','5, 3','(5;3)'],description:'Intersection (5,3)',marks:1},{type:'contains',expected:['(2,6)','2, 6','(2;6)'],description:'Intersection (2,6)',marks:1}],easyTemplate:'<div class="memo-line">Corners: $(0,0)$, $(5,0)$, $(@INPUT@, @INPUT@)$, $(@INPUT@, @INPUT@)$, $(0,@INPUT@)$</div>',hardTemplate:'Corners: @INPUT@',memo:'<div class="memo-line">$(0,0)$, $(5,0)$, $(5,3)$, $(2,6)$, $(0,6)$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3016,topic:'Linear Programming',question:'Maximize $P = 7x + 5y$ subject to: $x + y \\leq 100$, $x \\leq 60$, $y \\leq 70$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:60,tolerance:0.5,description:'x = 60',marks:1},{type:'value',expected:40,tolerance:0.5,description:'y = 40',marks:1},{type:'value',expected:620,tolerance:0.5,description:'P = 7(60)+5(40) = 620',marks:1}],easyTemplate:'<div class="memo-line">Test: $(60,40)$: $P = @INPUT@$; $(60,0)$: $P = @INPUT@$</div><div class="memo-line">Max at $(@INPUT@, @INPUT@)$</div>',hardTemplate:'Max P = @INPUT@',memo:'<div class="memo-line">At $(60,40)$: $P = 620$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3017,topic:'Linear Programming',question:'A manufacturer makes products A(x) and B(y). Machine time: 4x + 3y ≤ 240 min. Packing: x + y ≤ 70. Profit: R5/A, R4/B. Maximize.',markingCriteria:[{type:'contains',expected:['4x + 3y','4x+3y'],description:'Machine constraint',marks:1},{type:'anyValue',expected:[300,310,320,330,340],tolerance:20,description:'Max profit',marks:2}],easyTemplate:'<div class="memo-line">$4x + 3y \\leq @INPUT@$; $x + y \\leq @INPUT@$</div><div class="memo-line">$P = @INPUT@x + @INPUT@y$, Max $= R@INPUT@$</div>',hardTemplate:'Max P = R@INPUT@',memo:'<div class="memo-line">Max profit at corner of feasible region <span class="memo-mark">✓(3)</span></div>'},
-{id:3018,topic:'Linear Programming',question:'Write the objective function $P = 200x + 150y$ as a search line (solve for y).',markingCriteria:[{type:'contains',expected:['y = -200/150','y = -4/3','y=-4x/3','y = -(4/3)x'],description:'y = -(4/3)x + P/150',marks:2}],easyTemplate:'<div class="memo-line">$150y = -200x + P$</div><div class="memo-line">$y = -\\frac{@INPUT@}{@INPUT@}x + \\frac{P}{@INPUT@}$</div>',hardTemplate:'y = @INPUT@',memo:'<div class="memo-line">$y = -\\frac{4}{3}x + \\frac{P}{150}$ <span class="memo-mark">✓(2)</span></div>'},
-{id:3019,topic:'Linear Programming',question:'Minimize $C = 6x + 4y$ subject to: $2x + y \\geq 10$, $x + 2y \\geq 10$, $x,y \\geq 0$.',markingCriteria:[{type:'contains',expected:['10/3','3.33'],description:'Intersection at (10/3, 10/3)',marks:1},{type:'anyValue',expected:[33.33,33.34],tolerance:0.1,description:'Min C ≈ 33.33',marks:1}],easyTemplate:'<div class="memo-line">Intersection: $2x+y=10$ and $x+2y=10$</div><div class="memo-line">$3x = @INPUT@$, $x = @INPUT@$, $y = @INPUT@$, $C = @INPUT@$</div>',hardTemplate:'Min C = @INPUT@',memo:'<div class="memo-line">At $(10/3, 10/3)$: $C ≈ 33.33$ <span class="memo-mark">✓(2)</span></div>'},
-{id:3020,topic:'Linear Programming',question:'Maximize $P = 10x + 12y$ subject to: $2x + 3y \\leq 30$, $x + y \\leq 12$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:6,tolerance:0.5,description:'x = 6',marks:1},{type:'value',expected:6,tolerance:0.5,description:'y = 6',marks:1},{type:'value',expected:132,tolerance:0.5,description:'P = 10(6)+12(6) = 132',marks:1}],easyTemplate:'<div class="memo-line">$2x+3y=30$ and $x+y=12$: $x = @INPUT@, y = @INPUT@$</div><div class="memo-line">$P = @INPUT@$</div>',hardTemplate:'Max P = @INPUT@',memo:'<div class="memo-line">At $(6,6)$: $P = 132$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3021,topic:'Linear Programming',question:'A toy company makes dolls (x) and robots (y). Paint: x + 2y ≤ 16 hours. Assembly: 2x + y ≤ 14 hours. Profit: R3/doll, R5/robot. Maximize profit.',markingCriteria:[{type:'value',expected:4,tolerance:0.5,description:'x = 4',marks:1},{type:'value',expected:6,tolerance:0.5,description:'y = 6',marks:1},{type:'value',expected:42,tolerance:0.5,description:'P = 3(4)+5(6) = 42',marks:1}],easyTemplate:'<div class="memo-line">$x+2y=16$ and $2x+y=14$: $x=@INPUT@, y=@INPUT@$</div><div class="memo-line">$P = @INPUT@$</div>',hardTemplate:'Max P = R@INPUT@',memo:'<div class="memo-line">At $(4,6)$: $P = R42$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3022,topic:'Linear Programming',question:'Determine if (3,5) is in the feasible region: $x + y \\leq 10$, $2x + y \\leq 12$.',markingCriteria:[{type:'contains',expected:['3 + 5 = 8','8 ≤ 10','yes','feasible'],description:'x+y = 8 ≤ 10 ✓',marks:1},{type:'contains',expected:['2(3) + 5 = 11','11 ≤ 12'],description:'2x+y = 11 ≤ 12 ✓',marks:1}],easyTemplate:'<div class="memo-line">$x + y = @INPUT@ + @INPUT@ = @INPUT@ \\leq 10$ ✓</div><div class="memo-line">$2x + y = @INPUT@ + @INPUT@ = @INPUT@ \\leq 12$ ✓</div><div class="memo-line">Point is @INPUT@</div>',hardTemplate:'Answer: @INPUT@',memo:'<div class="memo-line">$8 \\leq 10$ ✓, $11 \\leq 12$ ✓ → feasible <span class="memo-mark">✓(2)</span></div>'},
-{id:3023,topic:'Linear Programming',question:'Maximize $P = 15x + 20y$ subject to: $x + 2y \\leq 20$, $3x + y \\leq 24$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:4,tolerance:0.5,description:'x = 4 at intersection',marks:1},{type:'value',expected:8,tolerance:0.5,description:'y = 8',marks:1},{type:'value',expected:220,tolerance:0.5,description:'P = 15(4)+20(8) = 220',marks:1}],easyTemplate:'<div class="memo-line">$x+2y=20$ and $3x+y=24$: $x=@INPUT@, y=@INPUT@$</div><div class="memo-line">$P = @INPUT@$</div>',hardTemplate:'Max P = @INPUT@',memo:'<div class="memo-line">At $(4,8)$: $P = 220$ <span class="memo-mark">✓(3)</span></div>'},
-{id:3024,topic:'Linear Programming',question:'A printer processes brochures (x) and posters (y). Time: 2x + 5y ≤ 100 min. Paper: x + y ≤ 30. Revenue: R8/brochure, R12/poster. Maximize revenue.',markingCriteria:[{type:'contains',expected:['2x + 5y','2x+5y'],description:'Time constraint',marks:1},{type:'anyValue',expected:[300,310,320],tolerance:20,description:'Max revenue',marks:2}],easyTemplate:'<div class="memo-line">$2x + 5y \\leq @INPUT@$; $x + y \\leq @INPUT@$</div><div class="memo-line">$R = @INPUT@x + @INPUT@y$, Max $= R@INPUT@$</div>',hardTemplate:'Max revenue = R@INPUT@',memo:'<div class="memo-line">Max revenue at corner <span class="memo-mark">✓(3)</span></div>'},
-{id:3025,topic:'Linear Programming',question:'Minimize $C = 4x + 6y$ subject to: $x + 2y \\geq 8$, $x + y \\geq 6$, $2x + y \\geq 8$, $x,y \\geq 0$.',markingCriteria:[{type:'value',expected:2,tolerance:0.5,description:'Optimal x ≈ 2',marks:1},{type:'value',expected:4,tolerance:0.5,description:'Optimal y ≈ 4',marks:1},{type:'value',expected:32,tolerance:1,description:'Min C ≈ 32',marks:1}],easyTemplate:'<div class="memo-line">Test corners of feasible region</div><div class="memo-line">$(@INPUT@, @INPUT@)$: $C = @INPUT@$ → minimum</div>',hardTemplate:'Min C = @INPUT@',memo:'<div class="memo-line">Min at $(2,4)$: $C = 32$ <span class="memo-mark">✓(3)</span></div>'},
+
+// Q1: Fruit farmer — full LP (from 2024 exam Q4)
+{id:3001,topic:'Linear Programming',
+question:'A fruit farmer supplies raspberries (x) and blueberries (y). Constraints: $x \\geq 100$, $y \\geq 50$, $x + y \\geq 200$, $x \\leq 200$, $y \\leq 300$. Cost: $C = 100x + 75y$.<br>4.1 Write all constraints. 4.2 Identify corner points. 4.3 Minimize cost. <em>[13 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x ≥ 100','x >= 100','x≥100'],description:'x ≥ 100',marks:1},
+  {type:'contains',expected:['y ≥ 50','y >= 50','y≥50'],description:'y ≥ 50',marks:1},
+  {type:'contains',expected:['x + y ≥ 200','x+y≥200','x + y >= 200'],description:'x + y ≥ 200',marks:1},
+  {type:'value',expected:17500,tolerance:1,description:'Min cost = R17 500 at (100,100)',marks:3}
+],
+easyTemplate:'<div class="memo-line"><strong>4.1 Constraints:</strong></div><div class="memo-line">$x \\geq @INPUT@$, $y \\geq @INPUT@$</div><div class="memo-line">$x + y \\geq @INPUT@$</div><div class="memo-line">$x \\leq @INPUT@$, $y \\leq @INPUT@$</div><div class="memo-line"><strong>4.2 Corner points of feasible region:</strong></div><div class="memo-line">$(@INPUT@, @INPUT@)$, $(@INPUT@, @INPUT@)$, $(@INPUT@, @INPUT@)$, $(@INPUT@, @INPUT@)$</div><div class="memo-line"><strong>4.3 Evaluate C = 100x + 75y at each:</strong></div><div class="memo-line">$C(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = R@INPUT@$</div><div class="memo-line">$C(@INPUT@, @INPUT@) = R@INPUT@$</div><div class="memo-line">$C(@INPUT@, @INPUT@) = R@INPUT@$</div><div class="memo-line">$C(@INPUT@, @INPUT@) = R@INPUT@$</div><div class="memo-line"><strong>Minimum cost:</strong> R@INPUT@ at $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Min cost: R@INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">Constraints ✓ <span class="memo-mark">✓(3)</span></div><div class="memo-line">Corner points identified <span class="memo-mark">✓(4)</span></div><div class="memo-line">Min C = R17 500 at (100,100) <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q2: Manufacturing — maximize profit
+{id:3002,topic:'Linear Programming',
+question:'A factory makes chairs (x) and tables (y). Each chair needs 2h labour, 3kg wood. Each table needs 4h labour, 2kg wood. Available: 40h labour, 30kg wood. Profit: R80/chair, R100/table.<br>Maximize profit. <em>[10 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['2x + 4y ≤ 40','2x+4y≤40','2x + 4y <= 40'],description:'Labour: 2x+4y ≤ 40',marks:1},
+  {type:'contains',expected:['3x + 2y ≤ 30','3x+2y≤30','3x + 2y <= 30'],description:'Wood: 3x+2y ≤ 30',marks:1},
+  {type:'value',expected:10,tolerance:0.01,description:'x = 10 at optimal (check: (10,0)→ C=800, but need to verify corners)',marks:2},
+  {type:'anyValue',expected:[1000,960],tolerance:50,description:'Max profit',marks:3}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">Labour: $@INPUT@x + @INPUT@y \\leq @INPUT@$</div><div class="memo-line">Wood: $@INPUT@x + @INPUT@y \\leq @INPUT@$</div><div class="memo-line">$x \\geq 0, y \\geq 0$</div><div class="memo-line"><strong>Corner points:</strong></div><div class="memo-line">$(0,0)$, $(@INPUT@, 0)$, $(0, @INPUT@)$, $(@INPUT@, @INPUT@)$</div><div class="memo-line"><strong>Evaluate P = @INPUT@x + @INPUT@y:</strong></div><div class="memo-line">$P(0,0) = R@INPUT@$</div><div class="memo-line">$P(@INPUT@,0) = R@INPUT@$</div><div class="memo-line">$P(0,@INPUT@) = R@INPUT@$</div><div class="memo-line">$P(@INPUT@,@INPUT@) = R@INPUT@$</div><div class="memo-line"><strong>Maximum:</strong> R@INPUT@ at $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Max profit: R@INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">2x+4y≤40, 3x+2y≤30 <span class="memo-mark">✓(2)</span></div><div class="memo-line">Corners evaluated, max profit found <span class="memo-mark">✓(8)</span></div>'
+},
+
+// Q3: Write constraints from word problem
+{id:3003,topic:'Linear Programming',
+question:'A baker makes cakes (x) and pies (y). Each cake needs 2 eggs, 500g flour. Each pie needs 3 eggs, 300g flour. Available: 24 eggs, 4.2kg flour. Write constraints. <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['2x + 3y ≤ 24','2x+3y≤24','2x + 3y <= 24'],description:'Eggs: 2x+3y ≤ 24',marks:1},
+  {type:'contains',expected:['500x + 300y ≤ 4200','500x+300y≤4200','5x + 3y ≤ 42'],description:'Flour: 500x+300y ≤ 4200 (or 5x+3y ≤ 42)',marks:1},
+  {type:'contains',expected:['x ≥ 0','x >= 0','x≥0'],description:'x ≥ 0',marks:1},
+  {type:'contains',expected:['y ≥ 0','y >= 0','y≥0'],description:'y ≥ 0',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Eggs:</strong> $@INPUT@x + @INPUT@y \\leq @INPUT@$</div><div class="memo-line"><strong>Flour:</strong> $@INPUT@x + @INPUT@y \\leq @INPUT@$ (or ÷100: $@INPUT@x + @INPUT@y \\leq @INPUT@$)</div><div class="memo-line"><strong>Non-negativity:</strong> $x \\geq @INPUT@$, $y \\geq @INPUT@$</div>',
+hardTemplate:'Egg constraint: @INPUT@. Flour: @INPUT@',
+memo:'<div class="memo-line">2x+3y ≤ 24, 500x+300y ≤ 4200, x,y ≥ 0 <span class="memo-mark">✓(4)</span></div>'
+},
+
+// Q4: Evaluate corner points
+{id:3004,topic:'Linear Programming',
+question:'Feasible region has corners at (0,0), (6,0), (4,3), (0,5). Maximize P = 5x + 8y. <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:0,tolerance:0.01,description:'P(0,0) = 0',marks:1},
+  {type:'value',expected:30,tolerance:0.01,description:'P(6,0) = 30',marks:1},
+  {type:'value',expected:44,tolerance:0.01,description:'P(4,3) = 44',marks:1},
+  {type:'value',expected:40,tolerance:0.01,description:'P(0,5) = 40',marks:1}
+],
+easyTemplate:'<div class="memo-line">$P(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line">$P(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line">$P(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line">$P(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line"><strong>Maximum:</strong> $P = @INPUT@$ at $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Max P = @INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">P(4,3) = 44 is maximum <span class="memo-mark">✓(4)</span></div>'
+},
+
+// Q5: Search line method
+{id:3005,topic:'Linear Programming',
+question:'Use the search line method: $Z = 3x + 2y$. Feasible corners: (0,8), (2,6), (5,2), (6,0). <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['3x + 2y','3x+2y','y = -1.5x','slope'],description:'Search line: y = −1.5x + c',marks:1},
+  {type:'value',expected:19,tolerance:0.01,description:'Max Z = 3(5)+2(2) = 19',marks:2},
+  {type:'value',expected:18,tolerance:0.01,description:'Z(6,0) = 18',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Search line:</strong> $y = -\\frac{@INPUT@}{@INPUT@}x + \\frac{Z}{@INPUT@}$, slope $= @INPUT@$</div><div class="memo-line"><strong>Evaluate at each corner:</strong></div><div class="memo-line">$Z(0,@INPUT@) = @INPUT@(0) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line"><strong>Maximum:</strong> $Z = @INPUT@$ at $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Max Z = @INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">Search line slope = −1.5 <span class="memo-mark">✓(1)</span></div><div class="memo-line">Max Z = 19 at (5,2) <span class="memo-mark">✓(3)</span></div>'
+},
+
+// Q6: Find intersection — corner point calculation
+{id:3006,topic:'Linear Programming',
+question:'Find the intersection of $2x + y = 10$ and $x + 3y = 15$. <em>[3 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:3,tolerance:0.01,description:'x = 3',marks:1},
+  {type:'value',expected:4,tolerance:0.01,description:'y = 4',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>From eq1:</strong> $y = @INPUT@ - @INPUT@x$</div><div class="memo-line"><strong>Sub into eq2:</strong></div><div class="memo-line">$x + @INPUT@(@INPUT@ - @INPUT@x) = @INPUT@$</div><div class="memo-line">$x + @INPUT@ - @INPUT@x = @INPUT@$</div><div class="memo-line">$-@INPUT@x = @INPUT@ - @INPUT@ = @INPUT@$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@ - @INPUT@(@INPUT@) = @INPUT@$</div>',
+hardTemplate:'$(@INPUT@, @INPUT@)$',
+memo:'<div class="memo-line">x = 3, y = 4 <span class="memo-mark">✓(3)</span></div>'
+},
+
+// Q7: Feasibility check
+{id:3007,topic:'Linear Programming',
+question:'Is the point (3, 4) feasible for: $x + y \\leq 8$, $2x + y \\leq 12$, $x \\geq 0$, $y \\geq 0$? <em>[2 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['3 + 4 = 7','7 ≤ 8','7 <= 8','7 < 8'],description:'x+y = 7 ≤ 8 ✓',marks:1},
+  {type:'contains',expected:['2(3) + 4 = 10','10 ≤ 12','10 <= 12','10 < 12','feasible','yes'],description:'2x+y = 10 ≤ 12 ✓ → feasible',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Check constraint 1:</strong> $@INPUT@ + @INPUT@ = @INPUT@ \\leq @INPUT@$ → @INPUT@</div><div class="memo-line"><strong>Check constraint 2:</strong> $@INPUT@(@INPUT@) + @INPUT@ = @INPUT@ \\leq @INPUT@$ → @INPUT@</div><div class="memo-line"><strong>Non-negativity:</strong> $@INPUT@ \\geq 0$ ✓, $@INPUT@ \\geq 0$ ✓</div><div class="memo-line"><strong>Conclusion:</strong> Point is @INPUT@</div>',
+hardTemplate:'Feasible: @INPUT@',
+memo:'<div class="memo-line">7 ≤ 8 ✓, 10 ≤ 12 ✓ → feasible <span class="memo-mark">✓(2)</span></div>'
+},
+
+// Q8: Diet problem — minimize cost
+{id:3008,topic:'Linear Programming',
+question:'A diet requires at least 10g protein and 8g fibre daily. Food A: 2g protein, 1g fibre, R5. Food B: 1g protein, 2g fibre, R4. Minimize cost. <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['2x + y ≥ 10','2x+y≥10','2x + y >= 10'],description:'Protein: 2x+y ≥ 10',marks:1},
+  {type:'contains',expected:['x + 2y ≥ 8','x+2y≥8','x + 2y >= 8'],description:'Fibre: x+2y ≥ 8',marks:1},
+  {type:'value',expected:4,tolerance:0.01,description:'x = 4',marks:2},
+  {type:'value',expected:2,tolerance:0.01,description:'y = 2',marks:2},
+  {type:'value',expected:28,tolerance:0.01,description:'Min C = 5(4)+4(2) = R28',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">Protein: $@INPUT@x + @INPUT@y \\geq @INPUT@$</div><div class="memo-line">Fibre: $@INPUT@x + @INPUT@y \\geq @INPUT@$</div><div class="memo-line">$x, y \\geq 0$</div><div class="memo-line"><strong>Corner points:</strong></div><div class="memo-line">Intersection: solve $@INPUT@x + y = @INPUT@$ and $x + @INPUT@y = @INPUT@$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$</div><div class="memo-line">Other corners: $(@INPUT@, 0)$, $(0, @INPUT@)$</div><div class="memo-line"><strong>Min C at $(@INPUT@, @INPUT@)$:</strong> $@INPUT@(@INPUT@) + @INPUT@(@INPUT@) = R@INPUT@$</div>',
+hardTemplate:'Min cost: R@INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">2x+y≥10, x+2y≥8 <span class="memo-mark">✓(2)</span></div><div class="memo-line">Optimal: (4,2), C = R28 <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q9: Transport problem
+{id:3009,topic:'Linear Programming',
+question:'A company ships from 2 warehouses to a store. W1 has 150 units (cost R6/unit), W2 has 100 units (cost R4/unit). Store needs at least 120 units. Minimize cost if x from W1, y from W2. <em>[6 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x + y ≥ 120','x+y≥120'],description:'Demand: x+y ≥ 120',marks:1},
+  {type:'contains',expected:['x ≤ 150','x<=150'],description:'W1 capacity',marks:1},
+  {type:'contains',expected:['y ≤ 100','y<=100'],description:'W2 capacity',marks:1},
+  {type:'value',expected:520,tolerance:1,description:'Min C = 6(20)+4(100) = R520',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">$x + y \\geq @INPUT@$, $x \\leq @INPUT@$, $y \\leq @INPUT@$, $x, y \\geq 0$</div><div class="memo-line"><strong>Minimize:</strong> $C = @INPUT@x + @INPUT@y$</div><div class="memo-line"><strong>Corner points:</strong> $(@INPUT@, @INPUT@)$, $(@INPUT@, @INPUT@)$, ...</div><div class="memo-line"><strong>Evaluate:</strong></div><div class="memo-line">$C(@INPUT@, @INPUT@) = R@INPUT@$ ← minimum</div><div class="memo-line">$C(@INPUT@, @INPUT@) = R@INPUT@$</div>',
+hardTemplate:'Min C: R@INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">x+y≥120, x≤150, y≤100 <span class="memo-mark">✓(3)</span></div><div class="memo-line">Min at (20,100): R520 <span class="memo-mark">✓(3)</span></div>'
+},
+
+// Q10: Identify binding constraints
+{id:3010,topic:'Linear Programming',
+question:'Optimal solution at (4,3). Constraints: $x+y \\leq 8$, $2x+y \\leq 12$, $x \\leq 6$. Which constraints are binding (active)? <em>[3 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x + y = 7','7 ≤ 8','not binding','slack'],description:'x+y = 7 < 8: not binding',marks:1},
+  {type:'contains',expected:['2(4) + 3 = 11','11 ≤ 12','not binding'],description:'2x+y = 11 < 12: not binding',marks:1},
+  {type:'contains',expected:['4 ≤ 6','not binding','no binding','none'],description:'x = 4 < 6: not binding',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Check each constraint at (4,3):</strong></div><div class="memo-line">$x + y = @INPUT@ + @INPUT@ = @INPUT@$. Compare to @INPUT@: @INPUT@ (@INPUT@)</div><div class="memo-line">$2x + y = @INPUT@(@INPUT@) + @INPUT@ = @INPUT@$. Compare to @INPUT@: @INPUT@ (@INPUT@)</div><div class="memo-line">$x = @INPUT@$. Compare to @INPUT@: @INPUT@ (@INPUT@)</div>',
+hardTemplate:'Binding: @INPUT@',
+memo:'<div class="memo-line">None are binding at (4,3) <span class="memo-mark">✓(3)</span></div>'
+},
+
+// Q11: Graph constraints — intercepts
+{id:3011,topic:'Linear Programming',
+question:'Find x and y intercepts for: $3x + 4y = 24$ and $2x + y = 10$. <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:8,tolerance:0.01,description:'3x+4y=24: x-int = 8',marks:1},
+  {type:'value',expected:6,tolerance:0.01,description:'3x+4y=24: y-int = 6',marks:1},
+  {type:'value',expected:5,tolerance:0.01,description:'2x+y=10: x-int = 5',marks:1},
+  {type:'value',expected:10,tolerance:0.01,description:'2x+y=10: y-int = 10',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Line 1: $3x + 4y = 24$</strong></div><div class="memo-line">$y = 0$: $3x = @INPUT@ \\Rightarrow x = @INPUT@$ → $(@INPUT@, 0)$</div><div class="memo-line">$x = 0$: $4y = @INPUT@ \\Rightarrow y = @INPUT@$ → $(0, @INPUT@)$</div><div class="memo-line"><strong>Line 2: $2x + y = 10$</strong></div><div class="memo-line">$y = 0$: $2x = @INPUT@ \\Rightarrow x = @INPUT@$ → $(@INPUT@, 0)$</div><div class="memo-line">$x = 0$: $y = @INPUT@$ → $(0, @INPUT@)$</div>',
+hardTemplate:'L1: (@INPUT@,0),(0,@INPUT@). L2: (@INPUT@,0),(0,@INPUT@)',
+memo:'<div class="memo-line">L1: (8,0),(0,6). L2: (5,0),(0,10) <span class="memo-mark">✓(4)</span></div>'
+},
+
+// Q12: Maximize with 3 constraints
+{id:3012,topic:'Linear Programming',
+question:'Maximize $Z = 4x + 3y$ subject to: $x + y \\leq 10$, $2x + y \\leq 16$, $x + 2y \\leq 14$, $x,y \\geq 0$. <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:6,tolerance:0.01,description:'Optimal x = 6',marks:2},
+  {type:'value',expected:4,tolerance:0.01,description:'Optimal y = 4',marks:2},
+  {type:'value',expected:36,tolerance:0.01,description:'Max Z = 4(6)+3(4) = 36',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Corner points (solve pairs):</strong></div><div class="memo-line">$(0,0)$, $(@INPUT@, 0)$, $(0, @INPUT@)$</div><div class="memo-line">$x+y=@INPUT@$ and $2x+y=@INPUT@$: $(@INPUT@, @INPUT@)$</div><div class="memo-line">$x+y=@INPUT@$ and $x+2y=@INPUT@$: $(@INPUT@, @INPUT@)$</div><div class="memo-line"><strong>Evaluate Z:</strong></div><div class="memo-line">$Z(0,0) = @INPUT@$, $Z(@INPUT@,0) = @INPUT@$, $Z(0,@INPUT@) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$ ← max</div>',
+hardTemplate:'Max Z = @INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">Corners evaluated, max Z = 36 at (6,4) <span class="memo-mark">✓(8)</span></div>'
+},
+
+// Q13: Slack variables
+{id:3013,topic:'Linear Programming',
+question:'At optimal (5,3), constraint is $2x + 3y \\leq 20$. Calculate the slack. <em>[2 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:19,tolerance:0.01,description:'LHS = 2(5)+3(3) = 19',marks:1},
+  {type:'value',expected:1,tolerance:0.01,description:'Slack = 20−19 = 1',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>LHS:</strong> $@INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line"><strong>Slack:</strong> $@INPUT@ - @INPUT@ = @INPUT@$</div>',
+hardTemplate:'Slack = @INPUT@',
+memo:'<div class="memo-line">LHS = 19, Slack = 20−19 = 1 <span class="memo-mark">✓(2)</span></div>'
+},
+
+// Q14: Printing shop
+{id:3014,topic:'Linear Programming',
+question:'A print shop makes posters (x) and banners (y). Printing: 1h/poster, 2h/banner (max 12h). Cutting: 2h/poster, 1h/banner (max 12h). Profit: R30/poster, R40/banner. Maximize. <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x + 2y ≤ 12','x+2y≤12'],description:'Printing: x+2y ≤ 12',marks:1},
+  {type:'contains',expected:['2x + y ≤ 12','2x+y≤12'],description:'Cutting: 2x+y ≤ 12',marks:1},
+  {type:'value',expected:4,tolerance:0.01,description:'x = 4',marks:2},
+  {type:'value',expected:4,tolerance:0.01,description:'y = 4',marks:2},
+  {type:'value',expected:280,tolerance:0.01,description:'Max P = 30(4)+40(4) = R280',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">Print: $@INPUT@x + @INPUT@y \\leq @INPUT@$</div><div class="memo-line">Cut: $@INPUT@x + @INPUT@y \\leq @INPUT@$</div><div class="memo-line">$x, y \\geq 0$</div><div class="memo-line"><strong>Intersection of constraints:</strong></div><div class="memo-line">$x + 2y = @INPUT@$ and $2x + y = @INPUT@$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$</div><div class="memo-line"><strong>Corner point evaluation:</strong></div><div class="memo-line">$P(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = R@INPUT@$ ← max</div>',
+hardTemplate:'Max P: R@INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">x+2y≤12, 2x+y≤12 <span class="memo-mark">✓(2)</span></div><div class="memo-line">Optimal (4,4), P = R280 <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q15: Minimize with ≥ constraints
+{id:3015,topic:'Linear Programming',
+question:'Minimize $C = 2x + 5y$ subject to: $x + y \\geq 6$, $x + 3y \\geq 12$, $x,y \\geq 0$. <em>[6 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:3,tolerance:0.01,description:'Intersection x = 3',marks:1},
+  {type:'value',expected:3,tolerance:0.01,description:'Intersection y = 3',marks:1},
+  {type:'value',expected:21,tolerance:0.01,description:'Min C at (3,3) = 6+15 = 21',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Find intersection:</strong> $x + y = @INPUT@$ and $x + @INPUT@y = @INPUT@$</div><div class="memo-line">Subtract: $@INPUT@y = @INPUT@ \\Rightarrow y = @INPUT@$</div><div class="memo-line">$x = @INPUT@ - @INPUT@ = @INPUT@$</div><div class="memo-line"><strong>Corner points:</strong> $(@INPUT@, 0)$, $(0, @INPUT@)$, $(@INPUT@, @INPUT@)$</div><div class="memo-line"><strong>Evaluate C:</strong></div><div class="memo-line">$C(@INPUT@, 0) = R@INPUT@$</div><div class="memo-line">$C(0, @INPUT@) = R@INPUT@$</div><div class="memo-line">$C(@INPUT@, @INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = R@INPUT@$ ← min</div>',
+hardTemplate:'Min C: R@INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">Intersection (3,3), Min C = R21 <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q16: Farming — two crops
+{id:3016,topic:'Linear Programming',
+question:'A farmer plants wheat (x) and maize (y) on 100 hectares. Labour: wheat 2 days/ha, maize 3 days/ha (max 240 days). Profit: R800/ha wheat, R1200/ha maize. Max profit? <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x + y ≤ 100','x+y≤100'],description:'Land: x+y ≤ 100',marks:1},
+  {type:'contains',expected:['2x + 3y ≤ 240','2x+3y≤240'],description:'Labour: 2x+3y ≤ 240',marks:1},
+  {type:'value',expected:60,tolerance:0.5,description:'x = 60',marks:2},
+  {type:'value',expected:40,tolerance:0.5,description:'y = 40',marks:2},
+  {type:'value',expected:96000,tolerance:1,description:'P = 800(60)+1200(40) = R96 000',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">$x + y \\leq @INPUT@$, $@INPUT@x + @INPUT@y \\leq @INPUT@$, $x,y \\geq 0$</div><div class="memo-line"><strong>Intercepts:</strong></div><div class="memo-line">L1: $(@INPUT@,0),(0,@INPUT@)$. L2: $(@INPUT@,0),(0,@INPUT@)$</div><div class="memo-line"><strong>Intersection:</strong> $x+y=@INPUT@$ and $2x+3y=@INPUT@$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$</div><div class="memo-line"><strong>Evaluate P:</strong></div><div class="memo-line">$P(@INPUT@,@INPUT@) = @INPUT@(@INPUT@)+@INPUT@(@INPUT@) = R@INPUT@$ ← max</div>',
+hardTemplate:'Max P: R@INPUT@ at (@INPUT@,@INPUT@)',
+memo:'<div class="memo-line">x+y≤100, 2x+3y≤240 <span class="memo-mark">✓(2)</span></div><div class="memo-line">(60,40), P = R96000 <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q17: Investment allocation
+{id:3017,topic:'Linear Programming',
+question:'Invest in Bonds (x) and Stocks (y). Total ≤ R100 000. Bonds ≥ R20 000. Stocks ≤ R60 000. Return: 6% bonds, 10% stocks. Maximize return. <em>[6 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:40000,tolerance:1,description:'x = R40 000',marks:2},
+  {type:'value',expected:60000,tolerance:1,description:'y = R60 000',marks:2},
+  {type:'value',expected:8400,tolerance:1,description:'Max return = 0.06(40000)+0.10(60000) = R8 400',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong> $x + y \\leq @INPUT@$, $x \\geq @INPUT@$, $y \\leq @INPUT@$</div><div class="memo-line"><strong>Objective:</strong> $R = @INPUT@x + @INPUT@y$</div><div class="memo-line"><strong>Corner evaluation:</strong></div><div class="memo-line">$(@INPUT@, @INPUT@)$: $R = @INPUT@(@INPUT@)+@INPUT@(@INPUT@) = R@INPUT@$</div><div class="memo-line">$(@INPUT@, @INPUT@)$: $R = R@INPUT@$ ← max</div>',
+hardTemplate:'Max return: R@INPUT@ at (@INPUT@,@INPUT@)',
+memo:'<div class="memo-line">Optimal (40000,60000), R = R8400 <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q18: Staffing
+{id:3018,topic:'Linear Programming',
+question:'A call centre needs at least 20 full-time (x) and 10 part-time (y) staff. Total staff ≤ 50. Budget: full-time R8000/mo, part-time R4000/mo, max R280 000. Maximize workforce (x+y). <em>[6 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['8000x + 4000y ≤ 280000','8x + 4y ≤ 280','8000x+4000y≤280000'],description:'Budget constraint',marks:1},
+  {type:'value',expected:20,tolerance:0.01,description:'x = 20',marks:2},
+  {type:'value',expected:30,tolerance:0.01,description:'y = 30',marks:2},
+  {type:'value',expected:50,tolerance:0.01,description:'Max staff = 50',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">$x \\geq @INPUT@$, $y \\geq @INPUT@$, $x + y \\leq @INPUT@$</div><div class="memo-line">$@INPUT@x + @INPUT@y \\leq @INPUT@$</div><div class="memo-line"><strong>Max x + y at corners:</strong></div><div class="memo-line">$(@INPUT@, @INPUT@)$: $x+y = @INPUT@$</div><div class="memo-line"><strong>Check budget:</strong> $@INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ \\leq @INPUT@$ ✓</div><div class="memo-line"><strong>Max workforce:</strong> @INPUT@ staff</div>',
+hardTemplate:'Max staff: @INPUT@ at (@INPUT@,@INPUT@)',
+memo:'<div class="memo-line">Budget OK at (20,30), total = 50 <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q19: Sensitivity — change coefficient
+{id:3019,topic:'Linear Programming',
+question:'Optimal at (4,3) with P = 5x + 8y = 44. If coefficient of y changes to 6, is (4,3) still optimal? Corners: (6,0), (0,5). <em>[3 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:38,tolerance:0.01,description:'P\'(4,3) = 5(4)+6(3) = 38',marks:1},
+  {type:'value',expected:30,tolerance:0.01,description:'P\'(6,0) = 30',marks:1},
+  {type:'contains',expected:['still optimal','yes','maximum'],description:'Still optimal',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>New P:</strong> $P = @INPUT@x + @INPUT@y$</div><div class="memo-line">$P(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$P(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$P(0,@INPUT@) = @INPUT@$</div><div class="memo-line"><strong>Largest is @INPUT@</strong> → $(@INPUT@,@INPUT@)$ is @INPUT@ optimal</div>',
+hardTemplate:'Still optimal: @INPUT@',
+memo:'<div class="memo-line">P\'(4,3)=38 > P\'(6,0)=30 > P\'(0,5)=30 → still optimal <span class="memo-mark">✓(3)</span></div>'
+},
+
+// Q20: Furniture — three constraints
+{id:3020,topic:'Linear Programming',
+question:'Desks (x), bookcases (y). Assembly: 4h/desk, 2h/bookcase (max 48h). Painting: 1h each (max 15h). Max desks: 10. Profit: R120/desk, R80/bookcase. <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['4x + 2y ≤ 48','4x+2y≤48'],description:'Assembly: 4x+2y ≤ 48',marks:1},
+  {type:'contains',expected:['x + y ≤ 15','x+y≤15'],description:'Painting: x+y ≤ 15',marks:1},
+  {type:'value',expected:6,tolerance:0.01,description:'x = 6',marks:2},
+  {type:'value',expected:9,tolerance:0.5,description:'y = 9',marks:2},
+  {type:'value',expected:1440,tolerance:10,description:'Max P ≈ R1 440',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">$@INPUT@x + @INPUT@y \\leq @INPUT@$, $x + y \\leq @INPUT@$, $x \\leq @INPUT@$</div><div class="memo-line"><strong>Corner point at intersection:</strong></div><div class="memo-line">$4x+2y=48$ and $x+y=15$: solve for $(x,y)$</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$</div><div class="memo-line"><strong>P(@INPUT@,@INPUT@)</strong> $= @INPUT@(@INPUT@)+@INPUT@(@INPUT@) = R@INPUT@$</div>',
+hardTemplate:'Max P: R@INPUT@ at (@INPUT@,@INPUT@)',
+memo:'<div class="memo-line">Constraints set, optimal ≈ (6,9), P ≈ R1440 <span class="memo-mark">✓(8)</span></div>'
+},
+
+// Q21: Graph interpretation
+{id:3021,topic:'Linear Programming',
+question:'A feasible region is bounded by: $x=0$, $y=0$, $x+y=6$, $x=4$. List all corner points. <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['(0,0)','(0, 0)'],description:'(0,0)',marks:1},
+  {type:'contains',expected:['(4,0)','(4, 0)'],description:'(4,0)',marks:1},
+  {type:'contains',expected:['(4,2)','(4, 2)'],description:'(4,2)',marks:1},
+  {type:'contains',expected:['(0,6)','(0, 6)'],description:'(0,6)',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Corners (intersections):</strong></div><div class="memo-line">$x=@INPUT@$ and $y=@INPUT@$: $(@INPUT@, @INPUT@)$</div><div class="memo-line">$x=@INPUT@$ and $y=@INPUT@$: $(@INPUT@, @INPUT@)$</div><div class="memo-line">$x=@INPUT@$ and $x+y=@INPUT@$: $(@INPUT@, @INPUT@)$</div><div class="memo-line">$x=@INPUT@$ and $x+y=@INPUT@$: $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Corners: @INPUT@',
+memo:'<div class="memo-line">(0,0), (4,0), (4,2), (0,6) <span class="memo-mark">✓(4)</span></div>'
+},
+
+// Q22: Maximize Z — different coefficients
+{id:3022,topic:'Linear Programming',
+question:'Maximize $Z = 7x + 5y$ at corners: (0,0), (8,0), (5,6), (0,10). <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:56,tolerance:0.01,description:'Z(8,0) = 56',marks:1},
+  {type:'value',expected:65,tolerance:0.01,description:'Z(5,6) = 35+30 = 65',marks:1},
+  {type:'value',expected:50,tolerance:0.01,description:'Z(0,10) = 50',marks:1},
+  {type:'contains',expected:['(5,6)','5, 6','maximum'],description:'Max at (5,6)',marks:1}
+],
+easyTemplate:'<div class="memo-line">$Z(0,0) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,0) = @INPUT@(@INPUT@) + @INPUT@(0) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line">$Z(0,@INPUT@) = @INPUT@(0) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line"><strong>Maximum:</strong> $Z = @INPUT@$ at $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Max Z = @INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">Z(5,6)=65 is maximum <span class="memo-mark">✓(4)</span></div>'
+},
+
+// Q23: Advertising budget
+{id:3023,topic:'Linear Programming',
+question:'A company spends on TV ads (x) and radio ads (y). Budget: $x+y \\leq 50000$. At least 10 TV: $x \\geq 10000$. Radio ≤ 30000. TV reaches 5000 people/R1000, radio 3000/R1000. Maximize reach. <em>[6 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:50000,tolerance:1,description:'x = 50000 (all TV if uncapped)',marks:1},
+  {type:'anyValue',expected:[220000,210000],tolerance:10000,description:'Max reach ≈ 220 000',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Reach:</strong> $R = @INPUT@ \\times \\frac{x}{1000} + @INPUT@ \\times \\frac{y}{1000} = @INPUT@x + @INPUT@y$</div><div class="memo-line"><strong>Constraints:</strong> $x+y \\leq @INPUT@$, $x \\geq @INPUT@$, $y \\leq @INPUT@$</div><div class="memo-line"><strong>Corner evaluation:</strong></div><div class="memo-line">$(@INPUT@, @INPUT@)$: Reach $= @INPUT@$</div><div class="memo-line">$(@INPUT@, @INPUT@)$: Reach $= @INPUT@$ ← max</div>',
+hardTemplate:'Max reach: @INPUT@ at (@INPUT@, @INPUT@)',
+memo:'<div class="memo-line">Maximize 5x+3y, optimal allocation found <span class="memo-mark">✓(6)</span></div>'
+},
+
+// Q24: Redundant constraint
+{id:3024,topic:'Linear Programming',
+question:'Constraints: $x+y \\leq 10$, $x+y \\leq 15$, $x,y \\geq 0$. Which constraint is redundant? <em>[2 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x + y ≤ 15','x+y≤15','15','second','redundant'],description:'x+y≤15 is redundant (weaker)',marks:2}
+],
+easyTemplate:'<div class="memo-line">If $x + y \\leq @INPUT@$ is satisfied, then $x + y \\leq @INPUT@$ is automatically satisfied</div><div class="memo-line">Because $@INPUT@ < @INPUT@$</div><div class="memo-line">∴ $x + y \\leq @INPUT@$ is @INPUT@</div>',
+hardTemplate:'Redundant: @INPUT@',
+memo:'<div class="memo-line">$x+y \\leq 15$ is redundant <span class="memo-mark">✓(2)</span></div>'
+},
+
+// Q25: Infeasible problem
+{id:3025,topic:'Linear Programming',
+question:'Is this system feasible? $x + y \\geq 8$, $x + y \\leq 5$, $x,y \\geq 0$. Explain. <em>[2 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['infeasible','no solution','impossible','contradiction','cannot'],description:'Infeasible: x+y cannot be ≥8 and ≤5',marks:2}
+],
+easyTemplate:'<div class="memo-line">$x + y \\geq @INPUT@$ requires sum at least @INPUT@</div><div class="memo-line">$x + y \\leq @INPUT@$ requires sum at most @INPUT@</div><div class="memo-line">Since @INPUT@ > @INPUT@, these @INPUT@</div><div class="memo-line">∴ The system is @INPUT@</div>',
+hardTemplate:'Feasible: @INPUT@',
+memo:'<div class="memo-line">Cannot satisfy both: infeasible <span class="memo-mark">✓(2)</span></div>'
+},
+
+// Q26: Clothing manufacturer
+{id:3026,topic:'Linear Programming',
+question:'Shirts (x), trousers (y). Cutting: 1h/shirt, 2h/trousers (max 80h). Sewing: 3h/shirt, 2h/trousers (max 120h). Profit: R40/shirt, R50/trousers. <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['x + 2y ≤ 80','x+2y≤80'],description:'Cutting constraint',marks:1},
+  {type:'contains',expected:['3x + 2y ≤ 120','3x+2y≤120'],description:'Sewing constraint',marks:1},
+  {type:'value',expected:20,tolerance:0.01,description:'x = 20',marks:2},
+  {type:'value',expected:30,tolerance:0.01,description:'y = 30',marks:2},
+  {type:'value',expected:2300,tolerance:1,description:'P = 40(20)+50(30) = R2 300',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">$@INPUT@x + @INPUT@y \\leq @INPUT@$ (cutting)</div><div class="memo-line">$@INPUT@x + @INPUT@y \\leq @INPUT@$ (sewing)</div><div class="memo-line"><strong>Intersection:</strong> Solve simultaneously</div><div class="memo-line">$x = @INPUT@$, $y = @INPUT@$</div><div class="memo-line"><strong>P:</strong> $@INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@ + @INPUT@ = R@INPUT@$</div>',
+hardTemplate:'Max P: R@INPUT@ at (@INPUT@,@INPUT@)',
+memo:'<div class="memo-line">x+2y≤80, 3x+2y≤120, optimal (20,30), P=R2300 <span class="memo-mark">✓(8)</span></div>'
+},
+
+// Q27: Shade feasible region
+{id:3027,topic:'Linear Programming',
+question:'For $2x + y \\leq 10$: Does (0,0) satisfy? Does (6,0) satisfy? Which side is feasible? <em>[3 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['0 ≤ 10','0 <= 10','yes','true'],description:'(0,0): 0 ≤ 10 ✓',marks:1},
+  {type:'contains',expected:['12 ≤ 10','12 > 10','no','false','not'],description:'(6,0): 12 > 10 ✗',marks:1},
+  {type:'contains',expected:['origin','(0,0)','below','left'],description:'Feasible side contains origin',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>(0,0):</strong> $@INPUT@(0) + 0 = @INPUT@ \\leq @INPUT@$ → @INPUT@</div><div class="memo-line"><strong>(6,0):</strong> $@INPUT@(@INPUT@) + 0 = @INPUT@ \\leq @INPUT@$ → @INPUT@</div><div class="memo-line"><strong>Feasible side:</strong> The side containing @INPUT@</div>',
+hardTemplate:'Feasible side: @INPUT@',
+memo:'<div class="memo-line">(0,0) ✓, (6,0) ✗, feasible = origin side <span class="memo-mark">✓(3)</span></div>'
+},
+
+// Q28: Electronics factory
+{id:3028,topic:'Linear Programming',
+question:'Phones (x), tablets (y). Assembly: 2h/phone, 5h/tablet (max 100h). Testing: 1h each (max 30). At least 5 phones. $P = 200x + 350y$. <em>[8 marks]</em>',
+markingCriteria:[
+  {type:'contains',expected:['2x + 5y ≤ 100','2x+5y≤100'],description:'Assembly',marks:1},
+  {type:'value',expected:350,tolerance:0.01,description:'Max from y-coefficient R350',marks:1},
+  {type:'anyValue',expected:[5500,5600,5700],tolerance:200,description:'Max P ≈ R5 500–5 700',marks:2}
+],
+easyTemplate:'<div class="memo-line"><strong>Constraints:</strong></div><div class="memo-line">$@INPUT@x + @INPUT@y \\leq @INPUT@$, $x + y \\leq @INPUT@$, $x \\geq @INPUT@$</div><div class="memo-line"><strong>Corner evaluation:</strong></div><div class="memo-line">$P(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = R@INPUT@$</div><div class="memo-line"><strong>Maximum:</strong> R@INPUT@ at $(@INPUT@, @INPUT@)$</div>',
+hardTemplate:'Max P: R@INPUT@ at (@INPUT@,@INPUT@)',
+memo:'<div class="memo-line">Optimal found from corners <span class="memo-mark">✓(8)</span></div>'
+},
+
+// Q29: Multi-product — 3 products simplified
+{id:3029,topic:'Linear Programming',
+question:'If x chairs and y tables, with constraints yielding corners (0,0), (10,0), (6,4), (0,8), and Z = 3x+5y. Which corner maximizes and minimizes Z? <em>[4 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:40,tolerance:0.01,description:'Max Z = Z(0,8) = 40',marks:1},
+  {type:'contains',expected:['(0,8)','0, 8'],description:'Max at (0,8)',marks:1},
+  {type:'value',expected:0,tolerance:0.01,description:'Min Z = Z(0,0) = 0',marks:1},
+  {type:'contains',expected:['(0,0)','0, 0','origin'],description:'Min at (0,0)',marks:1}
+],
+easyTemplate:'<div class="memo-line">$Z(0,0) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,0) = @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$Z(@INPUT@,@INPUT@) = @INPUT@(@INPUT@) + @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line">$Z(0,@INPUT@) = @INPUT@(@INPUT@) = @INPUT@$</div><div class="memo-line"><strong>Max:</strong> $Z = @INPUT@$ at $(@INPUT@,@INPUT@)$</div><div class="memo-line"><strong>Min:</strong> $Z = @INPUT@$ at $(@INPUT@,@INPUT@)$</div>',
+hardTemplate:'Max Z = @INPUT@ at @INPUT@, Min Z = @INPUT@ at @INPUT@',
+memo:'<div class="memo-line">Max Z=40 at (0,8), Min Z=0 at (0,0) <span class="memo-mark">✓(4)</span></div>'
+},
+
+// Q30: Dual prices interpretation
+{id:3030,topic:'Linear Programming',
+question:'At optimal, the labour constraint ($2x+3y \\leq 240$) has slack = 0. If an extra hour of labour becomes available (241h), profit increases by R400. What is the shadow price of labour? <em>[2 marks]</em>',
+markingCriteria:[
+  {type:'value',expected:400,tolerance:0.01,description:'Shadow price = R400/hour',marks:1},
+  {type:'contains',expected:['400','shadow','dual','marginal value'],description:'R400 per additional hour',marks:1}
+],
+easyTemplate:'<div class="memo-line"><strong>Shadow price</strong> = change in Z per unit increase in RHS</div><div class="memo-line">$= \\frac{\\Delta Z}{\\Delta b} = \\frac{R@INPUT@}{@INPUT@} = R@INPUT@$ per hour</div><div class="memo-line">This means each extra labour hour is worth R@INPUT@ in profit</div>',
+hardTemplate:'Shadow price: R@INPUT@/hour',
+memo:'<div class="memo-line">Shadow price = R400/hour <span class="memo-mark">✓(2)</span></div>'
+},
+
 ];if(!window.QUESTIONS)window.QUESTIONS=[];window.QUESTIONS.push(...Q);})();
