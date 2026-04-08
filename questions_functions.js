@@ -1,123 +1,28 @@
-// ========== MTHS 112 — FUNCTIONS, REVENUE & BREAK-EVEN (Workspace Format) ==========
-(function(){
-  const Q = [
-
-{id:6001, topic:'Functions, Revenue & Break-even',
-  question:'The demand and supply functions are:<br>$Q_D = -3P + 48$<br>$Q_S = 2P + 30$<br><br>6.3 Determine the market equilibrium (P and Q). <em>[2 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['-3p + 48 = 2p + 30','-3p+48=2p+30','qd = qs'], description:'Sets Qd = Qs', marks:1},
-    {type:'contains', expected:['-5p','-5p = -18','5p = 18','5p=18'], description:'Collects terms: -5P = -18', marks:1},
-    {type:'value', expected:3.6, tolerance:0.01, description:'Equilibrium price: P = 3.6', marks:1},
-    {type:'value', expected:37.2, tolerance:0.01, description:'Equilibrium quantity: Q = 37.2', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line">Set $Q_D = Q_S$: $-3P + @INPUT@ = 2P + @INPUT@$ </div><div class="memo-line">$-5P = -@INPUT@ \\Rightarrow P = @INPUT@$ </div><div class="memo-line">$Q = -3(@INPUT@) + @INPUT@ = -@INPUT@ + @INPUT@ = \@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo: '<div class="memo-line">Set $Q_D = Q_S$: $-3P + 48 = 2P + 30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$-5P = -18 \\Rightarrow P = 3.6$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = -3(3.6) + 48 = -10.8 + 48 = 37.2$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:6002, topic:'Functions, Revenue & Break-even',
-  question:'The cost function is $C = 3600 + 100q + 2q^2$ and the demand function is $p = 500 - 2q$.<br><br>7.1 Determine the revenue function $R = f(q)$. <em>[3 marks]</em><br>7.2 Determine the break-even quantity. <em>[3 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['r = p × q','r = pq','r=pq','revenue = p','r = q ×','r = q('], description:'R = P × Q', marks:1},
-    {type:'contains', expected:['500q - 2q^2','500q-2q^2','500q - 2q²'], description:'R = 500q - 2q²', marks:1},
-    {type:'contains', expected:['r = c','500q - 2q^2 = 3600','revenue = cost'], description:'Sets R = C for break-even', marks:1},
-    {type:'contains', expected:['4q^2','4q²','-400q','q^2 - 100q'], description:'Rearranges: 4q² - 400q + 3600 = 0', marks:1},
-    {type:'anyValue', expected:[10, 90], tolerance:0.1, description:'Break-even at q = 10 or q = 90', marks:2}
-  ],
-  easyTemplate: '<div class="memo-line"><strong>@INPUT@</strong> $R = p \\times q = (@INPUT@ - 2q)(q) = @INPUT@q - 2q^2$ </div><div class="memo-line"><strong>@INPUT@</strong> Set $R = C$: $@INPUT@q - 2q^2 = @INPUT@ + 100q + 2q^2$ </div><div class="memo-line">$0 = 4q^2 - @INPUT@q + @INPUT@$</div><div class="memo-line">$0 = q^2 - 100q + @INPUT@$ </div><div class="memo-line">$q = \\frac{100 \\pm \\sqrt{@INPUT@ - @INPUT@}}{2} = \\frac{100 \\pm @INPUT@}{2}$ </div><div class="memo-line">$q = @INPUT@$ or $q = \@INPUT@$ </div>',
-  hardTemplate: '7.1 $R(q) =$ @INPUT@<br><br>7.2 Break-even $q=$ @INPUT@ or $q=$ @INPUT@',
-  memo: '<div class="memo-line"><strong>7.1</strong> $R = p \\times q = (500 - 2q)(q) = 500q - 2q^2$ <span class="memo-mark">✓(3)</span></div><div class="memo-line"><strong>7.2</strong> Set $R = C$: $500q - 2q^2 = 3600 + 100q + 2q^2$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$0 = 4q^2 - 400q + 3600$</div><div class="memo-line">$0 = q^2 - 100q + 900$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$q = \\frac{100 \\pm \\sqrt{10000 - 3600}}{2} = \\frac{100 \\pm 80}{2}$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$q = 90$ or $q = 10$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:6003, topic:'Functions, Revenue & Break-even',
-  question:'The demand equation is $Q_d = 80 - 2P$.<br><br>5.1 Determine the price per unit when 30 units are demanded. <em>[2 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['30 = 80 - 2p','30=80-2p','q = 30'], description:'Substitutes Q = 30', marks:1},
-    {type:'value', expected:25, tolerance:0.01, description:'Price: P = R25', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line">$@INPUT@ = @INPUT@ - 2P$ </div><div class="memo-line">$2P = @INPUT@$</div><div class="memo-line">$P = R\@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo: '<div class="memo-line">$30 = 80 - 2P$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$2P = 50$</div><div class="memo-line">$P = R25$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:6004, topic:'Functions, Revenue & Break-even',
-  question:'The demand and supply functions are $Q_D = -3P + 48$ and $Q_S = 2P + 30$. The government imposes a unit tax of R5. The new demand function becomes $Q_D\' = 1.25(-3P + 48) = -3.75P + 60$.<br><br>Determine the new equilibrium price and quantity after the tax. <em>[3 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['-3.75p + 60 = 2p + 30','-3.75p+60=2p+30'], description:'Sets new Qd = Qs', marks:1},
-    {type:'value', expected:5.22, tolerance:0.01, description:'New equilibrium price ≈ 5.22', marks:1},
-    {type:'value', expected:40.43, tolerance:0.01, description:'New equilibrium quantity ≈ 40.43', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line">Set $Q_D\' = Q_S$: $-@INPUT@P + @INPUT@ = 2P + @INPUT@$ </div><div class="memo-line">$-@INPUT@P = -@INPUT@ \\Rightarrow P = @INPUT@$ </div><div class="memo-line">$Q = 2(@INPUT@) + @INPUT@ = \@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo: '<div class="memo-line">Set $Q_D\' = Q_S$: $-3.75P + 60 = 2P + 30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$-5.75P = -30 \\Rightarrow P = 5.22$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = 2(5.22) + 30 = 40.43$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:6006, topic:'Functions, Revenue & Break-even',
-  question:'The demand and supply functions of a product are given by:<br>$Q_D = 400 - 15P$<br>$Q_S = -50 + 10P$<br><br>6.3 Determine the market equilibrium (P and Q). <em>[2 marks]</em><br>6.4 The government imposes a unit tax of R5 on each good. Determine the new supply function $Q_S^{\\prime}$. <em>[2 marks]</em><br>6.5 Determine the new market equilibrium (P and Q). <em>[3 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['p=18', 'p = 18'], description:'Original Equilibrium Price = 18', marks:1},
-    {type:'contains', expected:['q=130', 'q = 130'], description:'Original Equilibrium Quantity = 130', marks:1},
-    {type:'contains', expected:['10(p - 5)','10(p-5)','10p - 100','10p-100','-100 + 10p'], description:'New Supply: Qs\' = 10P - 100', marks:2},
-    {type:'contains', expected:['p=20', 'p = 20'], description:'New Equilibrium Price = 20', marks:1},
-    {type:'contains', expected:['q=100', 'q = 100'], description:'New Equilibrium Quantity = 100', marks:2}
-  ],
-  easyTemplate: '<div class="memo-line"><strong>@INPUT@</strong> $@INPUT@ - @INPUT@P = -@INPUT@ + @INPUT@P \\Rightarrow @INPUT@P = @INPUT@ \\Rightarrow P = @INPUT@$ </div><div class="memo-line">$Q = @INPUT@ - @INPUT@(@INPUT@) = @INPUT@$ </div><div class="memo-line"><strong>@INPUT@</strong> With tax, producers receive $(P-5)$:</div><div class="memo-line">$Q_S^{\\prime} = -@INPUT@ + @INPUT@(P - 5) = @INPUT@P - 100$ </div><div class="memo-line"><strong>@INPUT@</strong> $@INPUT@ - @INPUT@P = @INPUT@P - 100 \\Rightarrow @INPUT@P = @INPUT@ \\Rightarrow P = @INPUT@$ </div><div class="memo-line">$Q = @INPUT@ - @INPUT@(@INPUT@) = \@INPUT@$ </div>',
-  hardTemplate: '6.3 $P = R$@INPUT@, $Q =$ @INPUT@<br><br>6.4 $Q_S\' =$ @INPUT@<br><br>6.5 $P = R$@INPUT@, $Q =$ @INPUT@',
-  memo: '<div class="memo-line"><strong>6.3</strong> $400 - 15P = -50 + 10P \\Rightarrow 25P = 450 \\Rightarrow P = 18$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = 400 - 15(18) = 130$ <span class="memo-mark">✓(1)</span></div><div class="memo-line"><strong>6.4</strong> With tax, producers receive $(P-5)$:</div><div class="memo-line">$Q_S^{\\prime} = -50 + 10(P - 5) = 10P - 100$ <span class="memo-mark">✓(2)</span></div><div class="memo-line"><strong>6.5</strong> $400 - 15P = 10P - 100 \\Rightarrow 25P = 500 \\Rightarrow P = 20$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = 400 - 15(20) = 100$ <span class="memo-mark">✓(2)</span></div>'
-},
-
-// ===== NEW: From 2024 2nd Opp Q1 (Cost, Revenue, Profit functions) =====
-{id:6007, topic:'Functions, Revenue & Break-even',
-  question:'A company manufactures products with cost $K(x) = 185x + 7000$ and sells them for R455 each.<br><br>1.2 Determine the revenue function $R(x)$. <em>[1 mark]</em><br>1.3 Determine the profit function $P(x) = R(x) - K(x)$. <em>[2 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['455x','r(x) = 455x','r = 455x'], description:'Revenue: R(x) = 455x', marks:1},
-    {type:'contains', expected:['270x - 7000','455x - 185x - 7000'], description:'Profit: P(x) = 270x - 7000', marks:1},
-    {type:'value', expected:7000, tolerance:1, description:'Fixed cost identified: R7 000', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line"><strong>1.2</strong> $R(x) = @INPUT@ \\times x = @INPUT@x$ </div><div class="memo-line"><strong>1.3</strong> $P(x) = @INPUT@x - (@INPUT@x + @INPUT@)$ </div><div class="memo-line">$= @INPUT@x - @INPUT@$ </div>',
-  hardTemplate: 'R(x) = @INPUT@<br>P(x) = @INPUT@',
-  memo: '<div class="memo-line"><strong>1.2</strong> $R(x) = 455x$ <span class="memo-mark">✓(1)</span></div><div class="memo-line"><strong>1.3</strong> $P(x) = 455x - (185x + 7000) = 270x - 7000$ <span class="memo-mark">✓(2)</span></div>'
-},
-
-// ===== NEW: From 2024 2nd Opp Q7 (Revenue = 300q - q²) =====
-{id:6008, topic:'Functions, Revenue & Break-even',
-  question:'The demand function for a product is $p = 300 - q$ where $p$ is the price and $q$ is quantity sold.<br><br>7.1 Determine the revenue function $R = f(q)$. <em>[2 marks]</em><br>7.2 What does $q$ represent and what does $(300 - q)$ represent? <em>[1 mark]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['r = pq','r = p × q','revenue = price × quantity'], description:'Revenue = Price × Quantity', marks:1},
-    {type:'contains', expected:['300q - q^2','300q - q²','q(300 - q)','q(300-q)'], description:'R = 300q − q²', marks:1},
-    {type:'contains', expected:['units','number of units','quantity','price'], description:'q = units sold, (300−q) = price expression', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line"><strong>7.1</strong> $R = p \\times q = (@INPUT@ - q) \\times q$ </div><div class="memo-line">$= @INPUT@q - q^2$ </div><div class="memo-line"><strong>7.2</strong> $q =$ @INPUT@, $(300 - q) =$ @INPUT@ </div>',
-  hardTemplate: 'R(q) = @INPUT@',
-  memo: '<div class="memo-line"><strong>7.1</strong> $R = p \\times q = (300 - q) \\times q = 300q - q^2$ <span class="memo-mark">✓(2)</span></div><div class="memo-line"><strong>7.2</strong> $q$ = number of units sold, $(300 - q)$ = price per unit <span class="memo-mark">✓(1)</span></div>'
-},
-
-// ===== NEW: From 2022 Q5.4 (Show revenue function from demand) =====
-{id:6009, topic:'Functions, Revenue & Break-even',
-  question:'The demand equation is $Q_d = 80 - 2P$.<br><br>Show that the revenue function is $R = 40q - 0.5q^2$. <em>[2 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['p = 40 - 0.5q','p = 40 - q÷2','p=40-0.5q'], description:'Rearranges: P = 40 − 0.5Q', marks:1},
-    {type:'contains', expected:['r = pq','r = q(40 - 0.5q)','40q - 0.5q^2','40q-0.5q²'], description:'R = Q × P = 40Q − 0.5Q²', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line">Rearrange demand: $Q = 80 - 2P \\Rightarrow P = @INPUT@ - @INPUT@Q$ </div><div class="memo-line">$R = P \\times Q = (@INPUT@ - @INPUT@Q) \\times Q = @INPUT@Q - @INPUT@Q^2$ ✓ </div>',
-  hardTemplate: 'R = @INPUT@',
-  memo: '<div class="memo-line">From $Q = 80 - 2P$: $P = 40 - 0.5Q$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$R = PQ = (40 - 0.5Q)Q = 40Q - 0.5Q^2$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-// ===== NEW: Break-even from profit function =====
-{id:6010, topic:'Functions, Revenue & Break-even',
-  question:'A company\'s profit function is $P(x) = 270x - 7000$. Determine the break-even quantity and interpret the result. <em>[3 marks]</em>',
-  markingCriteria: [
-    {type:'contains', expected:['p(x) = 0','270x - 7000 = 0','270x = 7000'], description:'Sets P(x) = 0 for break-even', marks:1},
-    {type:'value', expected:25.93, tolerance:0.1, description:'x = 7000 ÷ 270 ≈ 25.93', marks:1},
-    {type:'contains', expected:['26','must sell at least','minimum'], description:'Must sell at least 26 units to make a profit', marks:1}
-  ],
-  easyTemplate: '<div class="memo-line">$P(x) = 0$: $270x - 7000 = 0$ </div><div class="memo-line">$x = \\frac{@INPUT@}{@INPUT@} = @INPUT@$ </div><div class="memo-line">Must sell at least @INPUT@ units to break even </div>',
-  hardTemplate: 'Break-even: x = @INPUT@',
-  memo: '<div class="memo-line">$270x - 7000 = 0$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$x = \\frac{7000}{270} = 25.93$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Must sell at least 26 units to be profitable <span class="memo-mark">✓(1)</span></div>'
-}
-
-  ];
-  if(!window.QUESTIONS) window.QUESTIONS=[];
-  window.QUESTIONS.push(...Q);
-})();
+// ========== MTHS 112 — FUNCTIONS, REVENUE & BREAK-EVEN (25 Questions) ==========
+(function(){const Q=[
+{id:6001,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_D = -3P + 48$, Supply: $Q_S = 2P + 30$. Find equilibrium.',markingCriteria:[{type:'contains',expected:['-5p','5p = 18'],description:'−5P = −18',marks:1},{type:'value',expected:3.6,tolerance:0.01,description:'P = 3.6',marks:1},{type:'value',expected:37.2,tolerance:0.01,description:'Q = 37.2',marks:1}],easyTemplate:'<div class="memo-line">$-3P + @INPUT@ = 2P + @INPUT@$</div><div class="memo-line">$P = @INPUT@$, $Q = @INPUT@$</div>',hardTemplate:'(P, Q) = (@INPUT@, @INPUT@)',memo:'<div class="memo-line">P = 3.6, Q = 37.2 <span class="memo-mark">✓(3)</span></div>'},
+{id:6002,topic:'Functions, Revenue & Break-even',question:'Cost: $C = 3600+100q+2q^2$. Demand: $p = 500-2q$.<br>7.1 Revenue function. 7.2 Break-even.',markingCriteria:[{type:'contains',expected:['500q - 2q^2','500q-2q²'],description:'R = 500q − 2q²',marks:2},{type:'anyValue',expected:[10,90],tolerance:0.1,description:'Break-even q = 10 or 90',marks:2}],easyTemplate:'<div class="memo-line">$R = (500-2q)q = @INPUT@q - 2q^2$</div><div class="memo-line">$R = C$: $4q^2 - 400q + 3600 = 0$, $q = @INPUT@$ or $@INPUT@$</div>',hardTemplate:'R(q) = @INPUT@, BEP: q = @INPUT@ or @INPUT@',memo:'<div class="memo-line">R = 500q − 2q², break-even at q = 10, 90 <span class="memo-mark">✓(4)</span></div>'},
+{id:6003,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_d = 80-2P$. Find price when Q = 30.',markingCriteria:[{type:'value',expected:25,tolerance:0.01,description:'P = 25',marks:1}],easyTemplate:'<div class="memo-line">$30 = 80 - 2P$, $P = @INPUT@$</div>',hardTemplate:'P = R@INPUT@',memo:'<div class="memo-line">P = R25 <span class="memo-mark">✓(1)</span></div>'},
+{id:6004,topic:'Functions, Revenue & Break-even',question:'Old equilibrium: P=3.6, Q=37.2 from $Q_D=-3P+48$, $Q_S=2P+30$. After tax: $Q_D\'= -3.75P+60$. Find new equilibrium.',markingCriteria:[{type:'value',expected:5.22,tolerance:0.01,description:'New P ≈ 5.22',marks:1},{type:'value',expected:40.43,tolerance:0.01,description:'New Q ≈ 40.43',marks:1}],easyTemplate:'<div class="memo-line">$-3.75P + 60 = 2P + 30 \\Rightarrow P = @INPUT@$, $Q = @INPUT@$</div>',hardTemplate:'(P, Q) = (@INPUT@, @INPUT@)',memo:'<div class="memo-line">P ≈ 5.22, Q ≈ 40.43 <span class="memo-mark">✓(2)</span></div>'},
+{id:6005,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_D = 400-15P$, Supply: $Q_S = -50+10P$.<br>6.3 Equilibrium. 6.4 With R5 unit tax, new supply. 6.5 New equilibrium.',markingCriteria:[{type:'value',expected:18,tolerance:0.01,description:'P = 18',marks:1},{type:'value',expected:130,tolerance:0.01,description:'Q = 130',marks:1},{type:'contains',expected:['10p - 100','10(p-5)'],description:'New Qs = 10P−100',marks:2},{type:'value',expected:20,tolerance:0.01,description:'New P = 20',marks:1},{type:'value',expected:100,tolerance:0.01,description:'New Q = 100',marks:1}],easyTemplate:'<div class="memo-line">$400-15P = -50+10P$: $P = @INPUT@$, $Q = @INPUT@$</div><div class="memo-line">New supply: $Q_S\' = 10(P-5) = @INPUT@P - @INPUT@$</div><div class="memo-line">New eq: $P = @INPUT@$, $Q = @INPUT@$</div>',hardTemplate:'Old: P=@INPUT@, Q=@INPUT@. New: P=@INPUT@, Q=@INPUT@',memo:'<div class="memo-line">Equilibrium (18, 130). With tax: (20, 100) <span class="memo-mark">✓(6)</span></div>'},
+{id:6006,topic:'Functions, Revenue & Break-even',question:'Cost: $K(x) = 185x + 7000$, sell at R455/unit.<br>Revenue function and profit function.',markingCriteria:[{type:'contains',expected:['455x','r = 455x'],description:'R = 455x',marks:1},{type:'contains',expected:['270x - 7000','270x-7000'],description:'P = 270x − 7000',marks:2}],easyTemplate:'<div class="memo-line">$R(x) = @INPUT@x$</div><div class="memo-line">$P(x) = @INPUT@x - (@INPUT@x + @INPUT@) = @INPUT@x - @INPUT@$</div>',hardTemplate:'R = @INPUT@, P = @INPUT@',memo:'<div class="memo-line">R = 455x, P = 270x − 7000 <span class="memo-mark">✓(3)</span></div>'},
+{id:6007,topic:'Functions, Revenue & Break-even',question:'Demand: $p = 300-q$. Revenue function $R(q)$.',markingCriteria:[{type:'contains',expected:['300q - q^2','300q-q²','q(300-q)'],description:'R = 300q − q²',marks:2}],easyTemplate:'<div class="memo-line">$R = pq = (300-q)q = @INPUT@q - q^2$</div>',hardTemplate:'R(q) = @INPUT@',memo:'<div class="memo-line">R = 300q − q² <span class="memo-mark">✓(2)</span></div>'},
+{id:6008,topic:'Functions, Revenue & Break-even',question:'From $Q = 80-2P$, show $R = 40Q - 0.5Q^2$.',markingCriteria:[{type:'contains',expected:['p = 40 - 0.5q','p=40-0.5q'],description:'P = 40 − 0.5Q',marks:1},{type:'contains',expected:['40q - 0.5q^2','40q-0.5q²'],description:'R = 40Q − 0.5Q²',marks:1}],easyTemplate:'<div class="memo-line">$P = 40 - 0.5Q$</div><div class="memo-line">$R = PQ = (40-0.5Q)Q = @INPUT@Q - @INPUT@Q^2$</div>',hardTemplate:'R = @INPUT@',memo:'<div class="memo-line">P = 40−0.5Q, R = 40Q − 0.5Q² <span class="memo-mark">✓(2)</span></div>'},
+{id:6009,topic:'Functions, Revenue & Break-even',question:'Profit: $P(x) = 270x - 7000$. Break-even quantity.',markingCriteria:[{type:'value',expected:25.93,tolerance:0.1,description:'x = 7000÷270 ≈ 25.93',marks:1},{type:'contains',expected:['26','must sell'],description:'Must sell 26 units',marks:1}],easyTemplate:'<div class="memo-line">$P(x) = 0$: $270x = @INPUT@$, $x = @INPUT@$</div>',hardTemplate:'BEP: x = @INPUT@',memo:'<div class="memo-line">x ≈ 25.93, need 26 units <span class="memo-mark">✓(2)</span></div>'},
+{id:6010,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_D = 100-4P$. Supply: $Q_S = -20+6P$. Find equilibrium P and Q.',markingCriteria:[{type:'value',expected:12,tolerance:0.01,description:'P = 12',marks:1},{type:'value',expected:52,tolerance:0.01,description:'Q = 52',marks:1}],easyTemplate:'<div class="memo-line">$100-4P = -20+6P$: $10P = @INPUT@$, $P = @INPUT@$, $Q = @INPUT@$</div>',hardTemplate:'(P, Q) = (@INPUT@, @INPUT@)',memo:'<div class="memo-line">P = 12, Q = 52 <span class="memo-mark">✓(2)</span></div>'},
+{id:6011,topic:'Functions, Revenue & Break-even',question:'Cost: $C(q) = 5000+80q$. Price: R200/unit. Find break-even and profit at q=100.',markingCriteria:[{type:'contains',expected:['200q','r = 200q'],description:'R = 200q',marks:1},{type:'value',expected:41.67,tolerance:0.1,description:'BEP: 5000÷120 ≈ 41.67',marks:1},{type:'value',expected:7000,tolerance:1,description:'P(100) = 200(100)−5000−80(100) = R7 000',marks:1}],easyTemplate:'<div class="memo-line">$R = C$: $200q = 5000 + 80q$, $q = @INPUT@$</div><div class="memo-line">$P(100) = @INPUT@ - @INPUT@ = R@INPUT@$</div>',hardTemplate:'BEP: @INPUT@, P(100) = R@INPUT@',memo:'<div class="memo-line">BEP ≈ 41.67, P(100) = R7 000 <span class="memo-mark">✓(3)</span></div>'},
+{id:6012,topic:'Functions, Revenue & Break-even',question:'Demand: $P = 50 - 0.5Q$. Cost: $C = 400+10Q$.<br>Find revenue, profit function, and profit-maximizing Q.',markingCriteria:[{type:'contains',expected:['50q - 0.5q^2','50q-0.5q²'],description:'R = 50Q − 0.5Q²',marks:1},{type:'contains',expected:['40q - 0.5q^2 - 400','−0.5q²+40q−400'],description:'P = −0.5Q²+40Q−400',marks:1},{type:'value',expected:40,tolerance:0.5,description:'Max profit at Q = 40',marks:1}],easyTemplate:'<div class="memo-line">$R = (50-0.5Q)Q = @INPUT@Q - 0.5Q^2$</div><div class="memo-line">$P = R-C = -0.5Q^2 + @INPUT@Q - @INPUT@$</div><div class="memo-line">$P\'(Q) = 0$: $Q = @INPUT@$</div>',hardTemplate:'Max Q = @INPUT@',memo:'<div class="memo-line">P = −0.5Q²+40Q−400, max at Q = 40 <span class="memo-mark">✓(3)</span></div>'},
+{id:6013,topic:'Functions, Revenue & Break-even',question:'Supply: $Q_S = 3P-15$. At what price does supply = 0? What is supply at P = 20?',markingCriteria:[{type:'value',expected:5,tolerance:0.01,description:'P = 5 when Qs = 0',marks:1},{type:'value',expected:45,tolerance:0.01,description:'Qs(20) = 60−15 = 45',marks:1}],easyTemplate:'<div class="memo-line">$Q_S = 0$: $3P = @INPUT@$, $P = @INPUT@$</div><div class="memo-line">$Q_S(20) = 3(20) - 15 = @INPUT@$</div>',hardTemplate:'P(Qs=0) = @INPUT@, Qs(20) = @INPUT@',memo:'<div class="memo-line">P = 5, Qs(20) = 45 <span class="memo-mark">✓(2)</span></div>'},
+{id:6014,topic:'Functions, Revenue & Break-even',question:'Revenue: $R = 500q - 2q^2$. Find the number of units that maximizes revenue.',markingCriteria:[{type:'contains',expected:['r\'(q) = 500 - 4q','500 - 4q','r\'= 500-4q'],description:'R\'(q) = 500 − 4q',marks:1},{type:'value',expected:125,tolerance:0.5,description:'q = 500÷4 = 125',marks:1},{type:'value',expected:31250,tolerance:1,description:'Max R = 500(125)−2(15625) = R31 250',marks:1}],easyTemplate:'<div class="memo-line">$R\'(q) = @INPUT@ - @INPUT@q = 0$</div><div class="memo-line">$q = @INPUT@$, $R = @INPUT@(@INPUT@) - 2(@INPUT@) = R@INPUT@$</div>',hardTemplate:'Max R at q = @INPUT@',memo:'<div class="memo-line">q = 125, R = R31 250 <span class="memo-mark">✓(3)</span></div>'},
+{id:6015,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_D = 200 - 5P$, Supply: $Q_S = -40 + 3P$. Find equilibrium and total revenue at equilibrium.',markingCriteria:[{type:'value',expected:30,tolerance:0.01,description:'P = 30',marks:1},{type:'value',expected:50,tolerance:0.01,description:'Q = 50',marks:1},{type:'value',expected:1500,tolerance:0.5,description:'TR = 30 × 50 = R1 500',marks:1}],easyTemplate:'<div class="memo-line">$200-5P = -40+3P$: $P = @INPUT@$, $Q = @INPUT@$</div><div class="memo-line">$TR = @INPUT@ \\times @INPUT@ = R@INPUT@$</div>',hardTemplate:'Eq: (@INPUT@, @INPUT@), TR = R@INPUT@',memo:'<div class="memo-line">P = 30, Q = 50, TR = R1 500 <span class="memo-mark">✓(3)</span></div>'},
+{id:6016,topic:'Functions, Revenue & Break-even',question:'Fixed cost: R15 000. Variable cost: R120/unit. Selling price: R200/unit. Find BEP and profit at 250 units.',markingCriteria:[{type:'value',expected:187.5,tolerance:0.5,description:'BEP = 15000÷80 = 187.5',marks:1},{type:'value',expected:5000,tolerance:1,description:'P(250) = 200(250)−15000−120(250) = R5 000',marks:1}],easyTemplate:'<div class="memo-line">$BEP = \\frac{@INPUT@}{@INPUT@ - @INPUT@} = @INPUT@$</div><div class="memo-line">$P(250) = @INPUT@(250) - @INPUT@ - @INPUT@(250) = R@INPUT@$</div>',hardTemplate:'BEP: @INPUT@, P(250): R@INPUT@',memo:'<div class="memo-line">BEP = 187.5, P(250) = R5 000 <span class="memo-mark">✓(2)</span></div>'},
+{id:6017,topic:'Functions, Revenue & Break-even',question:'Cost: $C = 2000 + 50q$. Revenue: $R = 100q - q^2$. Find break-even quantities.',markingCriteria:[{type:'contains',expected:['q^2 - 50q + 2000','q²-50q+2000'],description:'q² − 50q + 2000 = 0',marks:1},{type:'anyValue',expected:[53.5,46.5,50],tolerance:5,description:'Approx break-even values',marks:1}],easyTemplate:'<div class="memo-line">$R = C$: $100q - q^2 = 2000 + 50q$</div><div class="memo-line">$q^2 - @INPUT@q + @INPUT@ = 0$, quadratic formula</div>',hardTemplate:'q = @INPUT@',memo:'<div class="memo-line">Solve quadratic for break-even <span class="memo-mark">✓(2)</span></div>'},
+{id:6018,topic:'Functions, Revenue & Break-even',question:'Demand drops by 20%. Original: $Q = 80-2P$. New demand function?',markingCriteria:[{type:'contains',expected:['0.8(80-2p)','0.8q','64 - 1.6p','64-1.6p'],description:'New: Q\' = 0.8(80−2P) = 64 − 1.6P',marks:2}],easyTemplate:'<div class="memo-line">$Q\' = 0.8(@INPUT@ - 2P) = @INPUT@ - @INPUT@P$</div>',hardTemplate:'New demand: @INPUT@',memo:'<div class="memo-line">Q\' = 64 − 1.6P <span class="memo-mark">✓(2)</span></div>'},
+{id:6019,topic:'Functions, Revenue & Break-even',question:'You invest x rand at 10% and (400000−x) at 8%.<br>1.1 Amount at 8%? 1.2 Interest on x? 1.3 Interest on remainder? 1.4 Total interest?',markingCriteria:[{type:'contains',expected:['400000 - x','400 000 - x'],description:'Remainder: 400000 − x',marks:1},{type:'contains',expected:['0.10x','0.1x'],description:'Interest on x: 0.10x',marks:1},{type:'contains',expected:['0.08(400000-x)','0.08(400 000 - x)'],description:'Interest on rest: 0.08(400000−x)',marks:1},{type:'contains',expected:['0.02x + 32000','32000 + 0.02x'],description:'Total: 0.02x + 32000',marks:1}],easyTemplate:'<div class="memo-line">1.1: $@INPUT@ - x$</div><div class="memo-line">1.2: $@INPUT@x$</div><div class="memo-line">1.3: $0.08(@INPUT@ - x) = @INPUT@ - @INPUT@x$</div><div class="memo-line">1.4: Total $= @INPUT@x + @INPUT@$</div>',hardTemplate:'Total interest = @INPUT@',memo:'<div class="memo-line">Total = 0.02x + 32000 <span class="memo-mark">✓(4)</span></div>'},
+{id:6020,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_D = 150 - 3P$. Supply: $Q_S = 2P - 10$. Government imposes R4 tax per unit. Find new equilibrium.',markingCriteria:[{type:'value',expected:32,tolerance:0.01,description:'Original P = 32',marks:1},{type:'contains',expected:['2(p-4)','2p - 18','2p-18'],description:'New supply: Qs = 2(P−4)−10 = 2P−18',marks:1},{type:'value',expected:33.6,tolerance:0.1,description:'New P ≈ 33.6',marks:1}],easyTemplate:'<div class="memo-line">Original: $150-3P = 2P-10$, $P = @INPUT@$</div><div class="memo-line">New supply: $Q_S\' = 2(P-4) - 10 = @INPUT@P - @INPUT@$</div><div class="memo-line">$150-3P = 2P-18$: $P = @INPUT@$</div>',hardTemplate:'New P = @INPUT@',memo:'<div class="memo-line">New P ≈ 33.6 <span class="memo-mark">✓(3)</span></div>'},
+{id:6021,topic:'Functions, Revenue & Break-even',question:'Revenue: $R = 250q$. Cost: $C = 8000 + 150q$. Find BEP, and loss at q = 50.',markingCriteria:[{type:'value',expected:80,tolerance:0.5,description:'BEP = 8000÷100 = 80',marks:1},{type:'value',expected:-3000,tolerance:1,description:'P(50) = 250(50)−8000−150(50) = −R3 000 (loss)',marks:1}],easyTemplate:'<div class="memo-line">$BEP = \\frac{@INPUT@}{@INPUT@} = @INPUT@$</div><div class="memo-line">$P(50) = @INPUT@(50) - @INPUT@ - @INPUT@(50) = R@INPUT@$</div>',hardTemplate:'BEP: @INPUT@, P(50): R@INPUT@',memo:'<div class="memo-line">BEP = 80, P(50) = −R3 000 (loss) <span class="memo-mark">✓(2)</span></div>'},
+{id:6022,topic:'Functions, Revenue & Break-even',question:'Demand: $Q = 60 - P$. Find price elasticity of demand at P = 20.',markingCriteria:[{type:'value',expected:40,tolerance:0.01,description:'Q(20) = 40',marks:1},{type:'value',expected:-0.5,tolerance:0.05,description:'Ed = (dQ/dP)(P/Q) = (−1)(20/40) = −0.5',marks:1}],easyTemplate:'<div class="memo-line">$Q(20) = @INPUT@$</div><div class="memo-line">$E_d = (-1) \\times \\frac{@INPUT@}{@INPUT@} = @INPUT@$</div>',hardTemplate:'Ed = @INPUT@',memo:'<div class="memo-line">Ed = −0.5 (inelastic) <span class="memo-mark">✓(2)</span></div>'},
+{id:6023,topic:'Functions, Revenue & Break-even',question:'Cost: $C(q) = q^2 + 10q + 100$. Find average cost at q = 10.',markingCriteria:[{type:'value',expected:300,tolerance:0.5,description:'C(10) = 100+100+100 = 300',marks:1},{type:'value',expected:30,tolerance:0.01,description:'AC = 300÷10 = 30',marks:1}],easyTemplate:'<div class="memo-line">$C(10) = @INPUT@ + @INPUT@ + @INPUT@ = @INPUT@$</div><div class="memo-line">$AC = \\frac{@INPUT@}{@INPUT@} = @INPUT@$</div>',hardTemplate:'AC = R@INPUT@',memo:'<div class="memo-line">AC(10) = R30 <span class="memo-mark">✓(2)</span></div>'},
+{id:6024,topic:'Functions, Revenue & Break-even',question:'Revenue: $R(q) = 120q - 2q^2$. Cost: $C(q) = 200 + 20q$. Find profit-max quantity and max profit.',markingCriteria:[{type:'value',expected:25,tolerance:0.5,description:'Profit max: P\'(q)=0 → 100−4q=0 → q=25',marks:1},{type:'value',expected:1050,tolerance:1,description:'P(25) = 120(25)−2(625)−200−20(25) = R1 050',marks:1}],easyTemplate:'<div class="memo-line">$P(q) = -2q^2 + @INPUT@q - @INPUT@$</div><div class="memo-line">$P\'(q) = -4q + @INPUT@ = 0$, $q = @INPUT@$</div><div class="memo-line">$P(@INPUT@) = R@INPUT@$</div>',hardTemplate:'q = @INPUT@, max P = R@INPUT@',memo:'<div class="memo-line">q = 25, max profit = R1 050 <span class="memo-mark">✓(2)</span></div>'},
+{id:6025,topic:'Functions, Revenue & Break-even',question:'Demand: $Q_D = 500 - 10P$. Supply: $Q_S = -100 + 5P$. Find consumer surplus at equilibrium.',markingCriteria:[{type:'value',expected:40,tolerance:0.01,description:'P = 40',marks:1},{type:'value',expected:100,tolerance:0.01,description:'Q = 100',marks:1},{type:'value',expected:500,tolerance:5,description:'CS = 0.5 × 100 × (50−40) = R500',marks:1}],easyTemplate:'<div class="memo-line">$500-10P = -100+5P$: $P = @INPUT@$, $Q = @INPUT@$</div><div class="memo-line">Max P (when Q=0): $P = @INPUT@$</div><div class="memo-line">$CS = 0.5 \\times @INPUT@ \\times (@INPUT@ - @INPUT@) = R@INPUT@$</div>',hardTemplate:'CS = R@INPUT@',memo:'<div class="memo-line">P=40, Q=100, CS = R500 <span class="memo-mark">✓(3)</span></div>'},
+];if(!window.QUESTIONS)window.QUESTIONS=[];window.QUESTIONS.push(...Q);})();

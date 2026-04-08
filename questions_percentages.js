@@ -1,121 +1,178 @@
-// ========== MTHS 112 — PERCENTAGES & VAT (Workspace Format) ==========
+// ========== MTHS 112 — PERCENTAGES & VAT (25 Questions) ==========
 window.QUESTIONS = [
-
 {id:1001, topic:'Percentages & VAT',
   question:'In 2018 VAT changed from 14% to 15%. Determine the percentage change in VAT to two decimal places.',
-  markingCriteria: [
-    {type:'contains', expected:['15 - 14','15-14','1'], description:'Identifies the change (15 - 14 = 1)', marks:1},
-    {type:'contains', expected:['÷ 14','÷14'], description:'Divides by the original value (14)', marks:1},
-    {type:'anyValue', expected:[7.14, 0.0714], tolerance:0.01, description:'Correct final answer: 7.14% or 0.0714', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Change in VAT = @INPUT@% − @INPUT@% = 1% </div><div class="memo-line">% change = $\\\\frac{\\\\text{change}}{\\\\text{original}} \\\\times 100 = \\\\frac{1}{@INPUT@} \\\\times 100$ </div><div class="memo-line">$= @INPUT@\\\\%$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Change in VAT = 15% − 14% = 1% <span class="memo-mark">✓(1)</span></div><div class="memo-line">% change = $\\\\frac{\\\\text{change}}{\\\\text{original}} \\\\times 100 = \\\\frac{1}{14} \\\\times 100$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= 7.14\\\\%$ <span class="memo-mark">✓(1)</span></div>'
+  markingCriteria:[{type:'contains',expected:['15 - 14','15-14','1'],description:'Change = 1',marks:1},{type:'contains',expected:['÷ 14','÷14'],description:'Divides by original (14)',marks:1},{type:'anyValue',expected:[7.14,0.0714],tolerance:0.01,description:'Answer: 7.14%',marks:1}],
+  easyTemplate:'<div class="memo-line">Change = @INPUT@% − @INPUT@% = 1%</div><div class="memo-line">% change = $\\frac{1}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@',
+  memo:'<div class="memo-line">Change = 15% − 14% = 1% <span class="memo-mark">✓(1)</span></div><div class="memo-line">% change = $\\frac{1}{14} \\times 100 = 7.14\\%$ <span class="memo-mark">✓(2)</span></div>'
 },
-
-{id:1003, topic:'Percentages & VAT',
-  question:'An item is sold for R500 in 2022 with VAT of 16%. What was the price of the item before VAT was added?',
-  markingCriteria: [
-    {type:'contains', expected:['1.16','1 + 0.16'], description:'Identifies the VAT-inclusive factor (1.16)', marks:1},
-    {type:'contains', expected:['500 ÷','÷ 1.16','÷1.16'], description:'Divides R500 by 1.16', marks:1},
-    {type:'value', expected:431.03, tolerance:0.01, description:'Correct answer: R431.03', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Price before VAT $= \\\\frac{\\\\text{Selling price}}{1 + \\\\text{VAT rate}}$ </div><div class="memo-line">$= \\\\frac{@INPUT@}{@INPUT@}$ </div><div class="memo-line">$= R@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Price before VAT $= \\\\frac{\\\\text{Selling price}}{1 + \\\\text{VAT rate}}$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= \\\\frac{500}{1.16}$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= R431.03$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1005, topic:'Percentages & VAT',
-  question:'The price of petrol increased from R21.50 to R23.80 per litre. Calculate the percentage increase to two decimal places.',
-  markingCriteria: [
-    {type:'value', expected:2.30, tolerance:0.01, description:'Calculates the change: R23.80 - R21.50 = R2.30', marks:1},
-    {type:'contains', expected:['÷ 21.50','÷21.50','÷ 21.5','÷21.5'], description:'Divides by original value (21.50)', marks:1},
-    {type:'anyValue', expected:[10.70, 0.107], tolerance:0.01, description:'Correct answer: 10.70% or 0.107', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Change $= @INPUT@ - @INPUT@ = R@INPUT@$ </div><div class="memo-line">% increase $= \\\\frac{@INPUT@}{@INPUT@} \\\\times 100$ </div><div class="memo-line">$= @INPUT@\\\\%$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Change $= 23.80 - 21.50 = R2.30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">% increase $= \\\\frac{2.30}{21.50} \\\\times 100$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= 10.70\\\\%$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1007, topic:'Percentages & VAT',
-  question:'A company\'s revenue decreased from R2 400 000 to R1 920 000. Calculate the percentage decrease.',
-  markingCriteria: [
-    {type:'value', expected:480000, tolerance:0.5, description:'Calculates the change: R480 000', marks:1},
-    {type:'contains', expected:['2400000','2 400 000'], description:'Divides by original (R2 400 000)', marks:1},
-    {type:'anyValue', expected:[20, 0.20], tolerance:0.01, description:'Correct answer: 20% or 0.20', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Change $= 2\\\\,@INPUT@\\\\,@INPUT@ - 1\\\\,@INPUT@\\\\,@INPUT@ = R@INPUT@\\\\,@INPUT@$ </div><div class="memo-line">% decrease $= \\\\frac{@INPUT@}{@INPUT@} \\\\times 100$ </div><div class="memo-line">$= @INPUT@\\\\%$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Change $= 2\\\\,400\\\\,000 - 1\\\\,920\\\\,000 = R480\\\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">% decrease $= \\\\frac{480000}{2400000} \\\\times 100$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= 20\\\\%$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1008, topic:'Percentages & VAT',
-  question:'A car was purchased for R320 000. After one year it is valued at R272 000. Calculate the percentage depreciation.',
-  markingCriteria: [
-    {type:'anyValue', expected:[48000, 0.85], tolerance:0.5, description:'Calculates depreciation (R48 000) or ratio (0.85)', marks:1},
-    {type:'anyValue', expected:[15, 0.15], tolerance:0.01, description:'Correct answer: 15% or 0.15', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Depreciation $= @INPUT@\\\\,@INPUT@ - @INPUT@\\\\,@INPUT@ = R@INPUT@\\\\,@INPUT@$ </div><div class="memo-line">% depreciation $= \\\\frac{@INPUT@}{@INPUT@} \\\\times 100 = @INPUT@\\\\%$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Depreciation $= 320\\\\,000 - 272\\\\,000 = R48\\\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">% depreciation $= \\\\frac{48000}{320000} \\\\times 100 = 15\\\\%$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1009, topic:'Percentages & VAT',
-  question:'A shirt costs R450 including 15% VAT. Calculate the VAT amount included in the price.',
-  markingCriteria: [
-    {type:'value', expected:391.30, tolerance:0.01, description:'Calculates price excl VAT: R391.30', marks:1},
-    {type:'value', expected:58.70, tolerance:0.01, description:'Correct VAT amount: R58.70', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Price excl. VAT $= \\\\frac{@INPUT@}{@INPUT@} = R@INPUT@$ </div><div class="memo-line">VAT amount $= @INPUT@ - @INPUT@ = R@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Price excl. VAT $= \\\\frac{450}{1.15} = R391.30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">VAT amount $= 450 - 391.30 = R58.70$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1011, topic:'Percentages & VAT',
-  question:'A store marks up products by 40% on cost and then adds 15% VAT. If cost price is R600, calculate the final selling price including VAT.',
-  markingCriteria: [
-    {type:'value', expected:840, tolerance:0.01, description:'Mark-up price: R840', marks:1},
-    {type:'contains', expected:['1.15','× 1.15'], description:'Applies VAT factor (1.15)', marks:1},
-    {type:'value', expected:966, tolerance:0.01, description:'Final price: R966', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Selling price excl. VAT $= @INPUT@ \\\\times @INPUT@ = R@INPUT@$ </div><div class="memo-line">Including VAT $= @INPUT@ \\\\times @INPUT@$ </div><div class="memo-line">$= R@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Selling price excl. VAT $= 600 \\\\times 1.40 = R840$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Including VAT $= 840 \\\\times 1.15$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= R966$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1013, topic:'Percentages & VAT',
-  question:'House prices increased by 8% one year and then by 5% the next year. If a house initially cost R1 200 000, what is its value after both increases?',
-  markingCriteria: [
-    {type:'value', expected:1296000, tolerance:0.5, description:'After year 1: R1 296 000', marks:1},
-    {type:'contains', expected:['1.05','× 1.05'], description:'Applies second increase (1.05)', marks:1},
-    {type:'value', expected:1360800, tolerance:0.5, description:'Final value: R1 360 800', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">After year 1: $1\\\\,@INPUT@\\\\,@INPUT@ \\\\times @INPUT@ = R1\\\\,@INPUT@\\\\,@INPUT@$ </div><div class="memo-line">After year 2: $1\\\\,@INPUT@\\\\,@INPUT@ \\\\times @INPUT@$ </div><div class="memo-line">$= R@INPUT@\\\\,@INPUT@\\\\,@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">After year 1: $1\\\\,200\\\\,000 \\\\times 1.08 = R1\\\\,296\\\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">After year 2: $1\\\\,296\\\\,000 \\\\times 1.05$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= R1\\\\,360\\\\,800$ <span class="memo-mark">✓(1)</span></div>'
-},
-
-{id:1015, topic:'Percentages & VAT',
-  question:'A phone originally cost R12 000. After a 10% discount and then adding 15% VAT, what is the final price?',
-  markingCriteria: [
-    {type:'value', expected:10800, tolerance:0.01, description:'After discount: R10 800', marks:1},
-    {type:'value', expected:12420, tolerance:0.01, description:'After VAT: R12 420', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">After @INPUT@% discount: $@INPUT@\\\\,@INPUT@ \\\\times @INPUT@ = R@INPUT@\\\\,@INPUT@$ </div><div class="memo-line">After @INPUT@% VAT: $@INPUT@\\\\,@INPUT@ \\\\times @INPUT@ = R@INPUT@\\\\,@INPUT@$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">After 10% discount: $12\\\\,000 \\\\times 0.90 = R10\\\\,800$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">After 15% VAT: $10\\\\,800 \\\\times 1.15 = R12\\\\,420$ <span class="memo-mark">✓(1)</span></div>'
-},
-
 {id:1002, topic:'Percentages & VAT',
   question:'In 2022 VAT changed from 15% to 16%. Determine the percentage change in VAT to two decimal places.',
-  markingCriteria: [
-    {type:'contains', expected:['16 - 15','16-15'], description:'Identifies the change (16 - 15 = 1)', marks:1},
-    {type:'contains', expected:['÷ 15','÷15'], description:'Divides by the original value (15)', marks:1},
-    {type:'anyValue', expected:[6.67, 0.0667], tolerance:0.01, description:'Correct final answer: 6.67% or 0.0667', marks:1}
-  ],
-  easyTemplate:'<div class="memo-line">Change = @INPUT@% − @INPUT@% = 1% </div><div class="memo-line">% change = $\\\\frac{1}{@INPUT@} \\\\times 100$ </div><div class="memo-line">$= @INPUT@\\\\%$ </div>',
-  hardTemplate: 'Final Answer: @INPUT@',
-  memo:'<div class="memo-line">Change = 16% − 15% = 1% <span class="memo-mark">✓(1)</span></div><div class="memo-line">% change = $\\\\frac{1}{15} \\\\times 100$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$= 6.67\\\\%$ <span class="memo-mark">✓(1)</span></div>'
+  markingCriteria:[{type:'contains',expected:['16 - 15','16-15'],description:'Change = 1',marks:1},{type:'contains',expected:['÷ 15','÷15'],description:'Divides by original (15)',marks:1},{type:'anyValue',expected:[6.67,0.0667],tolerance:0.01,description:'Answer: 6.67%',marks:1}],
+  easyTemplate:'<div class="memo-line">Change = @INPUT@% − @INPUT@% = 1%</div><div class="memo-line">% change = $\\frac{1}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@',
+  memo:'<div class="memo-line">Change = 16% − 15% = 1% <span class="memo-mark">✓(1)</span></div><div class="memo-line">% change = $\\frac{1}{15} \\times 100 = 6.67\\%$ <span class="memo-mark">✓(2)</span></div>'
 },
-
+{id:1003, topic:'Percentages & VAT',
+  question:'An item is sold for R500 in 2022 with VAT of 16%. What was the price before VAT?',
+  markingCriteria:[{type:'contains',expected:['1.16','÷ 1.16','÷1.16'],description:'Divides by 1.16',marks:1},{type:'value',expected:431.03,tolerance:0.01,description:'Answer: R431.03',marks:1}],
+  easyTemplate:'<div class="memo-line">Price excl. VAT $= \\frac{@INPUT@}{@INPUT@} = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">Price excl. VAT $= \\frac{500}{1.16} = R431.03$ <span class="memo-mark">✓(2)</span></div>'
+},
+{id:1004, topic:'Percentages & VAT',
+  question:'The price of petrol increased from R21.50 to R23.80. Calculate the percentage increase to two decimal places.',
+  markingCriteria:[{type:'value',expected:2.30,tolerance:0.01,description:'Change = R2.30',marks:1},{type:'contains',expected:['÷ 21.50','÷21.50','÷ 21.5'],description:'Divides by original',marks:1},{type:'anyValue',expected:[10.70,0.107],tolerance:0.01,description:'Answer: 10.70%',marks:1}],
+  easyTemplate:'<div class="memo-line">Change $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">% increase $= \\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@',
+  memo:'<div class="memo-line">Change $= 23.80 - 21.50 = R2.30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">% increase $= \\frac{2.30}{21.50} \\times 100 = 10.70\\%$ <span class="memo-mark">✓(2)</span></div>'
+},
+{id:1005, topic:'Percentages & VAT',
+  question:'Revenue decreased from R2 400 000 to R1 920 000. Calculate the percentage decrease.',
+  markingCriteria:[{type:'value',expected:480000,tolerance:0.5,description:'Change: R480 000',marks:1},{type:'anyValue',expected:[20,0.20],tolerance:0.01,description:'Answer: 20%',marks:1}],
+  easyTemplate:'<div class="memo-line">Change $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">% decrease $= \\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@',
+  memo:'<div class="memo-line">Change $= 2\\,400\\,000 - 1\\,920\\,000 = R480\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">% decrease $= \\frac{480000}{2400000} \\times 100 = 20\\%$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1006, topic:'Percentages & VAT',
+  question:'A car purchased for R320 000 is valued at R272 000 after one year. Calculate the % depreciation.',
+  markingCriteria:[{type:'value',expected:48000,tolerance:0.5,description:'Depreciation: R48 000',marks:1},{type:'anyValue',expected:[15,0.15],tolerance:0.01,description:'Answer: 15%',marks:1}],
+  easyTemplate:'<div class="memo-line">Depreciation $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">% depreciation $= \\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@',
+  memo:'<div class="memo-line">Depreciation $= 320\\,000 - 272\\,000 = R48\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">% = $\\frac{48000}{320000} \\times 100 = 15\\%$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1007, topic:'Percentages & VAT',
+  question:'A shirt costs R450 including 15% VAT. Calculate the VAT amount.',
+  markingCriteria:[{type:'value',expected:391.30,tolerance:0.01,description:'Price excl VAT: R391.30',marks:1},{type:'value',expected:58.70,tolerance:0.01,description:'VAT amount: R58.70',marks:1}],
+  easyTemplate:'<div class="memo-line">Excl. VAT $= \\frac{@INPUT@}{1.15} = R@INPUT@$</div><div class="memo-line">VAT $= @INPUT@ - @INPUT@ = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">Excl. VAT $= \\frac{450}{1.15} = R391.30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">VAT $= 450 - 391.30 = R58.70$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1008, topic:'Percentages & VAT',
+  question:'A store marks up by 40% on cost then adds 15% VAT. Cost price is R600. Calculate the final selling price including VAT.',
+  markingCriteria:[{type:'value',expected:840,tolerance:0.01,description:'After markup: R840',marks:1},{type:'value',expected:966,tolerance:0.01,description:'After VAT: R966',marks:1}],
+  easyTemplate:'<div class="memo-line">Markup: $@INPUT@ \\times 1.40 = R@INPUT@$</div><div class="memo-line">VAT: $@INPUT@ \\times 1.15 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$600 \\times 1.40 = R840$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$840 \\times 1.15 = R966$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1009, topic:'Percentages & VAT',
+  question:'House prices increased 8% year 1 then 5% year 2. Initial value R1 200 000. Find the value after both increases.',
+  markingCriteria:[{type:'value',expected:1296000,tolerance:0.5,description:'After year 1: R1 296 000',marks:1},{type:'value',expected:1360800,tolerance:0.5,description:'After year 2: R1 360 800',marks:1}],
+  easyTemplate:'<div class="memo-line">Year 1: $@INPUT@ \\times 1.08 = R@INPUT@$</div><div class="memo-line">Year 2: $@INPUT@ \\times 1.05 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">Year 1: $1\\,200\\,000 \\times 1.08 = R1\\,296\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Year 2: $1\\,296\\,000 \\times 1.05 = R1\\,360\\,800$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1010, topic:'Percentages & VAT',
+  question:'A phone costs R12 000. After a 10% discount and then 15% VAT, what is the final price?',
+  markingCriteria:[{type:'value',expected:10800,tolerance:0.01,description:'After discount: R10 800',marks:1},{type:'value',expected:12420,tolerance:0.01,description:'After VAT: R12 420',marks:1}],
+  easyTemplate:'<div class="memo-line">Discount: $@INPUT@ \\times 0.90 = R@INPUT@$</div><div class="memo-line">VAT: $@INPUT@ \\times 1.15 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$12\\,000 \\times 0.90 = R10\\,800$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$10\\,800 \\times 1.15 = R12\\,420$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1011, topic:'Percentages & VAT',
+  question:'A laptop is advertised at R18 499 VAT inclusive (15%). Calculate the price excluding VAT and the VAT amount.',
+  markingCriteria:[{type:'value',expected:16086.09,tolerance:0.01,description:'Excl VAT: R16 086.09',marks:1},{type:'value',expected:2412.91,tolerance:0.01,description:'VAT: R2 412.91',marks:1}],
+  easyTemplate:'<div class="memo-line">Excl. VAT $= \\frac{@INPUT@}{1.15} = R@INPUT@$</div><div class="memo-line">VAT $= @INPUT@ - @INPUT@ = R@INPUT@$</div>',
+  hardTemplate:'Excl VAT: R@INPUT@, VAT: R@INPUT@',
+  memo:'<div class="memo-line">$\\frac{18499}{1.15} = R16\\,086.09$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">VAT $= 18499 - 16086.09 = R2\\,412.91$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1012, topic:'Percentages & VAT',
+  question:'A TV cost R8 500 two years ago. It depreciated 12% in year 1 and 15% in year 2. What is its current value?',
+  markingCriteria:[{type:'value',expected:7480,tolerance:1,description:'After year 1: R7 480',marks:1},{type:'value',expected:6358,tolerance:1,description:'After year 2: R6 358',marks:1}],
+  easyTemplate:'<div class="memo-line">Year 1: $@INPUT@ \\times 0.88 = R@INPUT@$</div><div class="memo-line">Year 2: $@INPUT@ \\times 0.85 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$8500 \\times 0.88 = R7\\,480$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$7480 \\times 0.85 = R6\\,358$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1013, topic:'Percentages & VAT',
+  question:'A shopkeeper buys goods for R2 400 and wants a 35% profit margin on selling price. Calculate the selling price.',
+  markingCriteria:[{type:'contains',expected:['0.65','1 - 0.35','65%'],description:'Cost = 65% of SP',marks:1},{type:'value',expected:3692.31,tolerance:0.01,description:'SP = 2400 ÷ 0.65 = R3 692.31',marks:1}],
+  easyTemplate:'<div class="memo-line">Cost = $(1 - @INPUT@) \\times SP$</div><div class="memo-line">$SP = \\frac{@INPUT@}{@INPUT@} = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">Cost = 65% of SP <span class="memo-mark">✓(1)</span></div><div class="memo-line">$SP = \\frac{2400}{0.65} = R3\\,692.31$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1014, topic:'Percentages & VAT',
+  question:'An employee\'s salary increased from R28 500 to R31 350 per month. Calculate the percentage increase.',
+  markingCriteria:[{type:'value',expected:2850,tolerance:0.5,description:'Increase: R2 850',marks:1},{type:'value',expected:10,tolerance:0.01,description:'Answer: 10%',marks:1}],
+  easyTemplate:'<div class="memo-line">Increase $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">$\\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@%',
+  memo:'<div class="memo-line">Increase $= 31350 - 28500 = R2\\,850$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$\\frac{2850}{28500} \\times 100 = 10\\%$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1015, topic:'Percentages & VAT',
+  question:'A factory produced 15 600 units last month and 17 940 this month. Calculate the percentage increase in production.',
+  markingCriteria:[{type:'value',expected:2340,tolerance:0.5,description:'Increase: 2 340',marks:1},{type:'value',expected:15,tolerance:0.01,description:'Answer: 15%',marks:1}],
+  easyTemplate:'<div class="memo-line">Increase $= @INPUT@ - @INPUT@ = @INPUT@$</div><div class="memo-line">$\\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@%',
+  memo:'<div class="memo-line">$17940 - 15600 = 2340$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$\\frac{2340}{15600} \\times 100 = 15\\%$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1016, topic:'Percentages & VAT',
+  question:'A product costs R1 750 excl VAT. VAT is 15%. A trade discount of 5% is applied before VAT. Calculate the final price incl VAT.',
+  markingCriteria:[{type:'value',expected:1662.50,tolerance:0.01,description:'After discount: R1 662.50',marks:1},{type:'value',expected:1911.88,tolerance:0.01,description:'After VAT: R1 911.88',marks:1}],
+  easyTemplate:'<div class="memo-line">Discount: $@INPUT@ \\times 0.95 = R@INPUT@$</div><div class="memo-line">VAT: $@INPUT@ \\times 1.15 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$1750 \\times 0.95 = R1\\,662.50$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$1662.50 \\times 1.15 = R1\\,911.88$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1017, topic:'Percentages & VAT',
+  question:'A company\'s expenses were R540 000. They need to reduce expenses by 12%. What should the new expenses be?',
+  markingCriteria:[{type:'value',expected:64800,tolerance:0.5,description:'Reduction: R64 800',marks:1},{type:'value',expected:475200,tolerance:0.5,description:'New expenses: R475 200',marks:1}],
+  easyTemplate:'<div class="memo-line">Reduction $= @INPUT@ \\times 0.12 = R@INPUT@$</div><div class="memo-line">New $= @INPUT@ - @INPUT@ = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$540\\,000 \\times 0.12 = R64\\,800$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$540\\,000 - 64\\,800 = R475\\,200$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1018, topic:'Percentages & VAT',
+  question:'A car dealer buys midsize cars at 12% below list price. List price is R360 000. What does the dealer pay?',
+  markingCriteria:[{type:'contains',expected:['0.88','1 - 0.12','88%'],description:'Factor: 0.88',marks:1},{type:'value',expected:316800,tolerance:0.5,description:'Dealer pays: R316 800',marks:1}],
+  easyTemplate:'<div class="memo-line">Dealer price $= @INPUT@ \\times @INPUT@ = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$360\\,000 \\times 0.88 = R316\\,800$ <span class="memo-mark">✓(2)</span></div>'
+},
+{id:1019, topic:'Percentages & VAT',
+  question:'A luxury car lists at R560 000. Dealer discount is 15%. Calculate the dealer price and the saving.',
+  markingCriteria:[{type:'value',expected:476000,tolerance:0.5,description:'Dealer price: R476 000',marks:1},{type:'value',expected:84000,tolerance:0.5,description:'Saving: R84 000',marks:1}],
+  easyTemplate:'<div class="memo-line">Dealer price $= @INPUT@ \\times 0.85 = R@INPUT@$</div><div class="memo-line">Saving $= @INPUT@ - @INPUT@ = R@INPUT@$</div>',
+  hardTemplate:'Dealer price: R@INPUT@, Saving: R@INPUT@',
+  memo:'<div class="memo-line">$560\\,000 \\times 0.85 = R476\\,000$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$560\\,000 - 476\\,000 = R84\\,000$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1020, topic:'Percentages & VAT',
+  question:'Inflation was 5.2% in year 1 and 4.8% in year 2. A basket of goods cost R850. What does it cost after 2 years?',
+  markingCriteria:[{type:'value',expected:894.20,tolerance:0.1,description:'After year 1: R894.20',marks:1},{type:'value',expected:937.12,tolerance:0.1,description:'After year 2: R937.12',marks:1}],
+  easyTemplate:'<div class="memo-line">Year 1: $@INPUT@ \\times 1.052 = R@INPUT@$</div><div class="memo-line">Year 2: $@INPUT@ \\times 1.048 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$850 \\times 1.052 = R894.20$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$894.20 \\times 1.048 = R937.12$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1021, topic:'Percentages & VAT',
+  question:'A product was R245 before a price increase. It now costs R279.30. Calculate the percentage increase.',
+  markingCriteria:[{type:'value',expected:34.30,tolerance:0.01,description:'Increase: R34.30',marks:1},{type:'value',expected:14,tolerance:0.01,description:'Answer: 14%',marks:1}],
+  easyTemplate:'<div class="memo-line">Increase $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">$\\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Final Answer: @INPUT@%',
+  memo:'<div class="memo-line">$279.30 - 245 = R34.30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$\\frac{34.30}{245} \\times 100 = 14\\%$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1022, topic:'Percentages & VAT',
+  question:'A retailer pays R3 200 for goods and applies a 45% markup on cost. Then adds 15% VAT. Find the final selling price.',
+  markingCriteria:[{type:'value',expected:4640,tolerance:0.01,description:'After markup: R4 640',marks:1},{type:'value',expected:5336,tolerance:0.01,description:'After VAT: R5 336',marks:1}],
+  easyTemplate:'<div class="memo-line">Markup: $@INPUT@ \\times 1.45 = R@INPUT@$</div><div class="memo-line">VAT: $@INPUT@ \\times 1.15 = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$3200 \\times 1.45 = R4\\,640$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$4640 \\times 1.15 = R5\\,336$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1023, topic:'Percentages & VAT',
+  question:'A machine depreciates at 18% per year. It was bought for R250 000. What is the value after 3 years?',
+  markingCriteria:[{type:'contains',expected:['0.82','1 - 0.18'],description:'Depreciation factor: 0.82',marks:1},{type:'value',expected:137809.60,tolerance:1,description:'Value: R250000 × 0.82³ = R137 809.60',marks:2}],
+  easyTemplate:'<div class="memo-line">$V = @INPUT@ \\times (0.82)^3 = @INPUT@ \\times @INPUT@ = R@INPUT@$</div>',
+  hardTemplate:'Final Answer: R@INPUT@',
+  memo:'<div class="memo-line">$V = 250\\,000 \\times (0.82)^3 = 250\\,000 \\times 0.551236 = R137\\,809.60$ <span class="memo-mark">✓(3)</span></div>'
+},
+{id:1024, topic:'Percentages & VAT',
+  question:'An item sold for R6 900 incl 16% VAT. The retailer had a 25% markup on cost. Find the original cost price.',
+  markingCriteria:[{type:'value',expected:5948.28,tolerance:0.01,description:'Excl VAT: R5 948.28',marks:1},{type:'value',expected:4758.62,tolerance:0.01,description:'Cost: R4 758.62',marks:1}],
+  easyTemplate:'<div class="memo-line">Excl VAT $= \\frac{@INPUT@}{1.16} = R@INPUT@$</div><div class="memo-line">Cost $= \\frac{@INPUT@}{1.25} = R@INPUT@$</div>',
+  hardTemplate:'Cost price: R@INPUT@',
+  memo:'<div class="memo-line">$\\frac{6900}{1.16} = R5\\,948.28$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$\\frac{5948.28}{1.25} = R4\\,758.62$ <span class="memo-mark">✓(1)</span></div>'
+},
+{id:1025, topic:'Percentages & VAT',
+  question:'Sales rose from R1 850 000 to R2 146 000. Costs rose from R1 200 000 to R1 416 000. Did profit margin improve? Calculate both margins.',
+  markingCriteria:[{type:'value',expected:35.14,tolerance:0.1,description:'Old margin: (650000/1850000)×100 = 35.14%',marks:1},{type:'value',expected:34.01,tolerance:0.1,description:'New margin: (730000/2146000)×100 = 34.01%',marks:1}],
+  easyTemplate:'<div class="memo-line">Old profit $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">Old margin $= \\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div><div class="memo-line">New profit $= @INPUT@ - @INPUT@ = R@INPUT@$</div><div class="memo-line">New margin $= \\frac{@INPUT@}{@INPUT@} \\times 100 = @INPUT@\\%$</div>',
+  hardTemplate:'Old margin: @INPUT@%, New margin: @INPUT@%',
+  memo:'<div class="memo-line">Old: $\\frac{650000}{1850000} \\times 100 = 35.14\\%$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">New: $\\frac{730000}{2146000} \\times 100 = 34.01\\%$ — margin decreased <span class="memo-mark">✓(1)</span></div>'
+},
 ];
