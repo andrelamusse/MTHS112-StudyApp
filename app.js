@@ -91,9 +91,18 @@
           btn.innerHTML = '✨ Easy Mode';
       }
       renderWorkspace();
+      // Update keypad class
+      if (state.isEasyModeActive) mathKeypad.classList.add('easy-mode-active');
+      else mathKeypad.classList.remove('easy-mode-active');
     });
 
     $('btn-home').addEventListener('click', goHome);
+    $('btn-exit-quiz').addEventListener('click', goHome);
+    $('btn-skip').addEventListener('click', () => {
+      state.totalMarksPossible += state.selectedQuestions[state.currentQuestionIndex].markingCriteria.reduce((s,c) => s + c.marks, 0);
+      state.results.push({ question: state.selectedQuestions[state.currentQuestionIndex], earned: 0, total: 0, breakdown: [] });
+      nextQuestion();
+    });
     initKeypad();
   }
 
@@ -230,7 +239,12 @@
     feedback.style.display = 'none';
     feedback.className = 'feedback';
     btnNext.style.display = 'none';
+    $('btn-skip').style.display = state.answered ? 'none' : 'inline-block';
     mathKeypad.style.display = 'block';
+
+    // Toggle easy-mode-active class on keypad for hiding New Line
+    if (state.isEasyModeActive) mathKeypad.classList.add('easy-mode-active');
+    else mathKeypad.classList.remove('easy-mode-active');
 
     renderKaTeX();
   }
@@ -270,14 +284,19 @@
 
       area.innerHTML = '<div class="easy-template-container" style="font-size:1.1rem; padding: 15px;">' + safeTemplate + '</div>';
       renderMathInElement(area, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
-      area.innerHTML = area.innerHTML.replace(/INPUTXYZ/g, '<input class="easy-box" style="width:50px; font-size:inherit; border:none; border-bottom:1px solid var(--accent); background:var(--bg); color:var(--text); text-align:center; outline:none; padding:0 2px;">');
+      area.innerHTML = area.innerHTML.replace(/INPUTXYZ/g, '<input class="easy-box" style="width:80px; font-size:inherit; border:none; border-bottom:1px solid var(--accent); background:var(--bg); color:var(--text); text-align:center; outline:none; padding:0 2px;">');
       
       const boxes = area.querySelectorAll('.easy-box');
       if (boxes.length > 0) state.activeInput = boxes[0];
-      boxes.forEach(box => {
+      boxes.forEach((box, idx) => {
         attachInputLogic(box);
         box.addEventListener('keydown', e => {
           if (e.key === 'Enter') document.querySelector('.key-submit').click();
+          if (e.key === 'Tab') {
+            e.preventDefault();
+            const next = boxes[idx + 1];
+            if (next) { next.focus(); state.activeInput = next; }
+          }
         });
       });
       return;
@@ -294,7 +313,7 @@
 
     area.innerHTML = '<div class="hard-template-container" style="font-size:1.1rem; padding: 15px;">' + safeHardTempl + '</div>';
     renderMathInElement(area, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
-    area.innerHTML = area.innerHTML.replace(/INPUTXYZ/g, '<input class="workspace-input hard-box" style="width:140px; font-size:inherit; border:none; border-bottom:1px dashed var(--accent); background:transparent; color:var(--text); text-align:center; outline:none; padding:0 2px;">');
+    area.innerHTML = area.innerHTML.replace(/INPUTXYZ/g, '<input class="workspace-input hard-box" style="width:180px; font-size:inherit; border:none; border-bottom:1px dashed var(--accent); background:transparent; color:var(--text); text-align:center; outline:none; padding:0 2px;">');
 
     const boxes = area.querySelectorAll('.hard-box');
     if (boxes.length > 0) state.activeInput = boxes[0];
@@ -410,6 +429,7 @@
         btnNext.style.display = 'block';
         btnNext.onclick = nextQuestion;
         state.answered = true;
+        $('btn-skip').style.display = 'none';
     } else {
         let hardAutoEarned = 0;
         let hardMemoHTML = q.memo.replace(/<span class="memo-mark"([^>]*)>✓\((\d+)\)<\/span>/g, (match, attrs, mMarks, offset, fullStr) => {
@@ -461,6 +481,7 @@
             nextQuestion();
         };
         state.answered = true;
+        $('btn-skip').style.display = 'none';
     }
     renderKaTeX();
   }

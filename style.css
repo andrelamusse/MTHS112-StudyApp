@@ -571,7 +571,7 @@ body {
   color: #e2e8f0;
   padding: 2px 6px;
   border-radius: 4px;
-  width: 60px;
+  width: 80px;
   text-align: center;
   font-family: 'Inter', monospace;
   font-size: 1rem;
@@ -619,4 +619,58 @@ body {
 .tooltip-host:hover .tooltip {
   visibility: visible;
   opacity: 1;
+}
+
+/* ========== EXIT QUIZ BUTTON ========== */
+.btn-exit-quiz {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--error);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.btn-exit-quiz:hover {
+  background: rgba(239, 68, 68, 0.25);
+  transform: scale(1.1);
+}
+
+/* ========== SKIP BUTTON ========== */
+.btn-skip {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 10px 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 8px;
+}
+.btn-skip:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ========== IMPROVED MEMO LINE SPACING ========== */
+.memo-line {
+  margin-bottom: 8px;
+  padding: 4px 0;
+  line-height: 1.8;
+}
+
+/* ========== HIDE NEW LINE IN EASY MODE ========== */
+.easy-mode-active .key-newline {
+  opacity: 0.3;
+  pointer-events: none;
 }
