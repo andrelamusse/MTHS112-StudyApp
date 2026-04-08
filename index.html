@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTHS 112 — Mathematics Study App</title>
+  <meta name="description" content="Interactive mathematics study app for MTHS 112. Exam-style calculation problems with a workspace, custom math keypad, and memo-based marking.">
+  <meta name="theme-color" content="#06b6d4">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- ========== START SCREEN ========== -->
+    <div id="start-screen">
+      <div class="app-header">
+        <span class="app-icon">📐</span>
+        <h1>MTHS 112</h1>
+        <p class="subtitle">Business Mathematics — Interactive Study App</p>
+      </div>
+
+      <div class="topic-grid" id="topic-grid"></div>
+
+      <div class="session-config">
+        <label for="q-count">Questions per session:</label>
+        <select id="q-count">
+          <option value="5">5 Questions</option>
+          <option value="10" selected>10 Questions</option>
+          <option value="25">25 Questions</option>
+          <option value="0">All Questions</option>
+        </select>
+      </div>
+
+      <button class="btn-start" id="btn-start" disabled>Start Practice</button>
+    </div>
+
+    <!-- ========== QUIZ SCREEN ========== -->
+    <div id="quiz-screen">
+      <div class="quiz-header">
+        <span id="q-counter">Question 1 / 10</span>
+        <span class="marks-badge" id="marks-earned">Marks: <strong>0</strong></span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="question-meta">
+        <span class="topic-tag" id="topic-tag"></span>
+        <span class="marks-tag" id="marks-tag"></span>
+      </div>
+
+      <!-- Easy Mode Toggle -->
+      <button class="btn-easy-mode tooltip-host" id="btn-easy-mode">✨ Easy Mode<span class="tooltip">Provides fill-in-the-blank memo templates</span></button>
+
+      <!-- Question Card -->
+      <div class="question-card" id="question-card">
+        <div class="question-text" id="question-text"></div>
+      </div>
+
+      <!-- Workspace: where user writes calculations line by line -->
+      <div id="workspace-area"></div>
+
+      <!-- Math Keypad -->
+      <div id="math-keypad" class="math-keypad">
+        <div class="keypad-row">
+          <button class="key" data-val="7">7</button>
+          <button class="key" data-val="8">8</button>
+          <button class="key" data-val="9">9</button>
+          <button class="key key-op" data-val=" ÷ ">÷</button>
+          <button class="key key-op" data-val="(">(</button>
+          <button class="key key-op" data-val=")">)</button>
+        </div>
+        <div class="keypad-row">
+          <button class="key" data-val="4">4</button>
+          <button class="key" data-val="5">5</button>
+          <button class="key" data-val="6">6</button>
+          <button class="key key-op" data-val=" × ">×</button>
+          <button class="key key-op" data-val=" = "> = </button>
+          <button class="key key-op" data-val="^">xʸ</button>
+        </div>
+        <div class="keypad-row">
+          <button class="key" data-val="1">1</button>
+          <button class="key" data-val="2">2</button>
+          <button class="key" data-val="3">3</button>
+          <button class="key key-op" data-val=" - ">−</button>
+          <button class="key key-op" data-val=" + ">+</button>
+          <button class="key key-op" data-val="√">√</button>
+        </div>
+        <div class="keypad-row">
+          <button class="key" data-val="0">0</button>
+          <button class="key" data-val=".">.</button>
+          <button class="key key-op" data-val="%">%</button>
+          <button class="key key-special" data-val="R">R</button>
+          <button class="key key-special" data-val=" ln ">ln</button>
+          <button class="key key-special" data-val="e">e</button>
+        </div>
+        <div class="keypad-row">
+          <button class="key key-op" data-val="[">[</button>
+          <button class="key key-op" data-val="]">]</button>
+          <button class="key key-op" data-val="|">|</button>
+          <button class="key key-special" data-val="⇒">⇒</button>
+          <button class="key" data-val=",">,</button>
+          <button class="key" data-val=";">;</button>
+        </div>
+        <div class="keypad-row">
+          <button class="key key-special" data-val="x">x</button>
+          <button class="key key-special" data-val="y">y</button>
+          <button class="key key-special" data-val="z">z</button>
+          <button class="key key-del" data-action="backspace">⌫</button>
+          <button class="key key-clear" data-action="clear">C</button>
+          <button class="key key-newline" data-action="newline">↵ New Line</button>
+        </div>
+        <div class="keypad-row keypad-submit-row">
+          <button class="key key-submit" data-action="submit">Submit Answer ✓</button>
+        </div>
+      </div>
+
+      <!-- Feedback / Memo -->
+      <div class="feedback" id="feedback"></div>
+      <button class="btn-next" id="btn-next">Next Question →</button>
+    </div>
+
+    <!-- ========== SUMMARY SCREEN ========== -->
+    <div id="summary-screen">
+      <h2>Practice Complete! 🎉</h2>
+      <div class="score-circle" id="score-circle">
+        <svg viewBox="0 0 120 120">
+          <circle class="score-ring-bg" cx="60" cy="60" r="54"/>
+          <circle class="score-ring" id="score-ring" cx="60" cy="60" r="54"/>
+        </svg>
+        <div class="score-value" id="final-score"></div>
+      </div>
+      <div class="score-label" id="final-label"></div>
+      <div class="easy-hard-breakdown" id="easy-hard-breakdown"></div>
+
+      <div class="topic-breakdown" id="topic-breakdown">
+        <h3>Performance by Topic</h3>
+      </div>
+
+      <div class="summary-buttons">
+        <button class="btn-retry" id="btn-retry-wrong">Retry Weak Questions</button>
+        <button class="btn-home" id="btn-home">Back to Home</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Question Banks -->
+  <script src="questions_percentages.js"></script>
+  <script src="questions_matrices.js"></script>
+  <script src="questions_linprog.js"></script>
+  <script src="questions_tax.js"></script>
+  <script src="questions_finance.js"></script>
+  <script src="questions_functions.js"></script>
+  <script src="questions_calculus.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
