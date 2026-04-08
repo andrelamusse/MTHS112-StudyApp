@@ -64,6 +64,57 @@
   easyTemplate: '<div class="memo-line"><strong>@INPUT@</strong> $@INPUT@ - @INPUT@P = -@INPUT@ + @INPUT@P \\Rightarrow @INPUT@P = @INPUT@ \\Rightarrow P = @INPUT@$ </div><div class="memo-line">$Q = @INPUT@ - @INPUT@(@INPUT@) = @INPUT@$ </div><div class="memo-line"><strong>@INPUT@</strong> With tax, producers receive $(P-5)$:</div><div class="memo-line">$Q_S^{\\prime} = -@INPUT@ + @INPUT@(P - 5) = @INPUT@P - 100$ </div><div class="memo-line"><strong>@INPUT@</strong> $@INPUT@ - @INPUT@P = @INPUT@P - 100 \\Rightarrow @INPUT@P = @INPUT@ \\Rightarrow P = @INPUT@$ </div><div class="memo-line">$Q = @INPUT@ - @INPUT@(@INPUT@) = \@INPUT@$ </div>',
   hardTemplate: '6.3 $P = R$@INPUT@, $Q =$ @INPUT@<br><br>6.4 $Q_S\' =$ @INPUT@<br><br>6.5 $P = R$@INPUT@, $Q =$ @INPUT@',
   memo: '<div class="memo-line"><strong>6.3</strong> $400 - 15P = -50 + 10P \\Rightarrow 25P = 450 \\Rightarrow P = 18$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = 400 - 15(18) = 130$ <span class="memo-mark">✓(1)</span></div><div class="memo-line"><strong>6.4</strong> With tax, producers receive $(P-5)$:</div><div class="memo-line">$Q_S^{\\prime} = -50 + 10(P - 5) = 10P - 100$ <span class="memo-mark">✓(2)</span></div><div class="memo-line"><strong>6.5</strong> $400 - 15P = 10P - 100 \\Rightarrow 25P = 500 \\Rightarrow P = 20$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = 400 - 15(20) = 100$ <span class="memo-mark">✓(2)</span></div>'
+},
+
+// ===== NEW: From 2024 2nd Opp Q1 (Cost, Revenue, Profit functions) =====
+{id:6007, topic:'Functions, Revenue & Break-even',
+  question:'A company manufactures products with cost $K(x) = 185x + 7000$ and sells them for R455 each.<br><br>1.2 Determine the revenue function $R(x)$. <em>[1 mark]</em><br>1.3 Determine the profit function $P(x) = R(x) - K(x)$. <em>[2 marks]</em>',
+  markingCriteria: [
+    {type:'contains', expected:['455x','r(x) = 455x','r = 455x'], description:'Revenue: R(x) = 455x', marks:1},
+    {type:'contains', expected:['270x - 7000','455x - 185x - 7000'], description:'Profit: P(x) = 270x - 7000', marks:1},
+    {type:'value', expected:7000, tolerance:1, description:'Fixed cost identified: R7 000', marks:1}
+  ],
+  easyTemplate: '<div class="memo-line"><strong>1.2</strong> $R(x) = @INPUT@ \\times x = @INPUT@x$ </div><div class="memo-line"><strong>1.3</strong> $P(x) = @INPUT@x - (@INPUT@x + @INPUT@)$ </div><div class="memo-line">$= @INPUT@x - @INPUT@$ </div>',
+  hardTemplate: 'R(x) = @INPUT@<br>P(x) = @INPUT@',
+  memo: '<div class="memo-line"><strong>1.2</strong> $R(x) = 455x$ <span class="memo-mark">✓(1)</span></div><div class="memo-line"><strong>1.3</strong> $P(x) = 455x - (185x + 7000) = 270x - 7000$ <span class="memo-mark">✓(2)</span></div>'
+},
+
+// ===== NEW: From 2024 2nd Opp Q7 (Revenue = 300q - q²) =====
+{id:6008, topic:'Functions, Revenue & Break-even',
+  question:'The demand function for a product is $p = 300 - q$ where $p$ is the price and $q$ is quantity sold.<br><br>7.1 Determine the revenue function $R = f(q)$. <em>[2 marks]</em><br>7.2 What does $q$ represent and what does $(300 - q)$ represent? <em>[1 mark]</em>',
+  markingCriteria: [
+    {type:'contains', expected:['r = pq','r = p × q','revenue = price × quantity'], description:'Revenue = Price × Quantity', marks:1},
+    {type:'contains', expected:['300q - q^2','300q - q²','q(300 - q)','q(300-q)'], description:'R = 300q − q²', marks:1},
+    {type:'contains', expected:['units','number of units','quantity','price'], description:'q = units sold, (300−q) = price expression', marks:1}
+  ],
+  easyTemplate: '<div class="memo-line"><strong>7.1</strong> $R = p \\times q = (@INPUT@ - q) \\times q$ </div><div class="memo-line">$= @INPUT@q - q^2$ </div><div class="memo-line"><strong>7.2</strong> $q =$ @INPUT@, $(300 - q) =$ @INPUT@ </div>',
+  hardTemplate: 'R(q) = @INPUT@',
+  memo: '<div class="memo-line"><strong>7.1</strong> $R = p \\times q = (300 - q) \\times q = 300q - q^2$ <span class="memo-mark">✓(2)</span></div><div class="memo-line"><strong>7.2</strong> $q$ = number of units sold, $(300 - q)$ = price per unit <span class="memo-mark">✓(1)</span></div>'
+},
+
+// ===== NEW: From 2022 Q5.4 (Show revenue function from demand) =====
+{id:6009, topic:'Functions, Revenue & Break-even',
+  question:'The demand equation is $Q_d = 80 - 2P$.<br><br>Show that the revenue function is $R = 40q - 0.5q^2$. <em>[2 marks]</em>',
+  markingCriteria: [
+    {type:'contains', expected:['p = 40 - 0.5q','p = 40 - q÷2','p=40-0.5q'], description:'Rearranges: P = 40 − 0.5Q', marks:1},
+    {type:'contains', expected:['r = pq','r = q(40 - 0.5q)','40q - 0.5q^2','40q-0.5q²'], description:'R = Q × P = 40Q − 0.5Q²', marks:1}
+  ],
+  easyTemplate: '<div class="memo-line">Rearrange demand: $Q = 80 - 2P \\Rightarrow P = @INPUT@ - @INPUT@Q$ </div><div class="memo-line">$R = P \\times Q = (@INPUT@ - @INPUT@Q) \\times Q = @INPUT@Q - @INPUT@Q^2$ ✓ </div>',
+  hardTemplate: 'R = @INPUT@',
+  memo: '<div class="memo-line">From $Q = 80 - 2P$: $P = 40 - 0.5Q$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$R = PQ = (40 - 0.5Q)Q = 40Q - 0.5Q^2$ <span class="memo-mark">✓(1)</span></div>'
+},
+
+// ===== NEW: Break-even from profit function =====
+{id:6010, topic:'Functions, Revenue & Break-even',
+  question:'A company\'s profit function is $P(x) = 270x - 7000$. Determine the break-even quantity and interpret the result. <em>[3 marks]</em>',
+  markingCriteria: [
+    {type:'contains', expected:['p(x) = 0','270x - 7000 = 0','270x = 7000'], description:'Sets P(x) = 0 for break-even', marks:1},
+    {type:'value', expected:25.93, tolerance:0.1, description:'x = 7000 ÷ 270 ≈ 25.93', marks:1},
+    {type:'contains', expected:['26','must sell at least','minimum'], description:'Must sell at least 26 units to make a profit', marks:1}
+  ],
+  easyTemplate: '<div class="memo-line">$P(x) = 0$: $270x - 7000 = 0$ </div><div class="memo-line">$x = \\frac{@INPUT@}{@INPUT@} = @INPUT@$ </div><div class="memo-line">Must sell at least @INPUT@ units to break even </div>',
+  hardTemplate: 'Break-even: x = @INPUT@',
+  memo: '<div class="memo-line">$270x - 7000 = 0$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$x = \\frac{7000}{270} = 25.93$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Must sell at least 26 units to be profitable <span class="memo-mark">✓(1)</span></div>'
 }
 
   ];
