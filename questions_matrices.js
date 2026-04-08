@@ -41,7 +41,7 @@
     {type:'contains', expected:['y=3','y = 3'], description:'Finds y = 3', marks:1}
   ],
   easyTemplate: '<div class="memo-line">Add equations: $(x + y) + (2x - y) = 7 + 5$ </div><div class="memo-line">$3x = @INPUT@$ </div><div class="memo-line">$x = 4$ </div><div class="memo-line">$y = 7 - 4 = 3$ </div><div class="memo-line">Check: $4 + 3 = 7$ ✓, $2(4) - 3 = \@INPUT@$ ✓</div>',
-  hardTemplate: '(x, y, z) = (@INPUT@, @INPUT@, @INPUT@)',
+  hardTemplate: '(x, y) = (@INPUT@, @INPUT@)',
   memo: '<div class="memo-line">Add equations: $(x + y) + (2x - y) = 7 + 5$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$3x = 12$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$x = 4$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$y = 7 - 4 = 3$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Check: $4 + 3 = 7$ ✓, $2(4) - 3 = 5$ ✓</div>'
 },
 
@@ -54,7 +54,7 @@
     {type:'contains', expected:['x=3','x = 3'], description:'Finds x = 3', marks:1}
   ],
   easyTemplate: '<div class="memo-line">From eq2: $x = @INPUT@ - 3y$ </div><div class="memo-line">Sub into eq1: $4(@INPUT@ - 3y) + y = @INPUT@$</div><div class="memo-line">$@INPUT@ - @INPUT@y + y = @INPUT@ \\Rightarrow -@INPUT@y = -@INPUT@$ </div><div class="memo-line">$y = 5$ </div><div class="memo-line">$x = @INPUT@ - @INPUT@ = \@INPUT@$ </div>',
-  hardTemplate: '(x, y, z) = (@INPUT@, @INPUT@, @INPUT@)',
+  hardTemplate: '(x, y) = (@INPUT@, @INPUT@)',
   memo: '<div class="memo-line">From eq2: $x = 18 - 3y$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">Sub into eq1: $4(18 - 3y) + y = 17$</div><div class="memo-line">$72 - 12y + y = 17 \\Rightarrow -11y = -55$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$y = 5$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$x = 18 - 15 = 3$ <span class="memo-mark">✓(1)</span></div>'
 },
 
@@ -67,7 +67,7 @@
     {type:'value', expected:13, tolerance:0.01, description:'AB(2,2) = 1×1 + 4×3 = 13', marks:1}
   ],
   easyTemplate: '<div class="memo-line">$AB = \\begin{pmatrix} 2(5)+3(2) & 2(1)+3(3) \\\\ 1(5)+4(2) & 1(1)+4(3) \\end{pmatrix}$</div><div class="memo-line">$= \\begin{pmatrix} \@INPUT@& @INPUT@ \\\\ @INPUT@ & @INPUT@ \\end{pmatrix}$ </div>',
-  hardTemplate: '(x, y, z) = (@INPUT@, @INPUT@, @INPUT@)',
+  hardTemplate: '$AB = \\begin{pmatrix} @INPUT@ & @INPUT@ \\\\ @INPUT@ & @INPUT@ \\end{pmatrix}$',
   memo: '<div class="memo-line">$AB = \\begin{pmatrix} 2(5)+3(2) & 2(1)+3(3) \\\\ 1(5)+4(2) & 1(1)+4(3) \\end{pmatrix}$</div><div class="memo-line">$= \\begin{pmatrix} 16 & 11 \\\\ 13 & 13 \\end{pmatrix}$ <span class="memo-mark">✓(4)</span></div>'
 },
 
@@ -79,7 +79,7 @@
     {type:'value', expected:10, tolerance:0.01, description:'det(A) = 24 - 14 = 10', marks:1}
   ],
   easyTemplate: '<div class="memo-line">$\\det(A) = (4 \\times 6) - (7 \\times 2)$</div><div class="memo-line">$= @INPUT@ - @INPUT@ = \@INPUT@$ </div>',
-  hardTemplate: '(x, y, z) = (@INPUT@, @INPUT@, @INPUT@)',
+  hardTemplate: 'det(A) = @INPUT@',
   memo: '<div class="memo-line">$\\det(A) = (4 \\times 6) - (7 \\times 2)$</div><div class="memo-line">$= 24 - 14 = 10$ <span class="memo-mark">✓(1)</span></div>'
 },
 

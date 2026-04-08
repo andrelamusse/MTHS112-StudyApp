@@ -26,7 +26,7 @@
     {type:'value', expected:15120, tolerance:1, description:'Annual interest: 1260 × 12 = R15 120', marks:1},
     {type:'value', expected:30960, tolerance:1, description:'Annual pension: 2580 × 12 = R30 960', marks:1},
     {type:'contains', expected:['15120','15 120'], description:'Interest < R23 800 ∴ deductible', marks:1},
-    {type:'anyValue', expected:[344720, 360920, 375040], tolerance:1, description:'Taxable income (depends on whether interest is part of salary)', marks:1},
+    {type:'anyValue', expected:[344720, 359840, 360920, 375040], tolerance:1, description:'Taxable income (depends on whether interest is part of salary)', marks:1},
     {type:'value', expected:73726, tolerance:1, description:'Uses base tax: R73 726', marks:1},
     {type:'contains', expected:['0.31','31%','× 0.31'], description:'Applies 31% rate', marks:1},
     {type:'value', expected:16425, tolerance:1, description:'Subtracts primary rebate: R16 425', marks:1}

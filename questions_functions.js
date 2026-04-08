@@ -52,7 +52,7 @@
   memo: '<div class="memo-line">Set $Q_D\' = Q_S$: $-3.75P + 60 = 2P + 30$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$-5.75P = -30 \\Rightarrow P = 5.22$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">$Q = 2(5.22) + 30 = 40.43$ <span class="memo-mark">✓(1)</span></div>'
 },
 
-{id:6006, topic:'Functions & Market Equilibrium',
+{id:6006, topic:'Functions, Revenue & Break-even',
   question:'The demand and supply functions of a product are given by:<br>$Q_D = 400 - 15P$<br>$Q_S = -50 + 10P$<br><br>6.3 Determine the market equilibrium (P and Q). <em>[2 marks]</em><br>6.4 The government imposes a unit tax of R5 on each good. Determine the new supply function $Q_S^{\\prime}$. <em>[2 marks]</em><br>6.5 Determine the new market equilibrium (P and Q). <em>[3 marks]</em>',
   markingCriteria: [
     {type:'contains', expected:['p=18', 'p = 18'], description:'Original Equilibrium Price = 18', marks:1},

@@ -359,7 +359,7 @@
     }
 
     const totalMarks = q.markingCriteria.reduce((sum, c) => sum + c.marks, 0);
-    let feedbackHTML = `<div class="marks-breakdown">`;
+    let feedbackHTML = `<div class="marking-breakdown"><h4>Marks Breakdown</h4>`;
     let earned = 0;
     let finalCriterionIdx = q.markingCriteria.length - 1;
     let finalCriterionFound = false;
@@ -379,9 +379,9 @@
       if (found) {
         earned += criterion.marks;
         if (idx === finalCriterionIdx) finalCriterionFound = true;
-        feedbackHTML += `<div class="mark-item correct">${criterion.description} <span class="mark-points">✓ ${criterion.marks}</span></div>`;
+        feedbackHTML += `<div class="mark-item earned">${criterion.description} <span class="mark-status">✓ ${criterion.marks}</span></div>`;
       } else {
-        feedbackHTML += `<div class="mark-item incorrect">Missed: ${criterion.description} <span class="mark-points">✗ 0 / ${criterion.marks}</span></div>`;
+        feedbackHTML += `<div class="mark-item missed">Missed: ${criterion.description} <span class="mark-status">✗ 0/${criterion.marks}</span></div>`;
       }
     });
     feedbackHTML += `</div>`;
@@ -400,7 +400,10 @@
         }
         state.results.push({ question: q, earned, total: totalMarks, breakdown: [] });
 
-        feedback.innerHTML = feedbackHTML + `<div class="memo-section"><h4>Memo</h4>${q.memo}</div>`;
+        const fbClass = earned === totalMarks ? 'full-marks' : earned > 0 ? 'partial-marks' : 'zero-marks';
+        const scoreHeader = `<div class="feedback-header"><span class="feedback-title">${earned === totalMarks ? '🎉 Perfect!' : earned > 0 ? '🟡 Partial Marks' : '❌ No Marks'}</span><span class="marks-display">${earned} / ${totalMarks}</span></div>`;
+        feedback.className = 'feedback ' + fbClass;
+        feedback.innerHTML = scoreHeader + feedbackHTML + `<div class="memo-section"><h4>Memo</h4>${q.memo}</div>`;
         feedback.style.display = 'block';
         btnNext.innerHTML = 'Next Question →';
         btnNext.className = 'btn-next';
