@@ -289,7 +289,25 @@
 
       area.innerHTML = '<div class="easy-template-container" style="font-size:1.1rem; padding: 15px;">' + safeTemplate + '</div>';
       renderMathInElement(area, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
-      area.innerHTML = area.innerHTML.replace(/INPUTXYZ/g, '<input class="easy-box" style="width:80px; font-size:inherit; border:none; border-bottom:1px solid var(--accent); background:var(--bg); color:var(--text); text-align:center; outline:none; padding:0 2px;">');
+
+      // DOM-based replacement: walk text nodes to insert inputs (fixes KaTeX matrix bottom-row issue)
+      const walker = document.createTreeWalker(area, NodeFilter.SHOW_TEXT, null, false);
+      const textNodes = [];
+      while (walker.nextNode()) { if (walker.currentNode.textContent.includes('INPUTXYZ')) textNodes.push(walker.currentNode); }
+      textNodes.forEach(tn => {
+        const parts = tn.textContent.split('INPUTXYZ');
+        const frag = document.createDocumentFragment();
+        parts.forEach((part, i) => {
+          if (part) frag.appendChild(document.createTextNode(part));
+          if (i < parts.length - 1) {
+            const inp = document.createElement('input');
+            inp.className = 'easy-box';
+            inp.style.cssText = 'width:80px; font-size:inherit; border:none; border-bottom:1px solid var(--accent); background:var(--bg); color:var(--text); text-align:center; outline:none; padding:0 2px;';
+            frag.appendChild(inp);
+          }
+        });
+        tn.parentNode.replaceChild(frag, tn);
+      });
       
       const boxes = area.querySelectorAll('.easy-box');
       if (boxes.length > 0) state.activeInput = boxes[0];
@@ -318,7 +336,25 @@
 
     area.innerHTML = '<div class="hard-template-container" style="font-size:1.1rem; padding: 15px;">' + safeHardTempl + '</div>';
     renderMathInElement(area, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
-    area.innerHTML = area.innerHTML.replace(/INPUTXYZ/g, '<input class="workspace-input hard-box" style="width:180px; font-size:inherit; border:none; border-bottom:1px dashed var(--accent); background:transparent; color:var(--text); text-align:center; outline:none; padding:0 2px;">');
+
+    // DOM-based replacement for hard mode too
+    const hWalker = document.createTreeWalker(area, NodeFilter.SHOW_TEXT, null, false);
+    const hTextNodes = [];
+    while (hWalker.nextNode()) { if (hWalker.currentNode.textContent.includes('INPUTXYZ')) hTextNodes.push(hWalker.currentNode); }
+    hTextNodes.forEach(tn => {
+      const parts = tn.textContent.split('INPUTXYZ');
+      const frag = document.createDocumentFragment();
+      parts.forEach((part, i) => {
+        if (part) frag.appendChild(document.createTextNode(part));
+        if (i < parts.length - 1) {
+          const inp = document.createElement('input');
+          inp.className = 'workspace-input hard-box';
+          inp.style.cssText = 'width:180px; font-size:inherit; border:none; border-bottom:1px dashed var(--accent); background:transparent; color:var(--text); text-align:center; outline:none; padding:0 2px;';
+          frag.appendChild(inp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
 
     const boxes = area.querySelectorAll('.hard-box');
     if (boxes.length > 0) state.activeInput = boxes[0];
