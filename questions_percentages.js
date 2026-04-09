@@ -1,5 +1,5 @@
 // ========== MTHS 112 — PERCENTAGES & VAT (25 Questions) ==========
-window.QUESTIONS = [
+(function(){const Q=[
 {id:1001, topic:'Percentages & VAT',
   question:'In 2018 VAT changed from 14% to 15%. Determine the percentage change in VAT to two decimal places.',
   markingCriteria:[{type:'contains',expected:['15 - 14','15-14','1'],description:'Change = 1',marks:1},{type:'contains',expected:['÷ 14','÷14'],description:'Divides by original (14)',marks:1},{type:'anyValue',expected:[7.14,0.0714],tolerance:0.01,description:'Answer: 7.14%',marks:1}],
@@ -175,4 +175,4 @@ window.QUESTIONS = [
   hardTemplate:'Old margin: @INPUT@%, New margin: @INPUT@%',
   memo:'<div class="memo-line">Old: $\\frac{650000}{1850000} \\times 100 = 35.14\\%$ <span class="memo-mark">✓(1)</span></div><div class="memo-line">New: $\\frac{730000}{2146000} \\times 100 = 34.01\\%$ — margin decreased <span class="memo-mark">✓(1)</span></div>'
 },
-];
+];if(!window.QUESTIONS)window.QUESTIONS=[];window.QUESTIONS.push(...Q);})();

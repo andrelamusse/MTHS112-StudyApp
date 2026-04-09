@@ -3,14 +3,19 @@
   'use strict';
 
   const TOPICS_MAIN = [
-    'Matrices & Systems of Equations',
-    'Functions, Revenue & Break-even',
-    'Linear Programming'
+    'Unit 1: Matrix Reduction',
+    'Unit 2: Matrix Algebra',
+    'Unit 3: Linear Programming',
+    'Unit 4: Application of Functions',
+    'Unit 5: Linear Functions',
+    'Unit 6: Quadratic Functions'
   ];
   const TOPICS_OTHER = [
     'Percentages & VAT',
-    'Income Tax Calculations',
+    'Matrices & Systems of Equations',
+    'Functions, Revenue & Break-even',
     'Financial Mathematics',
+    'Income Tax Calculations',
     'Calculus (Differentiation & Integration)'
   ];
   const TOPICS = [...TOPICS_MAIN, ...TOPICS_OTHER];
@@ -117,7 +122,7 @@
 
     const mainHeader = document.createElement('h3');
     mainHeader.className = 'topic-group-header';
-    mainHeader.textContent = 'Main Categories';
+    mainHeader.textContent = '📝 Semester Test Units (1–6)';
     topicGrid.appendChild(mainHeader);
 
     TOPICS_MAIN.forEach(topic => {
@@ -130,7 +135,7 @@
 
     const otherHeader = document.createElement('h3');
     otherHeader.className = 'topic-group-header';
-    otherHeader.textContent = 'Other Units';
+    otherHeader.textContent = '📚 Additional Practice Banks';
     topicGrid.appendChild(otherHeader);
 
     TOPICS_OTHER.forEach(topic => {
