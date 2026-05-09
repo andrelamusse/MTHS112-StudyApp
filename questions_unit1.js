@@ -1,9 +1,9 @@
-// ========== MTHS 112 — UNIT 1: Matrix Reduction (Gaussian Elimination) ==========
+// ========== MTHS 112 — Week 2: Matrix Reduction (Gaussian Elimination) ==========
 // Sources: Newpdf1 (Week 2 classwork), MTHS112 Exam 1st opp Q2, MTHS112 Exam 2nd opp Q2
 (function(){const Q=[
 
 // ——— Newpdf1 Classwork Q1: Factory scheduling (2 variables) ———
-{id:1101,topic:'Unit 1: Matrix Reduction',
+{id:1101,topic:'Week 2: Matrix Reduction',
 question:'The manager of a factory plans a schedule for the manufacturing of Model A and Model B of an electronic item. Model A uses 2 resistors and 5 transistors, and Model B uses 1 resistor and 3 transistors. If the factory receives 50 resistors and 130 transistors on a daily basis from the suppliers, how many of each model should be made each day so that all the parts are used?<br>(1.1) What are the unknowns in this situation? [1]<br>(1.2) Compile appropriate equations and solve them simultaneously using the method of substitution. [4]<br>(1.3) Repeat the solution using the method of elimination. [3]<br>(1.4) Repeat the solution using the method of Gaussian elimination (matrix reduction). [4]',
 markingCriteria:[
   {type:'contains',expected:['Model A','Model B','x','y','number of each model'],description:'Unknowns: number of Model A and Model B',marks:1},
@@ -18,7 +18,7 @@ memo:'<div class="memo-line"><strong>(1.1)</strong> Unknowns: number of Model A 
 },
 
 // ——— Newpdf1 Classwork Q2a: 2-variable system ———
-{id:1102,topic:'Unit 1: Matrix Reduction',
+{id:1102,topic:'Week 2: Matrix Reduction',
 question:'Solve the system of equations using Gaussian elimination (matrix reduction):<br>$2x + 3y = 5$<br>$-2y - 3y = 4$',
 markingCriteria:[
   {type:'value',expected:29,tolerance:0.5,description:'x = 29 (or verify correct solution)',marks:3},
@@ -30,7 +30,7 @@ memo:'<div class="memo-line">Augmented: $\\begin{bmatrix} 2 & 3 & | & 5 \\\\ -2 
 },
 
 // ——— Newpdf1 Classwork Q2b: 3-variable system ———
-{id:1103,topic:'Unit 1: Matrix Reduction',
+{id:1103,topic:'Week 2: Matrix Reduction',
 question:'Solve the system of equations using Gaussian elimination:<br>$x - 2y + 3z = 1$<br>$x + 2y - z = 13$<br>$3x + 2y - 5z = 3$',
 markingCriteria:[
   {type:'value',expected:4,tolerance:0.01,description:'x = 4',marks:3},
@@ -43,7 +43,7 @@ memo:'<div class="memo-line">Augmented matrix → Row reduce <span class="memo-m
 },
 
 // ——— Newpdf1 Classwork Q2c: 3-variable system ———
-{id:1104,topic:'Unit 1: Matrix Reduction',
+{id:1104,topic:'Week 2: Matrix Reduction',
 question:'Solve the system of equations using Gaussian elimination:<br>$x + 2y - 2z = 1$<br>$2x + 2y - z = 6$<br>$3x + 4y - 3z = 5$',
 markingCriteria:[
   {type:'value',expected:5,tolerance:0.01,description:'x = 5',marks:3},
@@ -56,7 +56,7 @@ memo:'<div class="memo-line">$R_2 - 2R_1$: $[0, -2, 3, | , 4]$ <span class="memo
 },
 
 // ——— Newpdf1 Classwork Q2e: 3-variable system ———
-{id:1105,topic:'Unit 1: Matrix Reduction',
+{id:1105,topic:'Week 2: Matrix Reduction',
 question:'Solve using Gaussian elimination:<br>$x + 2y + z = 4$<br>$-x + y + z = 0$<br>$2x + z = 1$',
 markingCriteria:[
   {type:'value',expected:1,tolerance:0.01,description:'x = 1',marks:3},
@@ -69,7 +69,7 @@ memo:'<div class="memo-line">$R_2 + R_1$: $[0, 3, 2, | , 4]$, $R_3 - 2R_1$: $[0,
 },
 
 // ——— Newpdf1 Classwork Q3: Investment firm stock portfolios ———
-{id:1106,topic:'Unit 1: Matrix Reduction',
+{id:1106,topic:'Week 2: Matrix Reduction',
 question:'An investment firm offers three stock portfolios (A, B and C) with risk profile as indicated in the table. A client wants 35 units of high, 22 units of moderate and 18 units of low-risk stocks. Use reduction of a 3×3 matrix to determine how many of each portfolio must be suggested.<br><br>Risk | A | B | C<br>High: 6, 1, 3<br>Moderate: 3, 2, 3<br>Low: 1, 5, 3',
 markingCriteria:[
   {type:'value',expected:4,tolerance:0.01,description:'Portfolio A = 4',marks:3},
@@ -82,7 +82,7 @@ memo:'<div class="memo-line">System: $6a + b + 3c = 35$, $3a + 2b + 3c = 22$, $a
 },
 
 // ——— Newpdf1 Classwork Q4: Municipal and state taxes ———
-{id:1107,topic:'Unit 1: Matrix Reduction',
+{id:1107,topic:'Week 2: Matrix Reduction',
 question:'A company has taxable income of R312 000. The municipal tax is 25% of the portion that is left after the state tax has been paid. The state tax is 10% of the portion that is left after the municipal tax has been paid. Find the municipal and state taxes.',
 markingCriteria:[
   {type:'value',expected:72000,tolerance:100,description:'Municipal tax = R72 000',marks:3},
@@ -94,7 +94,7 @@ memo:'<div class="memo-line">$M = 0.25(312000 - S)$, $S = 0.10(312000 - M)$ <spa
 },
 
 // ——— Newpdf1 Classwork Q6: Investment R120 000 in 3 funds ———
-{id:1108,topic:'Unit 1: Matrix Reduction',
+{id:1108,topic:'Week 2: Matrix Reduction',
 question:'A person invests R120 000 in three types of money market accounts: Account A pays 6% p.a. on a low-risk investment, Account B pays 6.5% p.a. on a medium-risk investment and Account C pays 15% p.a. on a high-risk investment. Suppose the client wants the risk distribution between the low (A) and high (C) risk accounts to be 2:1 and the total yield for the three accounts to be R8 700 for the year. Compile three independent linear equations and convert to matrix form (3x3) to determine the amounts which must be invested in each account to satisfy the requirements.',
 markingCriteria:[
   {type:'value',expected:24000,tolerance:100,description:'Account A = R24 000',marks:3},
@@ -107,7 +107,7 @@ memo:'<div class="memo-line">$A + B + C = 120000$, $A - 2C = 0$, $0.06A + 0.065B
 },
 
 // ——— Newpdf1 Classwork Q7: Lawyer salary formula ———
-{id:1109,topic:'Unit 1: Matrix Reduction',
+{id:1109,topic:'Week 2: Matrix Reduction',
 question:'A law firm seeks to recruit top-quality experienced lawyers. The total package offered is the sum of three separate components: a basic salary which is 1.2 times the candidate\'s current salary together with an additional R54 000 for each year worked as a qualified lawyer and an extra R18 000 for every year that they are over the age of 21.<br>(7.1) Compile a formula that could be used to calculate the total salary S, offered to someone who is A years of age, has E years of relevant experience and currently earns N rand. [3]<br>(7.2) Use the formula and determine the salary offered to someone who is 30 years old with five years\' experience and who currently earns R2 700 000. [2]',
 markingCriteria:[
   {type:'contains',expected:['S = 1.2N + 54000E + 18000(A-21)','S=1.2N+54000E+18000(A-21)'],description:'Formula: S = 1.2N + 54000E + 18000(A-21)',marks:3},
@@ -119,7 +119,7 @@ memo:'<div class="memo-line"><strong>(7.1)</strong> $S = 1.2N + 54000E + 18000(A
 },
 
 // ——— MTHS112 Exam: Investment R800 000 in 3 funds (from Newpdf27) ———
-{id:1110,topic:'Unit 1: Matrix Reduction',
+{id:1110,topic:'Week 2: Matrix Reduction',
 question:'Consider a client who wants to invest R800 000 in three types of funds:<br>A: savings account paying 5% interest per year (low risk investment);<br>B: money-market account yielding 7.5% per year (medium risk investment);<br>C: stock market portfolio yielding 10% per year (high risk investment).<br>Suppose the client wants the risk distribution between the low (A) and high risk (C) accounts to be 3:1 and the total interest for the three accounts to be R50 000 for the year. Use simple modelling to determine the amounts which must be invested in each account to satisfy the requirements. [6]',
 markingCriteria:[
   {type:'value',expected:600000,tolerance:100,description:'A = R600 000',marks:2},
@@ -132,7 +132,7 @@ memo:'<div class="memo-line">Let C = x, A = 3x, B = 800000 - 4x <span class="mem
 },
 
 // ——— MTHS112 Exam: Rugby concession stand (from Newpdf27) ———
-{id:1111,topic:'Unit 1: Matrix Reduction',
+{id:1111,topic:'Week 2: Matrix Reduction',
 question:'Amanda, Mimi and Itumeleng made several trips to the concession stand at the local rugby game. Amanda bought 3 small and 2 large drinks and 1 hotdog for R109. Mimi bought 1 small drink and 2 large drinks with 1 hotdog for R83. Itumeleng bought 1 large drink and 2 hotdogs for R80. Use matrix reduction (Gaussian elimination) to determine the price of hotdogs and drinks at the concession stand. [7]',
 markingCriteria:[
   {type:'value',expected:13,tolerance:0.01,description:'Small drink = R13',marks:2},
@@ -145,7 +145,7 @@ memo:'<div class="memo-line">$3S + 2L + H = 109$, $S + 2L + H = 83$, $L + 2H = 8
 },
 
 // ——— MTHS112 Exam 2nd opp: Economist 3 products (from Newpdf30) ———
-{id:1112,topic:'Unit 1: Matrix Reduction',
+{id:1112,topic:'Week 2: Matrix Reduction',
 question:'An economist believes that the profit $p_1$, $p_2$ and $p_3$ (in rand) on three products are linked as follows:<br>$p_1 - 2p_2 + 3p_3 = -1$<br>$3p_1 + p_2 + p_3 = 2$<br>$2p_1 + p_2 - 3p_3 = -5$<br>Assuming that this data is correct, use matrix reduction (Gaussian elimination) to determine the values of $p_1$, $p_2$ and $p_3$. [7]',
 markingCriteria:[
   {type:'value',expected:-1,tolerance:0.01,description:'p₁ = -1',marks:2},
@@ -158,7 +158,7 @@ memo:'<div class="memo-line">Augmented → $R_2 - 3R_1$, $R_3 - 2R_1$ <span clas
 },
 
 // ——— Newpdf1 Example: Air freight company (3 aircraft types) ———
-{id:1113,topic:'Unit 1: Matrix Reduction',
+{id:1113,topic:'Week 2: Matrix Reduction',
 question:'An air freight company has three types of aircraft: passenger (G), transport (T) and commuter (C), which must carry three types of cargo: mail (P), medical (M) and freight (V). The load in tons per aircraft is:<br>P: G=2, T=4, C=1<br>M: G=1, T=2, C=1<br>V: G=3, T=2, C=0<br>On any given day, the company must move 23 tons of mail, 16 tons of medical supplies and 17 tons of general freight. Use Gauss elimination to determine how many aircraft of each type should be used. [7]',
 markingCriteria:[
   {type:'value',expected:5,tolerance:0.01,description:'Passenger G = 5',marks:2},

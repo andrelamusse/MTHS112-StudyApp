@@ -2,7 +2,7 @@
 (function(){const Q=[
 
 // Q1: 2×2 elimination — add equations
-{id:2001,topic:'Matrices & Systems of Equations',
+{id:2001,topic:'Week 2: Matrix Reduction',
 question:'Solve the system of equations using elimination:<br>$x + y = 7$<br>$2x - y = 5$',
 markingCriteria:[
   {type:'contains',expected:['3x = 12','3x=12'],description:'Adds equations: 3x = 12',marks:1},
@@ -15,7 +15,7 @@ memo:'<div class="memo-line"><strong>Add eq1 + eq2:</strong></div><div class="me
 },
 
 // Q2: 2×2 substitution
-{id:2002,topic:'Matrices & Systems of Equations',
+{id:2002,topic:'Week 2: Matrix Reduction',
 question:'Solve using substitution:<br>$3x + 2y = 16$<br>$x - y = 2$',
 markingCriteria:[
   {type:'contains',expected:['x = 2 + y','x=2+y','x = y + 2'],description:'Isolates x = 2 + y',marks:1},
@@ -28,7 +28,7 @@ memo:'<div class="memo-line">$x = 2 + y$ <span class="memo-mark">✓(1)</span></
 },
 
 // Q3: 2×2 elimination — multiply first
-{id:2003,topic:'Matrices & Systems of Equations',
+{id:2003,topic:'Week 2: Matrix Reduction',
 question:'Solve by elimination:<br>$5x + 3y = 31$<br>$2x + y = 12$',
 markingCriteria:[
   {type:'contains',expected:['multiply','×3','× 3','3y'],description:'Multiplies eq2 by 3',marks:1},
@@ -41,7 +41,7 @@ memo:'<div class="memo-line">$eq2 \\times 3: 6x + 3y = 36$ <span class="memo-mar
 },
 
 // Q4: 2×2 word problem — shop revenue
-{id:2004,topic:'Matrices & Systems of Equations',
+{id:2004,topic:'Week 2: Matrix Reduction',
 question:'A shop sells chairs at R150 each and tables at R250 each. In one day, 20 items were sold for a total of R4 000. Set up and solve a system of equations to find how many chairs (x) and tables (y) were sold.',
 markingCriteria:[
   {type:'contains',expected:['x + y = 20','x+y=20'],description:'Units: x + y = 20',marks:1},
@@ -55,7 +55,7 @@ memo:'<div class="memo-line">$x + y = 20$, $150x + 250y = 4000$ <span class="mem
 },
 
 // Q5: 3×3 Gaussian — clean (from 2024 exam style)
-{id:2005,topic:'Matrices & Systems of Equations',
+{id:2005,topic:'Week 2: Matrix Reduction',
 question:'Solve using Gaussian elimination:<br>$x + 3y + 3z = 32$<br>$x + 4y + 3z = 37$<br>$x + 3y + 4z = 35$ <em>[7 marks]</em>',
 markingCriteria:[
   {type:'contains',expected:['r2 - r1','r₂ - r₁','r2-r1'],description:'Row operation R₂ − R₁',marks:1},
@@ -70,7 +70,7 @@ memo:'<div class="memo-line">$R_2-R_1$: $(0, 1, 0 | 5) \\Rightarrow y = 5$ <span
 },
 
 // Q6: Matrix multiplication — car dealer (from 2024 exam Q3)
-{id:2006,topic:'Matrices & Systems of Equations',
+{id:2006,topic:'Week 2: Matrix Reduction',
 question:'A car dealer buys midsize cars at 12% below list, luxury cars at 15% below list.<br>$A = \\begin{pmatrix} 360000 & 420000 \\\\ 500000 & 560000 \\end{pmatrix}$ (list prices)<br>$B = \\begin{pmatrix} 0.88 & 0 \\\\ 0 & 0.85 \\end{pmatrix}$ (discount factors)<br><br>3.1 Determine $BA$. <em>[4 marks]</em><br>3.2 What does each entry represent? <em>[1 mark]</em>',
 markingCriteria:[
   {type:'value',expected:316800,tolerance:0.5,description:'BA(1,1) = 0.88×360000 = 316800',marks:1},
@@ -85,7 +85,7 @@ memo:'<div class="memo-line">$BA = \\begin{pmatrix} 316800 & 369600 \\\\ 425000 
 },
 
 // Q7: 3×3 Gaussian — investment portfolios (from 2024 exam Q2)
-{id:2007,topic:'Matrices & Systems of Equations',
+{id:2007,topic:'Week 2: Matrix Reduction',
 question:'An investment firm offers portfolios A, B, C with risk units:<br><table class="data-table"><thead><tr><th></th><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr><td>High</td><td>2</td><td>4</td><td>1</td></tr><tr><td>Moderate</td><td>4</td><td>3</td><td>7</td></tr><tr><td>Low</td><td>2</td><td>1</td><td>3</td></tr></tbody></table>A client wants 77 High, 114 Moderate, 48 Low risk units. Use Gaussian elimination. <em>[7 marks]</em>',
 markingCriteria:[
   {type:'contains',expected:['2a + 4b + c = 77','2a+4b+c=77'],description:'Sets up equation 1',marks:1},
@@ -99,7 +99,7 @@ memo:'<div class="memo-line">System: 2A+4B+C=77, 4A+3B+7C=114, 2A+B+3C=48 <span 
 },
 
 // Q8: Determinant 2×2
-{id:2008,topic:'Matrices & Systems of Equations',
+{id:2008,topic:'Week 3: Matrix Algebra',
 question:'Find $\\det(A)$ for $A = \\begin{pmatrix} 4 & 7 \\\\ 2 & 6 \\end{pmatrix}$.',
 markingCriteria:[
   {type:'value',expected:10,tolerance:0.01,description:'det = 24 − 14 = 10',marks:2}
@@ -110,7 +110,7 @@ memo:'<div class="memo-line">$\\det = (4)(6) - (7)(2) = 24 - 14 = 10$ <span clas
 },
 
 // Q9: Determinant 2×2 with negatives
-{id:2009,topic:'Matrices & Systems of Equations',
+{id:2009,topic:'Week 3: Matrix Algebra',
 question:'Find $\\det(A)$ for $A = \\begin{pmatrix} 5 & -3 \\\\ 2 & 4 \\end{pmatrix}$.',
 markingCriteria:[
   {type:'value',expected:26,tolerance:0.01,description:'det = 20 − (−6) = 26',marks:2}
@@ -121,7 +121,7 @@ memo:'<div class="memo-line">$\\det = 20 - (-6) = 20 + 6 = 26$ <span class="memo
 },
 
 // Q10: Matrix multiplication 2×2
-{id:2010,topic:'Matrices & Systems of Equations',
+{id:2010,topic:'Week 3: Matrix Algebra',
 question:'Compute $AB$ where $A = \\begin{pmatrix} 2 & 3 \\\\ 1 & 4 \\end{pmatrix}$ and $B = \\begin{pmatrix} 5 & 1 \\\\ 2 & 3 \\end{pmatrix}$. <em>[4 marks]</em>',
 markingCriteria:[
   {type:'value',expected:16,tolerance:0.01,description:'AB(1,1) = 10+6 = 16',marks:1},
@@ -135,7 +135,7 @@ memo:'<div class="memo-line">$AB = \\begin{pmatrix} 16 & 11 \\\\ 13 & 13 \\end{p
 },
 
 // Q11: Inverse 2×2
-{id:2011,topic:'Matrices & Systems of Equations',
+{id:2011,topic:'Week 3: Matrix Algebra',
 question:'Find the inverse of $A = \\begin{pmatrix} 2 & 1 \\\\ 5 & 3 \\end{pmatrix}$. <em>[5 marks]</em>',
 markingCriteria:[
   {type:'value',expected:1,tolerance:0.01,description:'det(A) = 6 − 5 = 1',marks:1},
@@ -150,7 +150,7 @@ memo:'<div class="memo-line">$\\det = 1$ <span class="memo-mark">✓(1)</span></
 },
 
 // Q12: 2×2 system — no clean solution
-{id:2012,topic:'Matrices & Systems of Equations',
+{id:2012,topic:'Week 3: Matrix Algebra',
 question:'Solve:<br>$2x + 5y = 21$<br>$3x + 2y = 12$ <em>[4 marks]</em>',
 markingCriteria:[
   {type:'contains',expected:['-11y','-11y =','11y'],description:'Eliminates x: −11y',marks:1},
@@ -164,7 +164,7 @@ memo:'<div class="memo-line">$eq1 \\times 3 - eq2 \\times 2: 11y = 39 \\Rightarr
 },
 
 // Q13: 3×3 Gaussian — different coefficients
-{id:2013,topic:'Matrices & Systems of Equations',
+{id:2013,topic:'Week 3: Matrix Algebra',
 question:'Solve using Gaussian elimination:<br>$x + 2y + z = 9$<br>$2x + y + z = 8$<br>$x + y + 2z = 11$ <em>[7 marks]</em>',
 markingCriteria:[
   {type:'value',expected:1,tolerance:0.01,description:'x = 1',marks:2},
@@ -177,7 +177,7 @@ memo:'<div class="memo-line">R₂−2R₁: (0,−3,−1|−10), R₃−R₁: (0,
 },
 
 // Q14: Matrix arithmetic — 2A − B
-{id:2014,topic:'Matrices & Systems of Equations',
+{id:2014,topic:'Week 3: Matrix Algebra',
 question:'Compute $2A - B$ where $A = \\begin{pmatrix} 3 & 1 \\\\ 2 & 5 \\end{pmatrix}$, $B = \\begin{pmatrix} 1 & 4 \\\\ 3 & 2 \\end{pmatrix}$. <em>[4 marks]</em>',
 markingCriteria:[
   {type:'value',expected:5,tolerance:0.01,description:'(1,1) = 6−1 = 5',marks:1},
@@ -191,7 +191,7 @@ memo:'<div class="memo-line">$2A = \\begin{pmatrix} 6 & 2 \\\\ 4 & 10 \\end{pmat
 },
 
 // Q15: Inverse 2×2 — different numbers
-{id:2015,topic:'Matrices & Systems of Equations',
+{id:2015,topic:'Week 3: Matrix Algebra',
 question:'Find the inverse of $A = \\begin{pmatrix} 4 & 7 \\\\ 2 & 6 \\end{pmatrix}$. <em>[5 marks]</em>',
 markingCriteria:[
   {type:'value',expected:10,tolerance:0.01,description:'det(A) = 24 − 14 = 10',marks:1},
@@ -206,7 +206,7 @@ memo:'<div class="memo-line">$\\det = 10$ <span class="memo-mark">✓(1)</span><
 },
 
 // Q16: 3×3 Gaussian — harder coefficients
-{id:2016,topic:'Matrices & Systems of Equations',
+{id:2016,topic:'Week 3: Matrix Algebra',
 question:'Solve using Gaussian elimination:<br>$2x + y - z = 3$<br>$x - y + 2z = 5$<br>$3x + 2y + z = 10$ <em>[7 marks]</em>',
 markingCriteria:[
   {type:'value',expected:2,tolerance:0.01,description:'x = 2',marks:2},
@@ -219,7 +219,7 @@ memo:'<div class="memo-line">Row ops → z=2, y=1, x=2 <span class="memo-mark">�
 },
 
 // Q17: Matrix-vector product
-{id:2017,topic:'Matrices & Systems of Equations',
+{id:2017,topic:'Week 3: Matrix Algebra',
 question:'Compute $Ax$ where $A = \\begin{pmatrix} 1 & 0 & 2 \\\\ 3 & 1 & 0 \\end{pmatrix}$ and $x = \\begin{pmatrix} 2 \\\\ 4 \\\\ 1 \\end{pmatrix}$. <em>[2 marks]</em>',
 markingCriteria:[
   {type:'value',expected:4,tolerance:0.01,description:'Row 1: 2+0+2 = 4',marks:1},
@@ -231,7 +231,7 @@ memo:'<div class="memo-line">$Ax = \\begin{pmatrix} 4 \\\\ 10 \\end{pmatrix}$ <s
 },
 
 // Q18: Transpose
-{id:2018,topic:'Matrices & Systems of Equations',
+{id:2018,topic:'Week 3: Matrix Algebra',
 question:'Find $A^T$ for $A = \\begin{pmatrix} 1 & 3 & 5 \\\\ 2 & 4 & 6 \\end{pmatrix}$. What are the dimensions of $A$ and $A^T$? <em>[3 marks]</em>',
 markingCriteria:[
   {type:'contains',expected:['2 × 3','2×3','2x3'],description:'A is 2×3',marks:1},
@@ -244,7 +244,7 @@ memo:'<div class="memo-line">A: 2×3, Aᵀ: 3×2 <span class="memo-mark">✓(2)<
 },
 
 // Q19: 2×2 system — word problem (mixture)
-{id:2019,topic:'Matrices & Systems of Equations',
+{id:2019,topic:'Week 3: Matrix Algebra',
 question:'A coffee shop blends two types of beans. Type A costs R80/kg, Type B costs R120/kg. They need 50 kg of blend at R92/kg. How many kg of each type? <em>[4 marks]</em>',
 markingCriteria:[
   {type:'contains',expected:['x + y = 50','x+y=50'],description:'Weight equation',marks:1},
@@ -258,7 +258,7 @@ memo:'<div class="memo-line">x+y=50, 80x+120y=4600 <span class="memo-mark">✓(2
 },
 
 // Q20: 3×3 Gaussian — nutrition problem
-{id:2020,topic:'Matrices & Systems of Equations',
+{id:2020,topic:'Week 3: Matrix Algebra',
 question:'A dietician mixes Foods A, B, C. Per unit:<br>Protein: A=2g, B=3g, C=1g (need 17g)<br>Fat: A=1g, B=2g, C=3g (need 16g)<br>Carbs: A=4g, B=1g, C=2g (need 19g)<br>Find units of each food. <em>[7 marks]</em>',
 markingCriteria:[
   {type:'value',expected:3,tolerance:0.01,description:'A = 3',marks:2},
@@ -271,7 +271,7 @@ memo:'<div class="memo-line">2A+3B+C=17, A+2B+3C=16, 4A+B+2C=19 <span class="mem
 },
 
 // Q21: Scalar mult + addition: 3A + 2B
-{id:2021,topic:'Matrices & Systems of Equations',
+{id:2021,topic:'Week 3: Matrix Algebra',
 question:'Compute $3A + 2B$ where $A = \\begin{pmatrix} 1 & 4 \\\\ 2 & 3 \\end{pmatrix}$, $B = \\begin{pmatrix} 5 & 1 \\\\ 3 & 2 \\end{pmatrix}$. <em>[4 marks]</em>',
 markingCriteria:[
   {type:'value',expected:13,tolerance:0.01,description:'(1,1) = 3+10 = 13',marks:1},
@@ -285,7 +285,7 @@ memo:'<div class="memo-line">$3A = \\begin{pmatrix} 3 & 12 \\\\ 6 & 9 \\end{pmat
 },
 
 // Q22: 2×2 system — Cramer's rule
-{id:2022,topic:'Matrices & Systems of Equations',
+{id:2022,topic:'Week 3: Matrix Algebra',
 question:'Use Cramer\'s rule to solve:<br>$3x + 4y = 25$<br>$x + 2y = 11$ <em>[6 marks]</em>',
 markingCriteria:[
   {type:'value',expected:2,tolerance:0.01,description:'D = 6−4 = 2',marks:1},
@@ -300,7 +300,7 @@ memo:'<div class="memo-line">D=2, Dx=6, Dy=8 <span class="memo-mark">✓(3)</spa
 },
 
 // Q23: Row-vector × Matrix
-{id:2023,topic:'Matrices & Systems of Equations',
+{id:2023,topic:'Week 3: Matrix Algebra',
 question:'Compute $vA$ where $v = \\begin{pmatrix} 1 & 2 & 3 \\end{pmatrix}$ and $A = \\begin{pmatrix} 4 \\\\ 5 \\\\ 6 \\end{pmatrix}$. <em>[2 marks]</em>',
 markingCriteria:[
   {type:'value',expected:32,tolerance:0.01,description:'vA = 4+10+18 = 32',marks:2}
@@ -311,7 +311,7 @@ memo:'<div class="memo-line">$vA = 4+10+18 = 32$ <span class="memo-mark">✓(2)<
 },
 
 // Q24: Singular matrix check
-{id:2024,topic:'Matrices & Systems of Equations',
+{id:2024,topic:'Week 3: Matrix Algebra',
 question:'Is the matrix $A = \\begin{pmatrix} 6 & 3 \\\\ 4 & 2 \\end{pmatrix}$ invertible? Explain. <em>[3 marks]</em>',
 markingCriteria:[
   {type:'value',expected:0,tolerance:0.01,description:'det = 12 − 12 = 0',marks:1},
@@ -323,7 +323,7 @@ memo:'<div class="memo-line">$\\det = 12-12 = 0$ <span class="memo-mark">✓(1)<
 },
 
 // Q25: 2×2 system word problem — investment
-{id:2025,topic:'Matrices & Systems of Equations',
+{id:2025,topic:'Week 3: Matrix Algebra',
 question:'R400 000 is split between two accounts. Account A earns 10%, Account B earns 8%. Total annual interest is R36 000. How much is in each account? <em>[4 marks]</em>',
 markingCriteria:[
   {type:'contains',expected:['x + y = 400000','x+y=400000'],description:'Total: x + y = 400000',marks:1},
@@ -337,7 +337,7 @@ memo:'<div class="memo-line">0.10x+0.08y=36000, 0.02x=4000, x=200000 <span class
 },
 
 // Q26: 3×3 Gaussian — production scheduling
-{id:2026,topic:'Matrices & Systems of Equations',
+{id:2026,topic:'Week 3: Matrix Algebra',
 question:'A factory makes 3 products using 3 machines. Hours per unit:<br>Machine 1: P₁=1h, P₂=2h, P₃=1h (available: 170h)<br>Machine 2: P₁=2h, P₂=1h, P₃=3h (available: 260h)<br>Machine 3: P₁=1h, P₂=1h, P₃=2h (available: 170h)<br>Find production quantities. <em>[7 marks]</em>',
 markingCriteria:[
   {type:'value',expected:30,tolerance:0.5,description:'P₁ = 30',marks:2},
@@ -350,7 +350,7 @@ memo:'<div class="memo-line">x+2y+z=170, 2x+y+3z=260, x+y+2z=170 <span class="me
 },
 
 // Q27: Matrix multiplication 2×2 — different numbers
-{id:2027,topic:'Matrices & Systems of Equations',
+{id:2027,topic:'Week 3: Matrix Algebra',
 question:'Compute $AB$ where $A = \\begin{pmatrix} 4 & -1 \\\\ 3 & 2 \\end{pmatrix}$, $B = \\begin{pmatrix} 2 & 5 \\\\ 1 & -3 \\end{pmatrix}$. <em>[4 marks]</em>',
 markingCriteria:[
   {type:'value',expected:7,tolerance:0.01,description:'(1,1) = 8−1 = 7',marks:1},
@@ -364,7 +364,7 @@ memo:'<div class="memo-line">$AB = \\begin{pmatrix} 7 & 23 \\\\ 8 & 9 \\end{pmat
 },
 
 // Q28: Show AB ≠ BA
-{id:2028,topic:'Matrices & Systems of Equations',
+{id:2028,topic:'Week 3: Matrix Algebra',
 question:'For $A = \\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$, $B = \\begin{pmatrix} 1 & 0 \\\\ 3 & 1 \\end{pmatrix}$, compute $AB$ and $BA$. Is $AB = BA$? <em>[5 marks]</em>',
 markingCriteria:[
   {type:'value',expected:7,tolerance:0.01,description:'AB(1,1) = 1+6 = 7',marks:1},
@@ -379,7 +379,7 @@ memo:'<div class="memo-line">$AB = \\begin{pmatrix} 7 & 2 \\\\ 3 & 1 \\end{pmatr
 },
 
 // Q29: Determinant and inverse — check if solvable
-{id:2029,topic:'Matrices & Systems of Equations',
+{id:2029,topic:'Week 3: Matrix Algebra',
 question:'Given $A = \\begin{pmatrix} 3 & 5 \\\\ 1 & 4 \\end{pmatrix}$, find $\\det(A)$ and $A^{-1}$. <em>[5 marks]</em>',
 markingCriteria:[
   {type:'value',expected:7,tolerance:0.01,description:'det = 12 − 5 = 7',marks:1},
@@ -394,7 +394,7 @@ memo:'<div class="memo-line">det = 7, $A^{-1} = \\frac{1}{7}\\begin{pmatrix} 4 &
 },
 
 // Q30: 3×3 system — bookstore word problem
-{id:2030,topic:'Matrices & Systems of Equations',
+{id:2030,topic:'Week 3: Matrix Algebra',
 question:'A bookstore sells textbooks (x), novels (y), and magazines (z).<br>Monday: 2x + 3y + 5z = R440<br>Tuesday: 4x + y + 3z = R400<br>Wednesday: x + 2y + 4z = R300<br>Find the price of each item. <em>[7 marks]</em>',
 markingCriteria:[
   {type:'value',expected:60,tolerance:0.5,description:'Textbook = R60',marks:2},

@@ -1,9 +1,9 @@
-// ========== MTHS 112 — UNIT 5: Linear Functions ==========
+// ========== MTHS 112 — Week 6: Linear Functions ==========
 // Sources: Newpdf6 (Week 6 classwork), MTHS112 Exam demand/supply questions
 (function(){const Q=[
 
 // ——— Q2: Market equilibrium ———
-{id:1501,topic:'Unit 5: Linear Functions',
+{id:1501,topic:'Week 6: Linear Functions',
 question:'A market researcher established that the demand function for a product is given by $Q + 10P = 120$ and the supply function by $Q - 5P = -10$.<br>(2.1) Determine the market equilibrium point for the given supply and demand functions. [4]<br>(2.2) Draw sketch graphs of the demand and supply functions on the given system of axes for the region $Q \\geq 0, P \\geq 0$. Indicate the market equilibrium with an A. [4]',
 markingCriteria:[
   {type:'value',expected:8.67,tolerance:0.1,description:'Equilibrium P ≈ 8.67',marks:2},
@@ -15,7 +15,7 @@ memo:'<div class="memo-line">$120-10P = 5P-10$ → $130 = 15P$ → $P = 130/15 \
 },
 
 // ——— Q3: Demand/supply from schedule ———
-{id:1502,topic:'Unit 5: Linear Functions',
+{id:1502,topic:'Week 6: Linear Functions',
 question:'Consider the supply and demand schedules:<br>Price: 10, 12, 14, 16, 18, 20<br>Demand: 10, 9, 8, 7, 6, 5<br>Supply: 3, 4, 5, 6, 7, 8<br>(3.2) Determine the demand and supply functions in the form $Q = aP + b$. [4]<br>(3.3) Determine the demand and supply equations in the form $P = aQ + b$. [2]<br>(3.4) Determine the coordinates of the market equilibrium. [3]',
 markingCriteria:[
   {type:'contains',expected:['-0.5','15','Q = -0.5P + 15','Q=-0.5P+15'],description:'Demand: Q = -0.5P + 15',marks:2},
@@ -29,7 +29,7 @@ memo:'<div class="memo-line">Demand: $m = (5-10)/(20-10) = -0.5$, $Q = -0.5P + 1
 },
 
 // ——— Q4: Income effect on demand ———
-{id:1503,topic:'Unit 5: Linear Functions',
+{id:1503,topic:'Week 6: Linear Functions',
 question:'The demand for a certain product is given by $Q_d = 350 - 5P + 0.025Y$, with $P$ the price per unit and $Y$ the average income of the consumer.<br>(4.1) Rewrite the demand function $Q$ in terms of $P$ if the average income of the consumer is fixed at R20 000. [2]<br>(4.3) Suppose there is a recession and the average income decreases to R16 000. Graph the new demand function and explain the change in the relationship between quantity demanded and price per unit. [3]',
 markingCriteria:[
   {type:'contains',expected:['Q = 850 - 5P','Q=850-5P'],description:'Q = 850 - 5P (at Y=20000)',marks:2},
@@ -42,7 +42,7 @@ memo:'<div class="memo-line">$Q = 350 - 5P + 0.025(20000) = 350 - 5P + 500 = 850
 },
 
 // ——— Q5: Market equilibrium with 25% demand increase ———
-{id:1504,topic:'Unit 5: Linear Functions',
+{id:1504,topic:'Week 6: Linear Functions',
 question:'A market researcher established that the demand function for a product is given by $Q_d = 120 - 10P$ and the supply function by $Q_s = 8P$.<br>(5.1) Determine coordinates of market equilibrium. [3]<br>(5.3) Assume the demand increases by 25% owing to an advertising campaign. Determine the coordinates of the new market equilibrium. Give an explanation for the change. [4]',
 markingCriteria:[
   {type:'value',expected:6.67,tolerance:0.1,description:'Original P ≈ 6.67',marks:1},
@@ -56,7 +56,7 @@ memo:'<div class="memo-line">$120-10P = 8P$ → $18P = 120$ → $P ≈ 6.67$, $Q
 },
 
 // ——— Q6: Unit tax effect on equilibrium ———
-{id:1505,topic:'Unit 5: Linear Functions',
+{id:1505,topic:'Week 6: Linear Functions',
 question:'A market researcher found that the demand function for a product is given by $Q_d = 100 - 12P$ and the supply function by $Q_s = -12 + 8P$.<br>(6.1) Determine the values of the price and quantity at the market equilibrium. [3]<br>(6.3) Determine the effect of a unit tax of R5 on the supply function and sketch the new supply function on the set of axes as a dashed line. [2]<br>(6.4) Determine the values of the price and quantity at the new market equilibrium and explain the difference. [3]',
 markingCriteria:[
   {type:'value',expected:5.6,tolerance:0.1,description:'Original P = 5.6',marks:1},
@@ -71,7 +71,7 @@ memo:'<div class="memo-line">$100-12P = -12+8P$ → $112 = 20P$ → $P = 5.6$, $
 },
 
 // ——— Q7: Revenue, cost, profit, break-even ———
-{id:1506,topic:'Unit 5: Linear Functions',
+{id:1506,topic:'Week 6: Linear Functions',
 question:'A firm has fixed cost of R450, variable costs of R5 per unit and a selling price of R10 per unit.<br>(7.1) Determine functions for the revenue, cost and profit in terms of the level of sales $q$. [3]<br>(7.2) At what sales level does the firm break even? [2]',
 markingCriteria:[
   {type:'contains',expected:['R = 10q','R(q) = 10q'],description:'Revenue: R(q) = 10q',marks:1},
@@ -85,7 +85,7 @@ memo:'<div class="memo-line">$R = 10q$, $C = 450+5q$, $P = 5q-450$ <span class="
 },
 
 // ——— Q8: Budget function ———
-{id:1507,topic:'Unit 5: Linear Functions',
+{id:1507,topic:'Week 6: Linear Functions',
 question:'Assume a consumer has a budget $M$ to spend on two goods $X$ and $Y$ with prices of $P_x$ and $P_y$ respectively.<br>(8.1) What is the consumer\'s budget function? [1]<br>(8.2) Determine an equation for the slope of the budget function. [1]<br>(8.3) Determine the budget function for $M = R4000$, $P_x = R10$ and $P_y = R30$. [2]<br>(8.5) What will happen if the price of $Y$ decreases? [1]<br>(8.6) What will happen if the income increases? [1]',
 markingCriteria:[
   {type:'contains',expected:['P_xX + P_yY = M','XP_x + YP_y = M','M = P_xX + P_yY'],description:'Budget: M = P_x·X + P_y·Y',marks:1},

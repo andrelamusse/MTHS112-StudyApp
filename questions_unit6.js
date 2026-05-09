@@ -1,9 +1,9 @@
-// ========== MTHS 112 — UNIT 6: Quadratic Functions ==========
+// ========== MTHS 112 — Week 7: Quadratic Functions ==========
 // Sources: Newpdf7 (Week 7 classwork), MTHS112 Exam Q5/Q6
 (function(){const Q=[
 
 // ——— Q1: Revenue, cost, profit analysis (big question) ———
-{id:1601,topic:'Unit 6: Quadratic Functions',
+{id:1601,topic:'Week 7: Quadratic Functions',
 question:'The demand function for a merchant\'s product is $q = 8000 - 40p$, with $p$ the price per unit (in rand). The cost function is $C = 100\\,000 + 20q$.<br>(1.1) Express the income $R$ as a function of quantity $q$. [2]<br>(1.2) What level of production will yield a maximum revenue? [2]<br>(1.3) What price will yield a maximum revenue? [1]<br>(1.4) What is the maximum revenue? [1]<br>(1.7) Determine the coordinates of the break-even points. [3]<br>(1.8) Write the profit as a function of quantity. [2]<br>(1.9) What level of production will yield a maximum profit? [2]<br>(1.10) What price will yield a maximum profit? [1]<br>(1.11) What is the maximum profit? [1]',
 markingCriteria:[
   {type:'contains',expected:['R = 200q - q²/40','R = -q²/40 + 200q','-q^2/40 + 200q'],description:'R(q) = -q²/40 + 200q',marks:2},
@@ -21,7 +21,7 @@ memo:'<div class="memo-line">$R(q) = 200q - q^2/40$ <span class="memo-mark">✓�
 },
 
 // ——— Q2: Magazine profit ———
-{id:1602,topic:'Unit 6: Quadratic Functions',
+{id:1602,topic:'Week 7: Quadratic Functions',
 question:'The daily profit $P$ (in rand) for selling $x$ magazines is determined by the formula $P = -x^2 + 80x - 1500$. For what values of $x$ is the profit positive?',
 markingCriteria:[
   {type:'value',expected:30,tolerance:1,description:'x > 30',marks:2},
@@ -33,7 +33,7 @@ memo:'<div class="memo-line">$x^2 - 80x + 1500 = 0$ → $(x-30)(x-50) = 0$ <span
 },
 
 // ——— Q3: Supply function ———
-{id:1603,topic:'Unit 6: Quadratic Functions',
+{id:1603,topic:'Week 7: Quadratic Functions',
 question:'A market researcher established that the supply function for a product is given by $Q_s = -3 + 4P^2$.<br>(3.1) The independent variable is: ____ The dependent variable is: ____ [2]<br>(3.2) Sketch the supply function on the $Q(P)$ axes and then the inverse on the $P(Q)$ axes. [4]',
 markingCriteria:[
   {type:'contains',expected:['P','price'],description:'Independent variable is P',marks:1},
@@ -46,7 +46,7 @@ memo:'<div class="memo-line">Independent: $P$; Dependent: $Q_s$ <span class="mem
 },
 
 // ——— Q4: Non-linear market equilibrium ———
-{id:1604,topic:'Unit 6: Quadratic Functions',
+{id:1604,topic:'Week 7: Quadratic Functions',
 question:'A market model is given: $Q_d = Q_s$; $Q_d = 16 - 3P$; $Q_s = -4 + 2P^2$.<br>(4.1) Sketch the first-quadrant portions of these functions on the same set of axes. Label the axes correctly (economists graph $P$ on vertical axis). Clearly indicate the intercepts with the axes. Label the market equilibrium point with an $A$. [4]<br>(4.2) Algebraically determine the market equilibrium point. [4]',
 markingCriteria:[
   {type:'value',expected:2,tolerance:0.1,description:'Equilibrium P = 2',marks:2},
@@ -58,7 +58,7 @@ memo:'<div class="memo-line">$2P^2+3P-20 = 0$ → $(2P-4)(P+5) = 0$ or quadratic
 },
 
 // ——— Exam Q: Sketching parabola ———
-{id:1605,topic:'Unit 6: Quadratic Functions',
+{id:1605,topic:'Week 7: Quadratic Functions',
 question:'Sketch the graph of $f(x) = -2x^2 + 12x - 10$, showing:<br>(a) the domain and range [2]<br>(b) the y-intercept [1]<br>(c) the x-intercepts [3]<br>(d) the turning point (vertex) [2]<br>(e) the axis of symmetry [1]',
 markingCriteria:[
   {type:'contains',expected:['all real','(-∞,∞)','R'],description:'Domain: all reals',marks:1},
@@ -76,7 +76,7 @@ memo:'<div class="memo-line">Domain: all reals; Range: $y \\leq 8$ <span class="
 },
 
 // ——— Exam Q: Quadratic revenue optimization ———
-{id:1606,topic:'Unit 6: Quadratic Functions',
+{id:1606,topic:'Week 7: Quadratic Functions',
 question:'A company sells widgets with a demand function $P = 50 - 0.5Q$. The total cost function is $C = 200 + 10Q$.<br>(a) Determine the revenue function $R$ as a function of $Q$. [2]<br>(b) Determine the profit function $\\Pi(Q)$. [2]<br>(c) Find the quantity $Q$ that maximizes profit. [2]<br>(d) What is the maximum profit? [2]<br>(e) At what quantity does the firm break even? [3]',
 markingCriteria:[
   {type:'contains',expected:['R = 50Q - 0.5Q²','R=50Q-0.5Q^2'],description:'R = 50Q - 0.5Q²',marks:2},

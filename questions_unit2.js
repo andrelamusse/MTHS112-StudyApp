@@ -1,9 +1,9 @@
-// ========== MTHS 112 — UNIT 2: Matrix Algebra ==========
+// ========== MTHS 112 — Week 3: Matrix Algebra ==========
 // Sources: Newpdf3 (Week 3 classwork), MTHS112 Exam Q3, MTHS123 Exam Q3
 (function(){const Q=[
 
 // ——— Newpdf3 Classwork Q1.1: Matrix dimensions ———
-{id:1201,topic:'Unit 2: Matrix Algebra',
+{id:1201,topic:'Week 3: Matrix Algebra',
 question:'Consider the following matrices:<br>$A = \\begin{bmatrix} 4 & 4 \\\\ 0 & 1 \\end{bmatrix}$, $B = \\begin{bmatrix} 2 & 3 \\\\ 4 & 4 \\end{bmatrix}$, $C = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$, $D = \\begin{bmatrix} 3 & 4 \\end{bmatrix}$<br>(1.1) Write down the dimension of each matrix. [4]<br>(1.2) Determine: $a_{22}$, $b_{12}$, $c_{11}$, $d_{12}$ [4]',
 markingCriteria:[
   {type:'contains',expected:['2x2','2 x 2','2×2'],description:'A is 2×2',marks:1},
@@ -21,7 +21,7 @@ memo:'<div class="memo-line">A: 2×2, B: 2×2, C: 2×1, D: 1×2 <span class="mem
 },
 
 // ——— Newpdf3 Classwork Q1.3: Matrix operations ———
-{id:1202,topic:'Unit 2: Matrix Algebra',
+{id:1202,topic:'Week 3: Matrix Algebra',
 question:'Given $A = \\begin{bmatrix} 4 & 4 \\\\ 0 & 1 \\end{bmatrix}$, $B = \\begin{bmatrix} 2 & 3 \\\\ 4 & 4 \\end{bmatrix}$, $C = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$, $D = \\begin{bmatrix} 3 & 4 \\end{bmatrix}$<br>Evaluate and give the dimension of the resultant:<br>(a) $A + B$ [2]<br>(d) $AB$ [3]<br>(g) $CD$ [2]<br>(h) $DC$ [2]',
 markingCriteria:[
   {type:'contains',expected:['6','7','4','5'],description:'A+B = [[6,7],[4,5]]',marks:2},
@@ -35,7 +35,7 @@ memo:'<div class="memo-line">$A+B = \\begin{bmatrix} 6 & 7 \\\\ 4 & 5 \\end{bmat
 },
 
 // ——— Newpdf3 Classwork Q2: Determinability of matrix products ———
-{id:1203,topic:'Unit 2: Matrix Algebra',
+{id:1203,topic:'Week 3: Matrix Algebra',
 question:'Consider the matrices: $B = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 2 \\end{bmatrix}$, $E = \\begin{bmatrix} 5 & 4 & 3 & 2 \\end{bmatrix}$, $X = \\begin{bmatrix} 12 & 11 & 3 & 7 \\\\ 3 & 2 & 1 & 1 \\end{bmatrix}$<br>(2.1) Use dimensions to decide if the following matrix products are determinable: BX, XB, XE, $EX^T$, EB, E+B, 2E [7]<br>(2.2) Determine the resultant matrices of the cases in 2.1 which are determinable. [10]',
 markingCriteria:[
   {type:'contains',expected:['not','undefined','cannot'],description:'BX: 4×1 and 2×4 → not determinable',marks:1},
@@ -52,7 +52,7 @@ memo:'<div class="memo-line">BX: not determinable (4×1 · 2×4) <span class="me
 },
 
 // ——— Newpdf3 Classwork Q3: Voter registration matrix multiplication ———
-{id:1204,topic:'Unit 2: Matrix Algebra',
+{id:1204,topic:'Week 3: Matrix Algebra',
 question:'Matrix A represents the proportion of voters in a certain suburb registered with the ANC, DA, EFF and FF+ for each age group. Matrix B represents the distribution of the voters according to age and gender.<br>$A = \\begin{bmatrix} 0.60 & 0.60 & 0.65 \\\\ 0.15 & 0.25 & 0.15 \\\\ 0.15 & 0.05 & 0.05 \\\\ 0.10 & 0.10 & 0.15 \\end{bmatrix}$ (rows: ANC, DA, EFF, FF+; cols: 18-30, 31-50, 50+)<br>$B = \\begin{bmatrix} 5000 & 6000 \\\\ 10000 & 12000 \\\\ 12000 & 15000 \\end{bmatrix}$ (cols: M, F; rows: 18-30, 31-50, 50+)<br>(3.1) Determine the matrix product AB. [4]<br>(3.2) How many voters in total are registered in the suburb? [1]<br>(3.3) How many voters older than 50 want to vote for the FF+? [1]<br>(3.4) How many females want to vote for the ANC? [1]<br>(3.5) How many voters between 18 and 30 want to vote for the DA? [1]',
 markingCriteria:[
   {type:'contains',expected:['16800','20100'],description:'AB first row correct',marks:4},
@@ -67,7 +67,7 @@ memo:'<div class="memo-line">AB calculated: ANC row = [16800, 20100] <span class
 },
 
 // ——— Newpdf3 Classwork Q4: Automobile manufacturer ———
-{id:1205,topic:'Unit 2: Matrix Algebra',
+{id:1205,topic:'Week 3: Matrix Algebra',
 question:'An automobile manufacturer has accepted orders for 30 minivans (B), 25 sport utility vehicles (SUV) and 15 sedans (S). These orders are represented by row vector $Q = [30\\; 25\\; 15]$. The raw materials are steel, glass, plastic, paint, and labour. Matrix R gives the units of each material needed for each type of vehicle:<br>$R = \\begin{bmatrix} 6 & 3 & 9 & 5 & 4 \\\\ 9 & 4 & 7 & 4 & 6 \\\\ 5 & 2 & 6 & 3 & 3 \\end{bmatrix}$ (rows: B, SUV, S)<br>Costs per unit in column vector $C$: Steel R8000, Glass R4000, Plastic R3000, Paint R2000, Labour R10000.<br>(4.1) Determine the matrix product $QR$ and interpret the entries. [4]<br>(4.2) Determine $QRC$ and interpret. [4]',
 markingCriteria:[
   {type:'contains',expected:['480','180','445','270','285'],description:'QR = [480, 180, 445, 270, 285]',marks:4},
@@ -79,7 +79,7 @@ memo:'<div class="memo-line">QR = [480, 180, 445, 270, 285] <span class="memo-ma
 },
 
 // ——— Newpdf3 Classwork Q5: Product profit/loss matrix ———
-{id:1206,topic:'Unit 2: Matrix Algebra',
+{id:1206,topic:'Week 3: Matrix Algebra',
 question:'The units of material needed to produce two products are given:<br>Product A: 10 of X, 15 of Y, 5 of Z<br>Product B: 20 of X, 10 of Y, 10 of Z<br>Cost per unit: X = R100, Y = R50, Z = R150<br>Selling price: A = R1000, B = R1500<br>Suppose 5 units of product A and 3 units of product B are produced and sold. Compose appropriate matrices and use matrix multiplication to calculate the profit or loss made.',
 markingCriteria:[
   {type:'value',expected:750,tolerance:10,description:'Profit = R750 or similar',marks:5}
@@ -90,7 +90,7 @@ memo:'<div class="memo-line">Cost per A = 10(100)+15(50)+5(150) = 1000+750+750 =
 },
 
 // ——— Newpdf3 Classwork Q6: Student stationery shopping ———
-{id:1207,topic:'Unit 2: Matrix Algebra',
+{id:1207,topic:'Week 3: Matrix Algebra',
 question:'Three students $P_1$, $P_2$ and $P_3$ have a choice of two stationers $W_1$ and $W_2$. Their shopping lists and prices are:<br>Items required (scripts, pencils, erasers): $P_1$: 2,2,1; $P_2$: 4,1,1; $P_3$: 1,3,0<br>Price per unit: $W_1$: 40,18,5; $W_2$: 41,16,8<br>Compose appropriate matrices and use matrix multiplication to determine at which store each student should buy to pay as little as possible.',
 markingCriteria:[
   {type:'contains',expected:['W1','W_1','store 1'],description:'P₁ should buy at W₁',marks:2},
@@ -103,7 +103,7 @@ memo:'<div class="memo-line">$P_1$: W₁=R121, W₂=R122 → W₁ <span class="m
 },
 
 // ——— MTHS112 Exam: P^T R matrix product (from Newpdf25/Newpdf27) ———
-{id:1208,topic:'Unit 2: Matrix Algebra',
+{id:1208,topic:'Week 3: Matrix Algebra',
 question:'An investment firm offers three stock portfolios. The stock distribution is given in matrix R with rows representing the risk distribution of high, moderate and low for each portfolio A, B and C in the columns. A client wants 35 units of high, 22 units of moderate and 18 units of low risk stocks. This profile is given in matrix P.<br>$R = \\begin{bmatrix} 6 & 1 & 3 \\\\ 3 & 2 & 3 \\\\ 1 & 5 & 3 \\end{bmatrix}$, $P = \\begin{bmatrix} 35 \\\\ 22 \\\\ 18 \\end{bmatrix}$<br>(3.1) Determine the matrix product $P^T R$. [4]<br>(3.2) Explain the meaning of the matrix entries of the matrix product of 3.1. [1]',
 markingCriteria:[
   {type:'contains',expected:['294','177','195'],description:'P^T R = [294 177 195]',marks:4},

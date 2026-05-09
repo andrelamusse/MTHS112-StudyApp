@@ -1,9 +1,9 @@
-// ========== MTHS 112 — UNIT 4: Application of Functions ==========
+// ========== MTHS 112 — Week 5: Application of Functions ==========
 // Sources: Newpdf5 (Week 5 classwork — concept of a function)
 (function(){const Q=[
 
 // ——— Q1: Function identification ———
-{id:1401,topic:'Unit 4: Application of Functions',
+{id:1401,topic:'Week 5: Application of Functions',
 question:'Which of the following are functions and why?<br>(a) $\\{(1,1),(2,3),(3,5)\\}$ [1]<br>(b) $\\{(1,1),(2,3),(2,5)\\}$ [1]<br>(c) $y = x^2$ [1]<br>(d) $y^2 = x$ [1]<br>(e) $f(x) = 3x + 4$ [1]',
 markingCriteria:[
   {type:'contains',expected:['yes','function'],description:'(a) is a function',marks:1},
@@ -18,7 +18,7 @@ memo:'<div class="memo-line">(a) Function ✓ (b) Not a function (x=2 repeats) �
 },
 
 // ——— Q2: Domain and range ———
-{id:1402,topic:'Unit 4: Application of Functions',
+{id:1402,topic:'Week 5: Application of Functions',
 question:'Determine the domain and range of the following functions:<br>(a) $f(x) = 3x + 4$ [2]<br>(b) $g(x) = \\sqrt{x - 2}$ [2]<br>(c) $h(x) = \\frac{1}{x+3}$ [2]<br>(d) $k(x) = x^2 - 9$ [2]',
 markingCriteria:[
   {type:'contains',expected:['all real','(-∞,∞)','R'],description:'(a) Domain: all reals',marks:1},
@@ -36,7 +36,7 @@ memo:'<div class="memo-line">(a) D: all reals, R: all reals <span class="memo-ma
 },
 
 // ——— Q3: Function evaluation ———
-{id:1403,topic:'Unit 4: Application of Functions',
+{id:1403,topic:'Week 5: Application of Functions',
 question:'If $f(x) = 2x^2 - 3x + 1$, determine:<br>(a) $f(0)$ [1]<br>(b) $f(-1)$ [2]<br>(c) $f(a)$ [2]<br>(d) $f(2a)$ [2]<br>(e) $f(a+h)$ [3]',
 markingCriteria:[
   {type:'value',expected:1,tolerance:0.01,description:'f(0) = 1',marks:1},
@@ -51,7 +51,7 @@ memo:'<div class="memo-line">$f(0) = 1$ <span class="memo-mark">✓</span></div>
 },
 
 // ——— Q6: Composite function ———
-{id:1404,topic:'Unit 4: Application of Functions',
+{id:1404,topic:'Week 5: Application of Functions',
 question:'Assume the number of units manufactured per day, $q$, is a function of the number of employees $m$, and the total revenue $r$ is a function of the number of units $q$:<br>$q(m) = \\frac{40m - m^2}{4}$ and $r(q) = 40q$<br>(6.1) Determine $(r \\circ q)(m)$. [2]<br>(6.3) Determine the income if there are 30 employees. [2]<br>(6.4) Determine the level of production if there are 30 employees. [1]<br>(6.5) Determine the price per unit produced. [1]',
 markingCriteria:[
   {type:'contains',expected:['10(40m - m²)','400m - 10m²','10(40m-m^2)'],description:'(r∘q)(m) = 10(40m-m²)',marks:2},
@@ -65,7 +65,7 @@ memo:'<div class="memo-line">$(r \\circ q)(m) = 40 \\cdot \\frac{40m-m^2}{4} = 1
 },
 
 // ——— Q7: Piecewise tax function ———
-{id:1405,topic:'Unit 4: Application of Functions',
+{id:1405,topic:'Week 5: Application of Functions',
 question:'Assume that a person with a salary less than R70 000 p.a. is exempted from paying income tax. From R70 000 to R150 000, income tax is payable as a percentage of 10% of the annual income, and above R150 000 a fixed amount of R15 000 plus 20% of the income above R150 000 is payable.<br>(7) Write the income tax $T$ as a piecewise defined function of income $x$. [3]<br>(7.2) Determine the amount of tax payable if the income is R250 000. [2]',
 markingCriteria:[
   {type:'contains',expected:['0','70000','70 000'],description:'T=0 if x ≤ 70000',marks:1},
@@ -79,7 +79,7 @@ memo:'<div class="memo-line">$T(x) = 0$ if $x \\leq 70000$ <span class="memo-mar
 },
 
 // ——— Q8: SARS tax bracket ———
-{id:1406,topic:'Unit 4: Application of Functions',
+{id:1406,topic:'Week 5: Application of Functions',
 question:'Using the SARS tax table (tax relief on investments: first R23 800 is exempt; primary rebate: R13 500):<br>$T(x)$ is piecewise from the table:<br>0-188 000: 18% of taxable income<br>188 001-293 600: R33 840 + 26% of amount above 188 000<br>293 601-406 400: R61 296 + 31% of amount above 293 600<br>(8.1) How much tax does a student of 20 years, who earns R70 000, pay? [2]<br>(8.2) How much tax does a person younger than 60 pay who earns R110 000 and has no investments? [3]<br>(8.3) How much tax does a person pay who earns R410 000 per annum plus interest of R51 000? [5]',
 markingCriteria:[
   {type:'value',expected:0,tolerance:10,description:'(8.1) R70000 → Tax below rebate = R0',marks:2},
@@ -92,7 +92,7 @@ memo:'<div class="memo-line">(8.1) $0.18(70000) = R12600$, less R13500 rebate �
 },
 
 // ——— Q9.1: Complex tax calculation ———
-{id:1407,topic:'Unit 4: Application of Functions',
+{id:1407,topic:'Week 5: Application of Functions',
 question:'A person earns a fixed salary of R370 000 per year and works an extra 200 hours at R250 per hour. The person has an investment which earns annual interest of R12 650 and contributes R950 each month towards an annuity. Using the tax table (exemptions: R23 800 interest, R350 000 annuity max; primary rebate: R13 050):<br>(9.1.1) Determine the person\'s taxable income for the tax year. [5]<br>(9.1.2) Write the income tax $T$ as a function of taxable income $x$. [2]<br>(9.1.3) Determine the tax due by the person. [3]<br>(9.1.4) Determine the actual percentage of the person\'s income that will go to SARS. [2]',
 markingCriteria:[
   {type:'value',expected:397450,tolerance:100,description:'Taxable income = R397 450',marks:5},

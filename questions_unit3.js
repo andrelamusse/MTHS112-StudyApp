@@ -1,9 +1,9 @@
-// ========== MTHS 112 — UNIT 3: Linear Programming ==========
+// ========== MTHS 112 — Week 4: Linear Programming ==========
 // Sources: Newpdf4 (Week 4 classwork), MTHS112 Exam Q4
 (function(){const Q=[
 
 // ——— Q1: Conversion of constraints to inequalities ———
-{id:1301,topic:'Unit 3: Linear Programming',
+{id:1301,topic:'Week 4: Linear Programming',
 question:'A business sells iPhones ($x$) and Samsung phones ($y$). Write down inequalities for the following restrictions:<br>1.1 At least 50, but not more than 200 iPhones ($x$) can be sold. [1]<br>1.2 Less than 300, but more than 100 Samsungs can be sold. [1]<br>1.3 The total number of phones that can be sold is 400. [1]<br>1.4 The number of Samsungs ($y$) must at most be twice the number of iPhones ($x$). [1]<br>1.5 The manufacturer must produce at least three times as many iPhones ($x$) as Samsungs ($y$). [1]<br>1.6 The ratio of iPhones ($x$) to Samsungs ($y$) is not greater than 9:2. [1]',
 markingCriteria:[
   {type:'contains',expected:['50','200','x'],description:'50 ≤ x ≤ 200',marks:1},
@@ -19,7 +19,7 @@ memo:'<div class="memo-line">1.1: $50 \\leq x \\leq 200$ <span class="memo-mark"
 },
 
 // ——— Q5: LP application — maximize P ———
-{id:1302,topic:'Unit 3: Linear Programming',
+{id:1302,topic:'Week 4: Linear Programming',
 question:'The following information is applicable to the variables $x$ and $y$ with $x, y \\geq 0$:<br>• The sum of $x$ and $y$ has a minimum value of 2 and a maximum value of 8.<br>• The value of $y$ may not be more than 3 times the value of $x$.<br>• The ratio of $y$ to $x$ must not be smaller than 3:5.<br>(5.1) Represent the above constraints by a system of inequalities. [4]<br>(5.2) Represent these inequalities graphically and shade the feasible region. [3]<br>(5.3) If $P = 7x + 5y$, determine the values of $x$ and $y$ for which $P$ will have a maximum value. [3]',
 markingCriteria:[
   {type:'contains',expected:['x + y ≥ 2','x+y≥2'],description:'x + y ≥ 2',marks:1},
@@ -35,7 +35,7 @@ memo:'<div class="memo-line">$x+y \\geq 2$, $x+y \\leq 8$, $y \\leq 3x$, $5y \\g
 },
 
 // ——— Q6: Radio manufacturing LP ———
-{id:1303,topic:'Unit 3: Linear Programming',
+{id:1303,topic:'Week 4: Linear Programming',
 question:'Two kinds of radios, electric ($x$) and battery ($y$), are manufactured in a certain week. At most 60 of $x$ and 100 of $y$ can be manufactured in a week. At least 80 radios must be manufactured in a week to cover the cost. It takes 40 minutes to assemble $x$ and 30 minutes to assemble $y$. The factory operates at most for 60 hours per week.<br>(6.1) Write down the constraints of this situation in terms of $x$ and $y$. [5]<br>(6.3) If the profit on $x$ is R40 and on $y$ R80, give the equation for the profit and draw the search line. [2]<br>(6.4) Use the graph to determine how many of $x$ and $y$ must be manufactured for maximum profit. [2]<br>(6.5) Calculate the maximum weekly profit. [1]',
 markingCriteria:[
   {type:'contains',expected:['x ≤ 60'],description:'x ≤ 60',marks:1},
@@ -53,7 +53,7 @@ memo:'<div class="memo-line">Constraints: $x \\leq 60$, $y \\leq 100$, $x+y \\ge
 },
 
 // ——— Q7: Fertilizer LP ———
-{id:1304,topic:'Unit 3: Linear Programming',
+{id:1304,topic:'Week 4: Linear Programming',
 question:'A farmer is purchasing fertilizer containing three nutrients A, B and C. The minimum needs are 160 units of A, 200 units of B and 80 units of C. There are two popular brands of fertilizer on the market. Fast Grow ($x$), costing R800 a bag, contains 3 units of A, 5 units of B and 1 unit of C. Easy Grow ($y$), costing R600 a bag, contains 2 units of each nutrient.<br>(7.1) Write down the constraints of this situation in terms of $x$ and $y$. [4]<br>(7.3) If the farmer wants to minimize cost, how many bags of each brand should be bought? [3]<br>(7.4) The minimum cost is: [1]',
 markingCriteria:[
   {type:'contains',expected:['3x + 2y ≥ 160'],description:'Nutrient A: 3x + 2y ≥ 160',marks:1},
@@ -69,7 +69,7 @@ memo:'<div class="memo-line">$3x+2y \\geq 160$, $5x+2y \\geq 200$, $x+2y \\geq 8
 },
 
 // ——— Q8: Computer factory LP ———
-{id:1305,topic:'Unit 3: Linear Programming',
+{id:1305,topic:'Week 4: Linear Programming',
 question:'A company has two factories to manufacture three different models of computers. Factory 1 can manufacture 60 of model A, 40 of model B and 60 of model C per day. Factory 2 can manufacture 60 of model A, 80 of model B and 40 of model C per day. The company needs to manufacture at least 2400 of model A, 2000 of model B and 1800 of model C.<br>(8.1) Assume $x$ is the number of days that Factory 1 is in use and $y$ is the number of days that Factory 2 is in use. Set up a system of inequalities to represent the constraints. [4]<br>(8.3) Write down the cost function if the daily operating cost for Factory 1 is R16 000 and for Factory 2 is R12 000. [1]<br>(8.4) Use the graph and determine the number of days each factory needs to operate to manufacture the required number of computers at the minimum cost. [3]<br>(8.5) The minimum cost is: [1]',
 markingCriteria:[
   {type:'contains',expected:['60x + 60y ≥ 2400'],description:'Model A: 60x + 60y ≥ 2400',marks:1},
@@ -86,7 +86,7 @@ memo:'<div class="memo-line">$60x+60y \\geq 2400$, $40x+80y \\geq 2000$, $60x+40
 },
 
 // ——— MTHS112 Exam LP question ———
-{id:1306,topic:'Unit 3: Linear Programming',
+{id:1306,topic:'Week 4: Linear Programming',
 question:'A small business makes tables and chairs. Each table requires 3 hours of carpentry and 2 hours of finishing. Each chair requires 2 hours of carpentry and 1 hour of finishing. There are at most 36 hours available for carpentry and 20 hours for finishing per week. The profit is R50 per table and R30 per chair.<br>(a) Write down the constraints. [4]<br>(b) Determine the number of tables and chairs that should be produced for maximum profit. [4]<br>(c) Calculate the maximum weekly profit. [2]',
 markingCriteria:[
   {type:'contains',expected:['3x + 2y ≤ 36'],description:'Carpentry: 3x + 2y ≤ 36',marks:1},

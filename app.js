@@ -3,22 +3,20 @@
   'use strict';
 
   const TOPICS_MAIN = [
-    'Unit 1: Matrix Reduction',
-    'Unit 2: Matrix Algebra',
-    'Unit 3: Linear Programming',
-    'Unit 4: Application of Functions',
-    'Unit 5: Linear Functions',
-    'Unit 6: Quadratic Functions'
+    'Week 1: Introduction & Percentages',
+    'Week 2: Matrix Reduction',
+    'Week 3: Matrix Algebra',
+    'Week 4: Linear Programming',
+    'Week 5: Application of Functions',
+    'Week 6: Linear Functions',
+    'Week 7: Quadratic Functions',
+    'Week 8: Exponential & Logarithmic Functions',
+    'Week 9: Sequences',
+    'Week 10: Annuities',
+    'Week 11: Application of Derivatives'
   ];
-  const TOPICS_OTHER = [
-    'Percentages & VAT',
-    'Matrices & Systems of Equations',
-    'Functions, Revenue & Break-even',
-    'Financial Mathematics',
-    'Income Tax Calculations',
-    'Calculus (Differentiation & Integration)'
-  ];
-  const TOPICS = [...TOPICS_MAIN, ...TOPICS_OTHER];
+  const TOPICS_OTHER = [];
+  const TOPICS = [...TOPICS_MAIN];
 
   // --- STATE ---
   let state = {
