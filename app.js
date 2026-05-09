@@ -120,7 +120,7 @@
 
     const mainHeader = document.createElement('h3');
     mainHeader.className = 'topic-group-header';
-    mainHeader.textContent = '📝 Semester Test Units (1–6)';
+    mainHeader.textContent = '📝 Weekly Topics (1–11)';
     topicGrid.appendChild(mainHeader);
 
     TOPICS_MAIN.forEach(topic => {
@@ -131,18 +131,7 @@
       topicGrid.appendChild(btn);
     });
 
-    const otherHeader = document.createElement('h3');
-    otherHeader.className = 'topic-group-header';
-    otherHeader.textContent = '📚 Additional Practice Banks';
-    topicGrid.appendChild(otherHeader);
 
-    TOPICS_OTHER.forEach(topic => {
-      const btn = document.createElement('button');
-      btn.className = 'topic-btn selected';
-      btn.textContent = topic;
-      btn.addEventListener('click', () => toggleTopic(btn, topic));
-      topicGrid.appendChild(btn);
-    });
     updateStartBtn();
   }
 
